@@ -1,0 +1,347 @@
+/*空间/场地列表模块*/
+.recommend li{
+    float: left;
+    width: 392px;
+    height: 495px;
+    background: #fff;
+    margin-right: 12px;
+    border: 1px solid #ccc;
+    position: relative;
+    box-sizing: border-box;
+}
+.recommend li:last-child{
+    margin-right: 0;
+}
+
+.recommend li .img{
+    width: 100%;
+    height: 264px;
+    background: #ddd;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.recommend li .img>a{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.recommend li .tags{
+    display: block;
+    padding: 0 15px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    left: 10px;
+    background: rgba(0,0,0,.6);
+    color: #fff;
+    text-align: center;
+}
+.recommend .text{
+    padding:15px 20px 10px;
+}
+.recommend .title{
+    display: block;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 26px;
+    line-height: 26px;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+.recommend .price{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    color: #fff;
+    background: #000;
+}
+.recommend .textinfo p{
+    line-height: 30px;
+}
+.recommend .textinfo>p{
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.recommend .textinfo p span{
+    color: #666;
+}
+.recommend .numb p{
+    float: left;
+    margin-right: 20px;
+}
+
+.recommend-sub li{
+    width: 291px;
+    height: 340px;
+    margin-right: 11px;
+}
+.recommend-sub li .img{
+    height: 195px;
+}
+.recommend-sub .price{
+    position: absolute;
+    top:154px;
+}
+.recommend-sub .text{padding:10px;}
+.recommend-sub .title{
+    height: 18px;
+    line-height: 18px;
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+.recommend-sub li .city{
+    height: 14px;
+    line-height: 14px;
+    margin-bottom: 10px;
+}
+.recommend-sub .textinfo p{line-height: 24px;}
+
+
+/*小图标*/
+.icon-close{/*关闭按钮小*/
+    width: 20px;
+    height: 20px;
+    background-position: -920px -20px;
+}
+.icon-bgclose{/*关闭按钮大*/
+    width: 30px;
+    height: 30px;
+    background-position: -376px -16px;
+}
+.icon-zan{/*赞-小*/
+    width: 15px;
+    height: 15px;
+    background-position: -323px -203px;
+}
+.icon-zan-red{/*赞-小红色*/
+    width: 15px;
+    height: 15px;
+    background-position: -743px -267px;
+}
+.icon-zanbg{/*赞-大*/
+    width: 25px;
+    height: 25px;
+    background-position: -317px -79px;
+}
+.icon-skim{/*浏览-小*/
+    width: 15px;
+    height: 15px;
+    background-position: -323px -142px;
+}
+.icon-skimbg{/*浏览-大*/
+    width: 25px;
+    height: 25px;
+    background-position: -317px -19px;
+}
+.icon-place{/*位置*/
+    background-position: -684px -23px;
+}
+.icon-space{/*空间个数*/
+    background-position: -743px -323px;
+}
+.icon-pnumbs{/*人数*/
+    background-position: -743px -23px;
+}
+.icon-assort{/*场地配套*/
+    background-position: -743px -83px;
+}
+.icon-busintype{/*行业类型*/
+    background-position: -743px -143px;
+}
+.icon-evtype{/*活动类型*/
+    background-position: -743px -203px;
+}
+.icon-zansm{/*赞-小（文章详情页）*/
+    width: 20px;
+    height: 20px;
+    background-position: -320px -260px;
+}
+.icon-zansm-hv{/*赞-小（文章详情页）*/
+    width: 20px;
+    height: 20px;
+    background-position: -320px -380px;
+}
+.icon-collectsm{/*未收藏-小（文章详情页）*/
+    width: 20px;
+    height: 20px;
+    background-position: -320px -320px;
+}
+.icon-collectsm-hv{/*已收藏-小（文章详情页）*/
+    width: 20px;
+    height: 20px;
+    background-position: -320px -440px;
+}
+.icon-collect{/*未收藏-小*/
+    background-position: -75px -16px;
+}
+.icon-collect-hv{/*已收藏-小*/
+    background-position: -75px -76px;
+}
+.icon-collectbg{/*未收藏-大*/
+    background-position: -60px -180px;
+}
+.icon-collectbg-hv{/*已收藏-大*/
+    background-position: -60px -120px;
+}
+.icon-collectbgmore{/*未收藏-最大*/
+    background-position: -120px -180px;
+}
+.icon-collectbgmore-hv{/*已收藏-最大*/
+    background-position: -120px -120px;
+}
+.icon-mobile{/*手机*/
+    width: 20px;
+    height: 20px;
+    background-position: -620px -80px;
+}
+
+.icon-warning{/*警告-小*/
+    width: 12px;
+    height: 12px;
+    background-position: -624px -24px;
+}
+.icon-warningbg{/*警告-大*/
+    width: 18px;
+    height: 18px;
+    background-position: -623px -200px;
+}
+.icon-time{
+    width: 20px;
+    height: 20px;
+    background-position: -440px -20px;
+}
+
+
+.btns .btn {
+    width: 40px;
+    height: 80px;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+    z-index: 10;
+}
+
+.btns .btn:hover {
+    background: rgba(0, 0, 0, 1);
+}
+
+.btns .btn span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -4px;
+    margin-top: -8px;
+}
+
+.btns .btnleft {
+    left: 50%;
+    margin-left: -600px;
+}
+
+.btns .btnright {
+    right: 50%;
+    margin-right: -600px;
+}
+.btns .btnright span{margin-left: -11px;}
+
+.btns .icon-arrowleft,
+.btns .icon-arrowright {
+    width: 13px;
+    height: 13px;
+    border-width: 2px;
+    border-color: #fff;
+}
+
+/*swiper左右箭头*/
+/*空间详情页 相关专题 左右箭头*/
+.yun-swiper-wrap2 .yun-swiper-prev span,.yun-swiper-wrap2 .yun-swiper-next span{
+    width: 14px;
+    height: 14px;
+    top: 34px;
+}
+.yun-swiper-wrap2 .yun-swiper-prev,.yun-swiper-wrap2 .yun-swiper-next{
+    margin-top: -40px;
+}
+
+.yun-swiper-prev,.yun-swiper-next{
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 80px;
+    margin-top: -40px;
+    z-index: 10;
+    cursor: pointer;
+    -moz-background-size: 27px 44px;
+    -webkit-background-size: 27px 44px;
+    background-size: 27px 44px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255,255,255,.5);
+}
+.yun-swiper-prev span,.yun-swiper-next span{
+    width: 24px;
+    height: 24px;
+    border-left: 2px solid #000;
+    border-top: 2px solid #000;
+    position: absolute;
+    top: 28px;
+}
+.yun-swiper-prev span{left: 15px;}
+.yun-swiper-next span{right: 15px;}
+.yun-swiper-prev{
+    left: 0;
+    right: auto;
+}
+.yun-swiper-next{
+    right: 0;
+    left: auto;
+}
+
+/*app下载弹窗*/
+.appcode-wrap{
+    width: 220px;
+    padding: 30px 0;
+    text-align: center;
+}
+.appcode-wrap .pserson-code-title{
+    color: #bac0c7;
+    font-size: 15px
+}
+.appcode-wrap .code-img .code-title{
+    margin-top: 16px;
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    padding-bottom: 10px
+}
+.appcode-wrap .code-img img{
+    width: 100px !important;
+    height: 100px !important
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
