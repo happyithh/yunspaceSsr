@@ -8,6 +8,7 @@ import SpaceDtl from '../components/space/dtl.vue'
 import ArticleDtl from '../components/news/dtl.vue'
 import Event from '../components/event/event.vue'
 import Site from '../components/site/site.vue'
+import SiteHome from '../components/site/home.vue'
 
 
 export default new Router({
@@ -19,5 +20,6 @@ export default new Router({
     { path: '/article/:id', component: ArticleDtl },
     { path: '/event', component: Event },
     { path: '/site/:id', component: Site },
+    { path: '/site', component: SiteHome }
   ]
 })

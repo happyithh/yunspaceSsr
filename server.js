@@ -95,9 +95,6 @@ app.get('*', (req, res) => {
             <link rel="manifest" href="/manifest.json">
             <script src="/static/js/jquery-3.1.1.min.js"></script>
             <link rel="stylesheet" href="/static/swiper/swiper-3.3.1.min.css">
-            <link rel="stylesheet" href="/public/css/css.css">
-            <link rel="stylesheet" href="/public/css/el-change.css">
-            <link rel="stylesheet" href="/public/css/component.css">
             <script src="/static/swiper/swiper-3.3.1.min.js"></script>
         </head>
         <body ${bodyAttrs.text()}>

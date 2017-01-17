@@ -43,13 +43,13 @@ module.exports = {
                 }
             },
             {
-                test: /\.(png|jpg|gif|svg)$/,
+                test: /\.(png|jpg|gif|jpeg|svg|woff|woff2|ttf|eot)$/,
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
                     name: '[name].[ext]?[hash]'
                 }
-            }
+            },
         ]
     }
 }
