@@ -5,6 +5,7 @@
         <div class="home-banner-search">
             <!--搜索-->
             <div class="home-search clearfix">
+                <div class="banner-tip">简单而直接的方式</div>
                 <div class="home-banner-wrap">
                     <div class="home-banner">
                         <img src="/static/images/home/banner.jpg">
@@ -15,6 +16,17 @@
         <div class="w1200">
 
             <!--空间故事-->
+            <div class="mt50 hot-site">
+                <div class="item-title clearfix">
+                    <h2><span class="redline"></span>空间故事</h2>
+                    <div class="keywords">
+                        <a href="">策划执行</a>
+                        <a href="">趣味年会</a>
+                        <a href="">闪店攻略</a>
+                    </div>
+                    <a class="more" href="">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                </div>
+            </div>
             <div class="swiper-container module-one">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"  v-for="item in reSites">
@@ -31,7 +43,18 @@
             <!--/空间故事-->
 
             <!--推荐场地-->
-            <div class="recommend-site">
+            <div class="mt50 hot-site">
+                <div class="item-title clearfix">
+                    <h2><span class="redline"></span>推荐场地</h2>
+                    <div class="keywords">
+                        <a href="">策划执行</a>
+                        <a href="">趣味年会</a>
+                        <a href="">闪店攻略</a>
+                    </div>
+                    <a class="more" href="">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                </div>
+            </div>
+            <div class="recommend-site clearfix">
                 <div class="site-piece" v-for="item in reSites">
                     <a href="" title="">
                         <img src="/static/images/test/3to2.png" alt="">
@@ -50,7 +73,18 @@
             <!--/推荐场地-->
 
             <!--精选分类-->
-                <div class="selection-classify">
+            <div class="mt50 hot-site">
+                <div class="item-title clearfix">
+                    <h2><span class="redline"></span>精选推荐</h2>
+                    <div class="keywords">
+                        <a href="">策划执行</a>
+                        <a href="">趣味年会</a>
+                        <a href="">闪店攻略</a>
+                    </div>
+                    <a class="more" href="">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                </div>
+            </div>
+                <div class="selection-classify clearfix">
                     <a class="selection-piece" v-for="item in selection">
                         <img src="/static/images/test/3to2.png" alt="">
                         <div class="name-des">
@@ -62,7 +96,18 @@
             <!--/精选分类-->
 
             <!--资讯报道-->
-            <div class="section logofriends clearfix">
+            <div class="mt50 hot-site">
+                <div class="item-title clearfix">
+                    <h2><span class="redline"></span>资讯报道</h2>
+                    <div class="keywords">
+                        <a href="">策划执行</a>
+                        <a href="">趣味年会</a>
+                        <a href="">闪店攻略</a>
+                    </div>
+                    <a class="more" href="">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                </div>
+            </div>
+            <div class="media-re clearfix">
                 <div class="media-left clearfix">
                     <a href="" title="" class="media-piece">
                         <img src="/static/images/test/3to2.png" alt="">

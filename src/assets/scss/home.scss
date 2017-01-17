@@ -2,6 +2,11 @@
   height: 340px;
   position: relative;
 }
+.banner-tip{
+  text-align: center;
+  font-size: 44px;
+  color: #181C1F;
+}
 
 .home-banner {
   width: 1920px;
@@ -11,7 +16,7 @@
   margin-left: -960px;
   top: 0;
   overflow: hidden;
-  z-index: 1;
+  z-index: -1;
 }
 
 .module-one a {
@@ -58,6 +63,7 @@
 
 .recommend-site {
   margin-right: -21px;
+  margin-bottom: -20px;
 }
 
 .site-piece {
@@ -113,6 +119,7 @@
 
 .selection-classify {
   margin-right: -18px;
+  margin-bottom: -18px;
 }
 
 .selection-piece {
@@ -225,4 +232,7 @@
       color: #8F949C;
     }
   }
+}
+.media-re {
+  margin-bottom: 25px;
 }

@@ -198,7 +198,6 @@
         color: #AA2C3C;
     }
 
-    .section{margin-top: 50px;}
     .site-item-title{margin-bottom: 10px;}
     /*tab切换*/
     .tab-menu li{
