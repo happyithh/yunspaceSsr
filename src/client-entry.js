@@ -8,7 +8,8 @@ Vue.use(Element)
 
 import 'public/css/css.css';
 import 'public/css/el-change.css';
-import 'public/css/component.css';
+import 'public/css/public.css';
+import 'public/css/icon.css'
 //me
 
 // prime the store with server-initialized state.
