@@ -17,30 +17,15 @@
             <!--空间故事-->
             <div class="swiper-container module-one">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <a href="" title>
+                    <div class="swiper-slide"  v-for="item in reSites">
+                        <a href="" title class="main-img">
                             <img src="/static/images/test/3to2.png" alt="">
+                            <p class="add">宁波当代艺术馆</p>
                         </a>
-                        <a href="">相遇1844·相约1892 瑞士劳芬设计名流派对</a>
+                        <a href="" class="title">相遇1844·相约1892 瑞士劳芬设计名流派对</a>
+                        <span class="other">3621 · 展览展示 · 时尚行业</span>
                     </div>
-                    <div class="swiper-slide">
-                        <a href="" title>
-                            <img src="/static/images/test/3to2.png" alt="">
-                        </a>
-                        <a href="">相遇1844·相约1892 瑞士劳芬设计名流派对</a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="" title>
-                            <img src="/static/images/test/3to2.png" alt="">
-                        </a>
-                        <a href="">相遇1844·相约1892 瑞士劳芬设计名流派对</a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="" title>
-                            <img src="/static/images/test/3to2.png" alt="">
-                        </a>
-                        <a href="">相遇1844·相约1892 瑞士劳芬设计名流派对</a>
-                    </div>
+
                 </div>
             </div>
             <!--/空间故事-->
@@ -51,9 +36,15 @@
                     <a href="" title="">
                         <img src="/static/images/test/3to2.png" alt="">
                     </a>
-                    <a href="">上海龙猫咖啡</a>
-                    <p>云SPACE价:<span>￥30,000/天 起</span></p>
-                    <p>云SPACE价:￥30,000/天 起</p>
+                    <div class="des">
+                        <a href="" class="title">上海龙猫咖啡</a>
+                        <p class="p1">云SPACE价:<span>￥30,000/天 起</span></p>
+                        <p>市场价: ￥30,000/天 起</p>
+                    </div>
+                    <div class="other">
+                        <span>徐家汇</span>
+                        <span>500人</span>
+                    </div>
                 </div>
             </div>
             <!--/推荐场地-->
@@ -70,13 +61,38 @@
                 </div>
             <!--/精选分类-->
 
-            <!--媒体报道-开始-->
-            <!--<div class="section logofriends clearfix">-->
-                <!--<h3>合作品牌</h3>-->
-                <!--<div class="cont">-->
-                    <!--<img src="/static/images/test/3to2.png" alt="" />-->
-                <!--</div>-->
-            <!--</div>-->
+            <!--资讯报道-->
+            <div class="section logofriends clearfix">
+                <div class="media-left clearfix">
+                    <a href="" title="" class="media-piece">
+                        <img src="/static/images/test/3to2.png" alt="">
+                        <div class="des">
+                            <p>商业时尚的汇聚地及潮流风向标的起源地</p>
+                            <p>2016-10-24</p>
+                        </div>
+                    </a>
+                    <a href="" title="" class="media-piece">
+                        <img src="/static/images/test/3to2.png" alt="">
+                        <div class="des">
+                            <p>商业时尚的汇聚地及潮流风向标的起源地</p>
+                            <p>2016-10-24</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="media-right">
+                    <ul>
+                        <li v-for="item in media">
+                            <a href="">
+                                <span>【搭建课堂】《华胥引》电影命名《鲛珠传》 打造IP六联动</span>
+                                <span class="time">2016-10-24</span>
+                                <div class="border-line"></div>
+                            </a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/资讯报道-->
         </div>
 
     </div>
@@ -104,7 +120,8 @@
                     }
                 },
                 reSites:[1,2,3,4,5,6,7,8],
-                selection:[1,2,3,4,5,6]
+                selection:[1,2,3,4,5,6],
+                media:[1,2,3,4,5,6,7,8]
             }
         },
         mounted () {
@@ -117,8 +134,8 @@
                     loop : true,
                     slidesPerView: 3,
                     paginationClickable: true,
-                    spaceBetween: 12,
-                    autoplay: 3000
+                    spaceBetween: 18,
+//                    autoplay: 3000
                 });
             })
         },
@@ -171,71 +188,6 @@
 
     }
 </script>
-<style>
-    .home-banner-search{
-        height: 340px;
-        position: relative;
-    }
-    .home-banner{
-        width: 1920px;
-        height: 340px;
-        position: absolute;
-        left: 50%;
-        margin-left: -960px;
-        top: 0;
-        overflow: hidden;
-        z-index: 1;
-    }
-    .module-one a{
-        display: block;
-    }
-    .module-one .swiper-slide{
-        float: left;
-        width: auto;
-    }
-    .recommend-site{
-        margin-right: -21px;
-    }
-    .site-piece{
-        float: left;
-        width: 284px;
-        margin-right: 21px;
-    }
-    .site-piece img,.selection-piece img{
-        width: 100%;
-        display: block;
-    }
-    .selection-classify{
-        margin-right: -18px;
-    }
-    .selection-piece{
-        width: 388px;
-        float: left;
-        margin-right: 18px;
-        margin-bottom: 18px;
-        position: relative;
-        display: block;
-        position: relative;
-    }
-    .name-des{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 14px 15px;
-        background: rgba(0,0,0,0.40);
-    }
-    .name-des p{
-        color: #fff;
-    }
-    .name-des p:nth-child(1){
-        font-size: 20px;
-        line-height: 20px;
-        margin-bottom: 6px;
-    }
-    .name-des p:nth-child(2){
-        font-size: 12px;
-        line-height: 12px;
-        color: #CCC;
-    }
+<style lang="sass">
+    @import "../assets/scss/home.scss";
 </style>

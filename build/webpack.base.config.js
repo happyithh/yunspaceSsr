@@ -49,7 +49,8 @@ module.exports = {
                     limit: 10000,
                     name: '[name].[ext]?[hash]'
                 }
-            }
+            },
+            { test: /\.(scss|sass)$/, loader: 'style-loader!css-loader!sass-loader'}
         ]
     }
 }

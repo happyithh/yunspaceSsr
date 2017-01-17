@@ -6,6 +6,7 @@
                 <ul class="footer_left">
                     <li>
                         <div class="footer-item-title">我要办活动</div>
+                        <span class="span-line"></span>
                         <p><a target="_blank" href="/spaces">空间场地</a></p>
                         <p><a target="_blank" href="http://www.yunspace.com.cn/service">配套服务</a></p>
                         <p><a target="_blank" href="http://www.yunspace.com.cn/set_list">超值套餐</a></p>
@@ -15,6 +16,7 @@
                     </li>
                     <li>
                         <div class="footer-item-title">业务合作</div>
+                        <span class="span-line"></span>
                         <p><a target="_blank" href="http://www.yunspace.com.cn/join/index">城市合伙人</a></p>
                         <p><a target="_blank" href="http://www.yunspace.com.cn/site_join">场地出租</a></p>
                         <p><a target="_blank" href="http://www.yunspace.com.cn/article/3140721.html">我要投稿</a></p>
@@ -23,6 +25,7 @@
                     </li>
                     <li>
                         <div class="footer-item-title">云·SPACE</div>
+                        <span class="span-line"></span>
                         <!--<p><a target="_blank" href="/about/news">官方新闻</a></p>-->
                         <p><a target="_blank" href="http://www.yunspace.com.cn/yunspace/news">官方新闻</a></p>
                         <!--<p><a target="_blank" href="/about/aboutus">关于我们</a></p>-->
@@ -34,10 +37,12 @@
                     </li>
                     <li style="margin-right: 40px">
                         <div class="footer-item-title">服务号</div>
+                        <span class="span-line"></span>
                         <p class="weixin2"><img src="/static/images/qrcode-cbz.jpg" width="120"></p>
                     </li>
                     <li>
                         <div class="footer-item-title">云space上海</div>
+                        <span class="span-line"></span>
                         <p class="weixin2"><img src="/static/images/qrcode-sh.jpg" width="120"></p>
                     </li>
                 </ul>
@@ -138,9 +143,9 @@
     }
 
     .footer-item-title {
-        font-size: 15px;
+        font-size: 14px;
         color: #fff;
-        margin-bottom: 15px;
+        margin-bottom: 8px;
     }
 
     .weixin2 {
@@ -271,12 +276,12 @@
     }
 
     .span-line {
-        width: 25px;
-        background: #fff;
+        width: 30px;
+        background: #cf484d;
         height: 2px;
         display: block;
-        margin-bottom: 15px;
-        margin-top: 15px;
+        margin-bottom: 18px;
+        margin-top: 0px;
     }
 
 </style>
