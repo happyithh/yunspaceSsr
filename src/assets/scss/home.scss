@@ -6,8 +6,19 @@
   text-align: center;
   font-size: 44px;
   color: #181C1F;
+  padding-top: 100px;
 }
-
+.home-search-bar{
+  margin: auto;
+  width: 910px;
+  text-align: center;
+  background-color: rgba(0,0,0,0.5);
+  padding: 10px;
+  position: absolute;
+  margin-left: -455px;
+  left: 50%;
+  bottom: 58px;
+}
 .home-banner {
   width: 1920px;
   height: 340px;
@@ -235,4 +246,12 @@
 }
 .media-re {
   margin-bottom: 25px;
+}
+.ad-one{
+  .ad-piece{
+    width: 590px;
+    float: left;
+    background-color: #f2f2f2;
+    height: 185px;
+  }
 }

@@ -14,7 +14,7 @@
         </div>
 
         <button class="fl btn btn-black search-btn"><i class="icon icon-icon_searchBarSearch"></i>搜索</button>
-        <button class="fl btn btn-red"><i class="icon icon-icon_searchBarOne"></i>一键租场地</button>
+        <button class="fl btn btn-red" style="margin-right: 0"><i class="icon icon-icon_searchBarOne"></i>一键租场地</button>
     </div>
     <!--搜索条-end-->
 

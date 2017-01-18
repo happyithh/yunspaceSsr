@@ -6,6 +6,9 @@
             <!--搜索-->
             <div class="home-search clearfix">
                 <div class="banner-tip">简单而直接的方式</div>
+                <div class="home-search-bar">
+                    <search-bar></search-bar>
+                </div>
                 <div class="home-banner-wrap">
                     <div class="home-banner">
                         <img src="/static/images/home/banner.jpg">
@@ -42,10 +45,21 @@
             </div>
             <!--/空间故事-->
 
+            <!--广告1-->
+            <div class="ad-one clearfix">
+                <a class="ad-piece">
+                    <img src="" alt="">
+                </a>
+                <a class="ad-piece">
+                    <img src="" alt="">
+                </a>
+            </div>
+            <!--/广告1-->
+
             <!--推荐场地-->
             <div class="mt50 hot-site">
                 <div class="item-title clearfix">
-                    <h2><span class="redline"></span>推荐场地</h2>
+                    <h2><span class="redline"></span>热推场地</h2>
                     <div class="keywords">
                         <a href="">策划执行</a>
                         <a href="">趣味年会</a>
@@ -75,7 +89,7 @@
             <!--精选分类-->
             <div class="mt50 hot-site">
                 <div class="item-title clearfix">
-                    <h2><span class="redline"></span>精选推荐</h2>
+                    <h2><span class="redline"></span>精选分类</h2>
                     <div class="keywords">
                         <a href="">策划执行</a>
                         <a href="">趣味年会</a>
@@ -149,6 +163,7 @@
         return store.dispatch(`getHomeData`)
     }
     import {mapGetters} from 'vuex'
+    import SearchBar from './public/search-bar.vue'
     export default {
         data() {
             const isInitialRender = !this.$root._isMounted
@@ -168,6 +183,9 @@
                 selection:[1,2,3,4,5,6],
                 media:[1,2,3,4,5,6,7,8]
             }
+        },
+        components: {
+            SearchBar
         },
         mounted () {
             var self = this
