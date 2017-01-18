@@ -83,20 +83,61 @@
             </div>
             <!--场地主题-end-->
 
-            <!--场地推荐-star-->
+            <!--热推场地-star-->
             <div class="section hot-site">
                 <div class="item-title clearfix">
                     <h2><span class="redline"></span>热推场地</h2>
-                    <div class="keywords">
-                        <a href="">策划执行</a>
-                        <a href="">趣味年会</a>
-                        <a href="">闪店攻略</a>
-                    </div>
                     <a class="more" href="">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                 </div>
 
+                <ul class="cont clearfix">
+                    <li v-for="item in siteRecommend">
+                        <a href="" title="">
+                            <img src="" alt="">
+                            <p>上海植物园第一会所会场</p>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <!--场地推荐-end-->
+            <!--热推场地-end-->
+
+            <!--精选分类-star-->
+            <div class="section selected-site">
+                <div class="item-title clearfix">
+                    <h2><span class="redline"></span>精选分类</h2>
+                </div>
+
+                <!--城市精选专题-开始-->
+                <div class="section citysubject clearfix">
+                    <div class="w1200">
+                        <div class="cont">
+                            <div class="btns">
+                                <a class="btn btnleft" href="javascript:;">
+                                    <span class="icon-arrowleft"></span>
+                                </a>
+                                <a class="btn btnright" href="javascript:;">
+                                    <span class="icon-arrowright"></span>
+                                </a>
+                            </div>
+                            <div class="citySelection" style="height: 100%;">
+                                <div class="swiper-wrapper swiper-container">
+                                    <div class="swiper-slide">Slide 2</div>
+                                    <div class="swiper-slide">Slide 3</div>
+                                    <div class="swiper-slide">Slide 4</div>
+                                </div>
+                                <!-- Add Pagination -->
+                                <!--<div class="swiper-pagination"></div>-->
+                            </div>
+                            <ul class="subject-list"></ul>
+                        </div>
+                        <router-link to="/found" class="btnlookmore">查看更多专题</router-link>
+                        <!--<a href="javascript:;" class="btnlookmore">查看更多专题</a>-->
+                    </div>
+
+                </div>
+                <!--城市精选专题-结束-->
+            </div>
+            <!--精选分类-end-->
         </div>
 
 
@@ -118,7 +159,8 @@
         data() {
             return {
                 hotTags:[1,2,3,4,5],
-                sites:[1,2,3,4,5,6,7,]
+                sites:[1,2,3,4,5,6,7,],
+                siteRecommend:[1,2,3,4,5,6,7,8,9,10,11,12]
             }
         },
 
@@ -146,6 +188,10 @@
                     $('.itembox .tab-box .cont').eq(index).addClass('current');
                 })
             });
+
+            setTimeout(function () {
+                this.init();
+            },300);
         },
         preFetch: fetchData,
 
@@ -156,127 +202,25 @@
             SearchBar
         },
         computed: {
-
         },
         methods: {
+            init : function () {
+                var citySelectionSwiper = new Swiper('.citySelection', {
+//                    pagination: '.swiper-pagination',
+                    nextButton: '.citysubject .btnright',
+                    prevButton: '.citysubject .btnleft',
+                    loop : true,
+                    slidesPerView: 3,
+                    paginationClickable: true,
+                    spaceBetween: 1,
+                    autoplay: 3000
+//                    freeMode: true
+                });
+            },
         },
     }
 
 </script>
-<style scoped>
-    .site-search-bar{
-        width: 100%;
-        padding: 15px 0;
-        background: #f5f5f5;
-        box-shadow: 0 1px 0 0 rgba(0,0,0,0.05);
-    }
-
-    /***热门标签***/
-    .hot-tags{margin-top: 15px;}
-    .hot-tags dt{
-        font-size: 16px;
-        color: #999;
-    }
-    .hot-tags dt{
-        padding-right: 15px;
-    }
-    .hot-tags dt .icon{
-        font-size: 15px;
-        margin-right: 5px;
-        margin-top: 4px;
-        color: #cbcbcb;
-    }
-    .hot-tags dt .cutoff-rule{
-        margin-left: 30px;
-        color: #dcdcdc;
-    }
-    .hot-tags a{
-        color: #999;
-        padding: 0 15px;
-    }
-    .hot-tags a:hover{
-        color: #AA2C3C;
-    }
-
-    .section{margin-top: 50px;}
-    .site-item-title{margin-bottom: 10px;}
-    /*tab切换*/
-    .tab-menu li{
-        float: left;
-        margin-right: 40px;
-        height: 24px;
-        line-height: 24px;
-        font-size: 24px;
-        color: #999;
-        text-align: center;
-        padding-bottom: 12px;
-        box-sizing: content-box;
-        cursor: pointer;
-    }
-    .tab-menu .current{
-        color: #181C1F;
-        border-bottom: 2px solid #AA2C3C;
-        margin-bottom: -1px;
-    }
-    .tab-box .cont{
-        display: none;
-    }
-    .tab-box .current{
-        display: block;
-    }
-
-    .site-cont{position: relative;}
-    .site-cont .box{
-        float: left;
-        width: 386px;
-        height: 257px;
-        margin-right: 20px;
-        margin-top: 20px;
-        background: #eee;
-        position: relative;
-    }
-    .site-cont a{
-        display: block;
-        width: 100%;
-        height: 100%;
-        color: #fff;
-    }
-    .site-cont .box:nth-of-type(3),
-    .site-cont .box:nth-of-type(7){
-        margin-right: 0;
-    }
-    .site-cont .box:nth-of-type(4){
-        margin-left: 812px;
-    }
-    .site-cont .box p{
-        display: inline-block;
-        width: 70%;
-        height: 36px;
-        line-height: 36px;
-        padding: 0 20px;
-        text-align: center;
-        font-size: 16px;
-        background: rgba(0,0,0,0.60);
-        position: absolute;
-        left: 15%;
-        top: 110px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-    .site-cont .box-more{
-        width: 792px;
-        height: 257px;
-        position: absolute;
-        left: 0;
-        top: 297px;
-        background: #eee;
-    }
-
-
-
-
-
-
-
+<style lang="sass" scoped>
+    @import "../../assets/scss/site.scss";
 </style>
