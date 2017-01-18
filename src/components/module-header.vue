@@ -32,7 +32,7 @@
                     <router-link tag="li" to="/event">
                         <a>找场地</a>
                     </router-link>
-                    <router-link tag="li" to="/openshop">
+                    <router-link tag="li" to="/activity">
                         <a>活动</a>
                     </router-link>
                     <router-link tag="li" to="/ip">
