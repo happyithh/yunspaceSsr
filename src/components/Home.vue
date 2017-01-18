@@ -5,7 +5,7 @@
         <div class="home-banner-search">
             <!--搜索-->
             <div class="home-search clearfix">
-                <div class="banner-tip">简单而直接的方式</div>
+                <div class="banner-tip font-thin">简单而直接的方式</div>
                 <div class="home-search-bar">
                     <search-bar></search-bar>
                 </div>
@@ -35,7 +35,7 @@
                     <div class="swiper-slide"  v-for="item in reSites">
                         <a href="" title class="main-img">
                             <img src="/static/images/test/3to2.png" alt="">
-                            <p class="add">宁波当代艺术馆</p>
+                            <p class="add"><i class="icon icon-icon_typeSpace"></i>宁波当代艺术馆</p>
                         </a>
                         <a href="" class="title">相遇1844·相约1892 瑞士劳芬设计名流派对</a>
                         <span class="other">3621 · 展览展示 · 时尚行业</span>
@@ -79,12 +79,21 @@
                         <p>市场价: ￥30,000/天 起</p>
                     </div>
                     <div class="other">
-                        <span>徐家汇</span>
-                        <span>500人</span>
+                        <span>
+                            <i class="icon icon-icon_spaceBusiness"></i>徐家汇
+                            <i class="boder-left-line"></i>
+                        </span>
+                        <span><i class="icon icon-icon_spacePeople"></i>500人</span>
                     </div>
                 </div>
             </div>
             <!--/推荐场地-->
+            
+            <!--广告条-->
+            <a href="" class="ad-two mt50">
+                <img src="" alt="">
+            </a>
+            <!--/广告条-->
 
             <!--精选分类-->
             <div class="mt50 hot-site">
@@ -152,6 +161,13 @@
                 </div>
             </div>
             <!--/资讯报道-->
+        </div>
+
+        <div class="fixed-nav">
+            <a href=""><i class="icon icon-icon_leftbarQR"></i></a>
+            <a href=""><i class="icon icon-icon_leftbarServe"></i></a>
+            <a href=""><i class="icon icon-icon_leftbarOnline"></i></a>
+            <a href=""><i class="icon icon-icon_leftbarBacktop"></i></a>
         </div>
 
     </div>

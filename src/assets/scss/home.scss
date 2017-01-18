@@ -1,6 +1,7 @@
 .home-banner-search {
   height: 340px;
   position: relative;
+  overflow: hidden;
 }
 .banner-tip{
   text-align: center;
@@ -52,8 +53,13 @@
         position: absolute;
         top:15px;
         right: 15px;
-        padding: 10px 16px;
+        padding: 8px 16px;
         border-radius: 20px;
+        i{
+          font-size: 14px;
+          vertical-align: -2px;
+          padding-right: 4px;
+        }
       }
     }
     .title{
@@ -67,6 +73,9 @@
       font-size: 14px;
       color: #666666;
       line-height: 14px;
+
+
+
     }
   }
 }
@@ -79,7 +88,7 @@
 
 .site-piece {
   float: left;
-  width: 284px;
+  width: 287px;
   margin-right: 18px;
   border: 1px solid #E9EBEC;
   margin-bottom: 20px;
@@ -119,6 +128,19 @@
       font-size: 12px;
       color: #8F949C;
       line-height: 14px;
+      .icon{
+        margin-right: 7px;
+        font-size: 14px;
+        vertical-align: -2px;
+      }
+      .boder-left-line{
+        width: 1px;
+        background-color: #8F949C;
+        float: right;
+        display: inline-block;
+        height: 10px;
+        margin-top: 2px;
+      }
     }
   }
 }
@@ -248,10 +270,35 @@
   margin-bottom: 25px;
 }
 .ad-one{
+  margin-right: -18px;
   .ad-piece{
-    width: 590px;
+    width: 591px;
     float: left;
     background-color: #f2f2f2;
     height: 185px;
+    margin-right: 18px;
+  }
+}
+.ad-two{
+  height: 92px;
+  display: block;
+  background-color: #f2f2f2;
+}
+.fixed-nav{
+  position: fixed;
+  right: 0;
+  top: 50%;
+  margin-top: -72px;
+  a{
+    display: block;
+    height: 36px;
+    width: 36px;
+    margin-bottom: 1px;
+    background-color: #181C1F;
+
+    color: #fff!important;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
   }
 }
