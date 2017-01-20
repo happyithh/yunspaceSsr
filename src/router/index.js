@@ -13,6 +13,7 @@ import SiteHotActivity from '../components/site/site-hot-activity.vue'
 import SiteSelected from '../components/site/site-selected.vue'
 import RentalSite from '../components/form/rental-site.vue'
 import InquiryList from '../components/inquiry/inquiry-list.vue'
+import Success from '../components/inquiry/success.vue'
 import Activity from '../components/activity/activity.vue'
 
 
@@ -31,6 +32,7 @@ export default new Router({
     { path: '/site/selected', component: SiteSelected },
     { path: '/form/rental', component: RentalSite },
     { path: '/inquiry', component: InquiryList },
+    { path: '/success', component: Success },
     { path: '/activity', component: Activity },
   ]
 })

@@ -38,6 +38,7 @@ a:active {color: #AA2C3C} /* 鼠标点击那一瞬间的状态 */
 .ml15{margin-left: 15px}
 .ml20{margin-left: 20px}
 .red{color:#AA2C3C;}
+.underline:hover{text-decoration: underline}
 .text-center{text-align: center}
 button[disabled]{
     background: #999;
@@ -97,7 +98,7 @@ button[disabled]{
 }
 /*满屏黑色遮罩*/
 .mask-bg{
-    background: rgba(0,0,0,.75);
+    background: rgba(0,0,0,.5);
     width: 100%;
     height: 100%;
     position: absolute;

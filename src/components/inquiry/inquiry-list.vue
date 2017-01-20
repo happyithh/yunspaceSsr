@@ -10,17 +10,54 @@
         </div>
         <!--面包屑-end-->
 
-        <div class="w1200 inquiry-list">
-            <table>
-                <thead>
+        <div class="w1200">
+            <div class="inquiry-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>上海虹桥国家会展中心 </th>
+                            <th>秀场展馆</th>
+                            <th colspan="3">地址：上海市青浦区徐泾崧泽大道333号</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td width="95px"></td>
+                            <td width="300px">场地空间</td>
+                            <td width="250px">云SPACE价</td>
+                            <td width="300px">最大容纳人数</td>
+                            <td width="200px">面积</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>西厅</td>
+                            <td>￥25元/㎡/天</td>
+                            <td>10000人</td>
+                            <td>9664㎡</td>
+                            <td><span class="delete-one icon-icon_deleteTrash"></span></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>西厅</td>
+                            <td>￥25元/㎡/天</td>
+                            <td>10000人</td>
+                            <td>9664㎡</td>
+                            <td><span class="delete-one icon-icon_deleteTrash"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
                     <tr>
                         <th><input type="checkbox"></th>
                         <th>上海虹桥国家会展中心 </th>
                         <th>秀场展馆</th>
                         <th colspan="3">地址：上海市青浦区徐泾崧泽大道333号</th>
                     </tr>
-                </thead>
-                <tbody>
+                    </thead>
+                    <tbody>
                     <tr>
                         <td width="95px"></td>
                         <td width="300px">场地空间</td>
@@ -45,88 +82,67 @@
                         <td>9664㎡</td>
                         <td><span class="delete-one icon-icon_deleteTrash"></span></td>
                     </tr>
-                </tbody>
-            </table>
-            <table>
-                <thead>
-                <tr>
-                    <th><input type="checkbox"></th>
-                    <th>上海虹桥国家会展中心 </th>
-                    <th>秀场展馆</th>
-                    <th colspan="3">地址：上海市青浦区徐泾崧泽大道333号</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td width="95px"></td>
-                    <td width="300px">场地空间</td>
-                    <td width="250px">云SPACE价</td>
-                    <td width="300px">最大容纳人数</td>
-                    <td width="200px">面积</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>西厅</td>
-                    <td>￥25元/㎡/天</td>
-                    <td>10000人</td>
-                    <td>9664㎡</td>
-                    <td><span class="delete-one icon-icon_deleteTrash"></span></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>西厅</td>
-                    <td>￥25元/㎡/天</td>
-                    <td>10000人</td>
-                    <td>9664㎡</td>
-                    <td><span class="delete-one icon-icon_deleteTrash"></span></td>
-                </tr>
-                </tbody>
-            </table>
-            <table>
-                <thead>
-                <tr>
-                    <th><input type="checkbox"></th>
-                    <th>上海虹桥国家会展中心 </th>
-                    <th>秀场展馆</th>
-                    <th colspan="3">地址：上海市青浦区徐泾崧泽大道333号</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td width="95px"></td>
-                    <td width="300px">场地空间</td>
-                    <td width="250px">云SPACE价</td>
-                    <td width="300px">最大容纳人数</td>
-                    <td width="200px">面积</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>西厅</td>
-                    <td>￥25元/㎡/天</td>
-                    <td>10000人</td>
-                    <td>9664㎡</td>
-                    <td><span class="delete-one icon-icon_deleteTrash"></span></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>西厅</td>
-                    <td>￥25元/㎡/天</td>
-                    <td>10000人</td>
-                    <td>9664㎡</td>
-                    <td><span class="delete-one icon-icon_deleteTrash"></span></td>
-                </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                    <tr>
+                        <th><input type="checkbox"></th>
+                        <th>上海虹桥国家会展中心 </th>
+                        <th>秀场展馆</th>
+                        <th colspan="3">地址：上海市青浦区徐泾崧泽大道333号</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td width="95px"></td>
+                        <td width="300px">场地空间</td>
+                        <td width="250px">云SPACE价</td>
+                        <td width="300px">最大容纳人数</td>
+                        <td width="200px">面积</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>西厅</td>
+                        <td>￥25元/㎡/天</td>
+                        <td>10000人</td>
+                        <td>9664㎡</td>
+                        <td><span class="delete-one icon-icon_deleteTrash"></span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>西厅</td>
+                        <td>￥25元/㎡/天</td>
+                        <td>10000人</td>
+                        <td>9664㎡</td>
+                        <td><span class="delete-one icon-icon_deleteTrash"></span></td>
+                    </tr>
+                    </tbody>
+                </table>
 
-            <div class="inquiry-handle clearfix">
-                <label class="fl choice-all">
-                    <input type="checkbox">全选
-                </label>
-                <a class="fl delete-all" href="javascript:;">删除</a>
-                <p class="fl statement">声明：免费咨询意向场地，不收取任何费用。</p>
-                <button class="fr btn btn-red">立即提交</button>
+                <div class="inquiry-handle clearfix">
+                    <label class="fl choice-all">
+                        <input type="checkbox">全选
+                    </label>
+                    <a class="fl delete-all" href="javascript:;">删除</a>
+                    <p class="fl statement">声明：免费咨询意向场地，不收取任何费用。</p>
+                    <button class="fr btn-rental btn btn-red">立即提交</button>
+                </div>
+
+            </div>
+
+            <div class="inquiry-list-no hide">
+                <div class="cont">
+                    <img src="/static/images/delete.jpg">
+                    <div class="text">您暂时没有意向场地询价前往 <a class="red underline" href="javascript:;">找场地&gt;&gt;</a></div>
+                    <div class="btn-wrap clearfix">
+                        <p class="fl">或者</p>
+                        <button class="fr btn-rental btn btn-red">一键租场地</button>
+                    </div>
+                </div>
+
+                <p class="statement">声明：免费咨询意向场地，不收取任何费用。</p>
             </div>
         </div>
 
