@@ -43,9 +43,17 @@
 
 /*tab切换*/
 .itembox{
-
+  .tab-box{
+    .cont{
+      display: none;
+    }
+    .current{
+      display: block;
+    }
+  }
 }
-.tab-menu{
+
+.site-menu{
   li{
     float: left;
     margin-right: 40px;
@@ -62,67 +70,187 @@
     color: #181C1F;
     border-bottom: 2px solid #AA2C3C;
     margin-bottom: -1px;
-  }
-}
-.tab-box{
-  .cont{
-    display: none;
-  }
-  .current{
-    display: block;
-  }
-}
-
-.site-cont{
-  position: relative;
-  .box{
-    float: left;
-    width: 386px;
-    height: 257px;
-    margin-right: 20px;
-    margin-top: 20px;
-    background: #eee;
-    position: relative;
     a{
-      display: block;
-      width: 100%;
-      height: 100%;
-      color: #fff;
-      p{
-        display: inline-block;
-        width: 70%;
-        height: 36px;
-        line-height: 36px;
-        padding: 0 20px;
-        text-align: center;
-        font-size: 16px;
-        background: rgba(0,0,0,0.60);
-        position: absolute;
-        left: 15%;
-        top: 110px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+      color: #AA2C3C;
+    }
+  }
+}
+.site-item{
+  .site-cont{
+    .box{
+      float: left;
+      width: 386px;
+      height: 257px;
+      margin-right: 20px;
+      margin-top: 20px;
+      background: #eee;
+      position: relative;
+      a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        p{
+          display: inline-block;
+          width: 70%;
+          height: 36px;
+          line-height: 36px;
+          padding: 0 20px;
+          text-align: center;
+          font-size: 16px;
+          background: rgba(0,0,0,0.60);
+          position: absolute;
+          left: 15%;
+          top: 110px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
       }
     }
   }
 
-  .box:nth-of-type(3),
-  .box:nth-of-type(7){
-    margin-right: 0;
+  /*场地首页*/
+  .site-cont-index{
+    position: relative;
+    .box:nth-of-type(3),
+    .box:nth-of-type(7){
+      margin-right: 0;
+    }
+    .box:nth-of-type(4){
+      margin-left: 812px;
+    }
+    .box-more{
+      width: 792px;
+      height: 257px;
+      position: absolute;
+      left: 0;
+      top: 297px;
+      background: #eee;
+    }
   }
-  .box:nth-of-type(4){
-    margin-left: 812px;
+
+  /*场地列表*/
+  .site-title-list{
+    border-bottom: none;
+    .model-change{
+      .btn-model{
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        background: #e6e6e6;
+        border-radius: 2px;
+        margin-left: 10px;
+        color: #bebebe;
+        font-size: 23px;
+        cursor: pointer;
+      }
+      .current{
+        background: #AA2C3C;
+        color: #fff;
+      }
+    }
   }
-  .box-more{
-    width: 792px;
-    height: 257px;
-    position: absolute;
-    left: 0;
-    top: 297px;
-    background: #eee;
+  .site-cont-list{
+    padding-bottom: 20px;
+    .box-list{
+      .box:nth-child(3n){
+        margin-right: 0;
+      }
+
+      /**列表模式**/
+      .box-list-box{
+        float: left;
+        width: 100%;
+        height: 226px;
+        padding: 16px 20px;
+        border: 1px solid #e8eaec;
+        margin-top: 20px;
+        .img{
+          width: 292px;
+          height: 100%;
+          margin-right: 16px;
+        }
+        .text{
+          width: 670px;
+          height: 100%;
+          overflow: hidden;
+          position: relative;
+          h3{
+            font-size: 20px;
+            line-height: 20px;
+            margin-bottom: 27px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            a{
+              color: #4b4b4e;
+            }
+          }
+          p{
+            font-size: 14px;
+            line-height: 14px;
+            color: #8F949C;
+          }
+          .assort{
+            margin-bottom: 8px;
+            p{
+              float: left;
+              padding-right: 52px;
+              position: relative;
+              .line{
+                display: inline-block;
+                width: 2px;
+                height: 9px;
+                background: #DEE1E6;
+                position: absolute;
+                top: 3px;
+                right: 25px;
+              }
+            }
+          }
+          .keywords{
+            font-size: 12px;
+            line-height: 12px;
+            margin-top: 27px;
+          }
+          .btn{
+            width: 156px;
+            height: 37px;
+            line-height: 37px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            color: #fff;
+          }
+        }
+
+        .price{
+          text-align: right;
+          p{
+            font-size: 12px;
+            height: 24px;
+            line-height: 24px;
+            color: #484B4E;
+            margin-bottom: 2px;
+            strong{
+              font-size: 24px;
+            }
+          }
+          span{
+            display: block;
+            font-size: 12px;
+            height: 12px;
+            line-height: 12px;
+            color: #999;
+          }
+        }
+      }
+    }
   }
 }
+
 
 /***热推场地***/
 .hot-site{
@@ -163,85 +291,85 @@
   }
 }
 
-/***精选场地***/
+/***精选分类***/
 .selected-site {
-  /*精选案例*/
-  .caseselected .cont > li {
-    float: left;
-    width: 392px;
-    height: 420px;
-    background: #fff;
-    margin-right: 10px;
-    margin-bottom: 10px;
+  .citysubject{
+    margin: 30px 0 50px;
     position: relative;
-  }
-
-  .caseselected li:nth-child(3n) {
-    margin-right: 0;
-  }
-
-  .caseselected .img {
-    width: 100%;
-    height: 264px;
-    background: #ddd;
-    overflow: hidden;
-  }
-
-  .caseselected .title {
-    color: #000;
-    font-size: 18px;
-    padding-bottom: 5px;
-    height: 58px;
-    overflow: hidden;
-    box-sizing: border-box;
-
-    display: -webkit-box; /*将对象作为弹性盒子模型显示*/
-    text-overflow: ellipsis;
-    word-break: break-all;
-    -webkit-box-orient: vertical; /*伸缩盒对象的子元素的排列方式-垂直*/
-    -webkit-line-clamp: 2; /*限制在一个块级元素显示的文本的行数*/
-  }
-
-  .caseselected .textinfo {
-    padding: 8px 10px 12px;
-  }
-
-  .caseselected .tags span {
-    display: inline-block;
-    height: 28px;
-    line-height: 28px;
-    padding: 0 20px;
-    background: #fff;
-    border: 1px solid #000;
-    color: #666;
-    margin-right: 5px;
-    margin-top: 5px;
-  }
-
-  .caseselected .numbs {
-    position: absolute;
-    right: 15px;
-    bottom: 15px;
-    color: #666;
-  }
-
-  .caseselected .numbs li {
-    position: relative;
-    height: 25px;
-    line-height: 25px;
-    padding-left: 32px;
-    margin-left: 30px;
-  }
-
-  .caseselected .numbs i {
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    top: 0;
+    .cont {
+      width: 100%;
+      height: 256px;
+      min-width: 1200px;
+      overflow: hidden;
+      position: relative;
+      .swiper-slide{
+        background-color: #fff;
+        position: relative;
+      }
+      .swiper-container{
+        overflow: visible;
+      }
+      .citySelection{
+        .swiper-slide{
+          a{
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+          a:after{
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.2);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+          }
+          img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: #aaa;
+          }
+          p{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size:18px;
+            color:#fff;
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            top: 50%;
+            margin-top: -15px;
+            text-shadow: 1px 1px 3px #000;
+          }
+        }
+      }
+    }
   }
 }
 
-
+/***标签***/
+.tags{
+  margin-top: 40px;
+  a{
+    color: #666;
+    font-size: 12px;
+    padding: 0 12px;
+    height: 26px;
+    line-height: 26px;
+    margin-right: 20px;
+    margin-bottom: 8px;
+  }
+  .active{
+    color: #fff;
+    background: #AA2C3C;
+  }
+}
 
 
 

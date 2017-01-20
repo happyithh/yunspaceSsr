@@ -23,18 +23,18 @@
         <div class="w1200">
             <!--场地主题-star-->
             <div class="section site-item itembox">
-                <div class="item-title site-item-title clearfix">
-                    <ul class="fl tab-menu clearfix">
+                <div class="item-title clearfix">
+                    <ul class="fl tab-menu site-menu clearfix">
                         <li>展览展示</li>
                         <li>商业发布</li>
                         <li class="current">晚会年会</li>
                         <li>论坛会议</li>
                     </ul>
 
-                    <a class="fr more" href="">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                    <a class="more" href="">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                 </div>
 
-                <div class="tab-box site-cont clearfix">
+                <div class="tab-box site-cont site-cont-index clearfix">
                     <div class="cont clearfix">
                         <div class="box" v-for="item in sites">
                             <a href="javascript:;">
@@ -87,7 +87,7 @@
             <div class="section hot-site">
                 <div class="item-title clearfix">
                     <h2><span class="redline"></span>热推场地</h2>
-                    <a class="more" href="">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                    <a class="more" href="/site/hot">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                 </div>
 
                 <ul class="cont clearfix">
@@ -107,35 +107,61 @@
                     <h2><span class="redline"></span>精选分类</h2>
                 </div>
 
-                <!--城市精选专题-开始-->
-                <div class="section citysubject clearfix">
-                    <div class="w1200">
-                        <div class="cont">
-                            <div class="btns">
-                                <a class="btn btnleft" href="javascript:;">
-                                    <span class="icon-arrowleft"></span>
-                                </a>
-                                <a class="btn btnright" href="javascript:;">
-                                    <span class="icon-arrowright"></span>
-                                </a>
-                            </div>
-                            <div class="citySelection" style="height: 100%;">
-                                <div class="swiper-wrapper swiper-container">
-                                    <div class="swiper-slide">Slide 2</div>
-                                    <div class="swiper-slide">Slide 3</div>
-                                    <div class="swiper-slide">Slide 4</div>
-                                </div>
-                                <!-- Add Pagination -->
-                                <!--<div class="swiper-pagination"></div>-->
-                            </div>
-                            <ul class="subject-list"></ul>
-                        </div>
-                        <router-link to="/found" class="btnlookmore">查看更多专题</router-link>
-                        <!--<a href="javascript:;" class="btnlookmore">查看更多专题</a>-->
+                <div class="citysubject clearfix">
+                    <div class="btns">
+                        <a class="btn btnleft" href="javascript:;">
+                            <span class="icon-icon_switchArrowLeft"></span>
+                        </a>
+                        <a class="btn btnright" href="javascript:;">
+                            <span class="icon-icon_switchArrowRight"></span>
+                        </a>
                     </div>
+                    <div class="cont">
 
+                        <div class="citySelection" style="height: 100%;">
+                            <div class="swiper-wrapper swiper-container">
+                                <div class="swiper-slide">
+                                    <a href="">
+                                        <img src="" alt="">
+                                        <p class="tag">秀场展馆</p>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="">
+                                        <img src="" alt="">
+                                        <p class="tag">特色场地</p>
+                                    </a></div>
+                                <div class="swiper-slide">
+                                    <a href="">
+                                        <img src="" alt="">
+                                        <p class="tag">商业广场</p>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="">
+                                        <img src="" alt="">
+                                        <p class="tag">影业剧院</p>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="">
+                                        <img src="" alt="">
+                                        <p class="tag">高端会所</p>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="">
+                                        <img src="" alt="">
+                                        <p class="tag">会务中心</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <!--<div class="swiper-pagination"></div>-->
+                        </div>
+                        <ul class="subject-list"></ul>
+                    </div>
                 </div>
-                <!--城市精选专题-结束-->
             </div>
             <!--精选分类-end-->
         </div>
@@ -190,7 +216,7 @@
             });
 
             setTimeout(function () {
-                this.init();
+                self.init();
             },300);
         },
         preFetch: fetchData,
@@ -210,10 +236,10 @@
                     nextButton: '.citysubject .btnright',
                     prevButton: '.citysubject .btnleft',
                     loop : true,
-                    slidesPerView: 3,
+                    slidesPerView: 6,
                     paginationClickable: true,
-                    spaceBetween: 1,
-                    autoplay: 3000
+                    spaceBetween: 20,
+                    autoplay: 5000
 //                    freeMode: true
                 });
             },

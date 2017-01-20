@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'yunSpaceWeb-iconfont';
-    src:  url('fonts/yunSpaceWeb-iconfont.eot?9wuy4z');
-    src:  url('fonts/yunSpaceWeb-iconfont.eot?9wuy4z#iefix') format('embedded-opentype'),
-    url('fonts/yunSpaceWeb-iconfont.ttf?9wuy4z') format('truetype'),
-    url('fonts/yunSpaceWeb-iconfont.woff?9wuy4z') format('woff'),
-    url('fonts/yunSpaceWeb-iconfont.svg?9wuy4z#yunSpaceWeb-iconfont') format('svg');
+    src:  url('fonts/yunSpaceWeb-iconfont.eot?luxm8p');
+    src:  url('fonts/yunSpaceWeb-iconfont.eot?luxm8p#iefix') format('embedded-opentype'),
+    url('fonts/yunSpaceWeb-iconfont.ttf?luxm8p') format('truetype'),
+    url('fonts/yunSpaceWeb-iconfont.woff?luxm8p') format('woff'),
+    url('fonts/yunSpaceWeb-iconfont.svg?luxm8p#yunSpaceWeb-iconfont') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,6 +24,12 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-icon_spaceListstyle1:before {
+    content: "\e93c";
+}
+.icon-icon_spaceListstyle2:before {
+    content: "\e93d";
+}
 .icon-icon_articleBrowserLine:before {
     content: "\e900";
 }

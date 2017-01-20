@@ -29,7 +29,7 @@
                     <router-link tag="li" to="/" exact>
                         <a>首页</a>
                     </router-link>
-                    <router-link tag="li" to="/event">
+                    <router-link tag="li" to="/site">
                         <a>找场地</a>
                     </router-link>
                     <router-link tag="li" to="/activity">
