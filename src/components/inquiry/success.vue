@@ -2,12 +2,12 @@
     <div>
         <!--提交成功-star-->
         <div class="success">
-            <h2>提交成功</h2>
+            <h2><span></span>️提交成功</h2>
             <p>您的需求已提交成功，我们将在30分钟内与您取得联系，请保持电话畅通！</p>
             <p>客服工作时间：09:00-18:00（周末除外）
             <br/>客服电话：400-056-0599</p>
 
-            <p>5秒后自动跳转到首页
+            <p class="jump">5秒后自动跳转到首页
                 <br>点击手动跳转到<a class="red underline" href="javascript:;">首页</a>
             </p>
 
@@ -79,5 +79,14 @@
         color: #000;
         line-height: 1.6em;
         margin: 15px 0 10px;
+    }
+    .success .jump{
+        font-size: 12px;
+        color: #73777C;
+        line-height: 1.8em;
+        margin: 20px 0 15px;
+    }
+    .success .jump a{
+        margin-left: 10px;
     }
 </style>

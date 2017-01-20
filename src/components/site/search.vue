@@ -1,21 +1,33 @@
 <template>
     <div>
-        <div class="search-bar-wrap">
+        <!--搜索版块-star-->
+        <div class="site-search-bar">
             <div class="w1200">
                 <!--搜索条-star-->
                 <div class="search-bar clearfix">
                     <div class="fl search-box clearfix">
                         <div class="fl box-wrap">
-                            <input class="box" type="text" placeholder="目的">
-                            <i class="icon icon-icon_selectDownArrowThin"></i>
+                            <input class="box" type="text" placeholder="请输入场地名称">
                         </div>
                     </div>
                     <button class="fl btn btn-black search-btn"><i class="icon icon-icon_searchBarSearch"></i>搜索</button>
                     <button class="fl btn btn-red" style="margin-right: 0"><i class="icon icon-icon_searchBarOne"></i>一键租场地</button>
+
+                    <a class="fr show" href="javascript:;"><img src="" alt="魔都首个泰迪之家博物馆"></a>
                 </div>
                 <!--搜索条-end-->
+
+                <dl class="hot-tags clearfix">
+                    <dt class="fl clearfix">
+                        <i class="fl icon icon-icon_detailsType"></i>
+                    <p class="fl">热门标签</p>
+                    <span class="fl cutoff-rule">|</span>
+                    </dt>
+                    <dd class="fl" v-for="item in hotTags"><a href="">热门标签</a></dd>
+                </dl>
             </div>
         </div>
+        <!--搜索版块-end-->
     </div>
 </template>
 <script>
@@ -39,7 +51,8 @@
                 },
                 reSites:[1,2,3,4,5,6,7,8],
                 selection:[1,2,3,4,5,6],
-                media:[1,2,3,4,5,6,7,8]
+                media:[1,2,3,4,5,6,7,8],
+                hotTags:[1,2,3,4,5],
             }
         },
         components: {
@@ -79,6 +92,6 @@
 
     }
 </script>
-<style>
-
+<style lang="sass" scoped>
+    @import "../../assets/scss/site.scss";
 </style>
