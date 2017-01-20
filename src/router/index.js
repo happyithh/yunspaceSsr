@@ -16,6 +16,7 @@ import InquiryList from '../components/inquiry/inquiry-list.vue'
 import Success from '../components/inquiry/success.vue'
 import Activity from '../components/activity/activity.vue'
 import SiteSearch from '../components/site/search.vue'
+import Site from '../components/site/dtl.vue'
 
 
 export default new Router({

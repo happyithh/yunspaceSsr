@@ -55,7 +55,7 @@ const defaultState = {
         relate_topics:'',
         relate_articles:''
     },
-    loading : true,
+    loading : false,
 }
 
 const inBrowser = typeof window !== 'undefined'
