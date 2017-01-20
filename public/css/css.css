@@ -103,68 +103,6 @@ button[disabled]{
     top:0;
     z-index: 1;
 }
-
-.icon-arrowleft{/*箭头向左*/
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-left: 1px solid #000;
-    border-top: 1px solid #000;
-    transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    /*需要自定义width、height、border-color*/
-}
-.icon-arrowleft.black{
-    border-left: 1px solid #000;
-    border-top: 1px solid #000;
-}
-.icon-arrowleft.white{
-    border-left: 1px solid #fff;
-    border-top: 1px solid #fff;
-}
-.icon-arrowright{/*箭头向右*/
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-left: 1px solid #000;
-    border-top: 1px solid #000;
-    transform: rotate(135deg);
-    -ms-transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    -moz-transform: rotate(135deg);
-}
-.icon-arrowright.black{
-    border-left: 1px solid #000;
-    border-top: 1px solid #000;
-}
-.icon-arrowright.white{
-    border-left: 1px solid #fff;
-    border-top: 1px solid #fff;
-}
-.icon-arrowtop{/*箭头向上*/
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-left: 1px solid #000;
-    border-top: 1px solid #000;
-    transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-}
-.icon-arrowbottom{/*箭头向下*/
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-left: 1px solid #000;
-    border-top: 1px solid #000;
-    transform: rotate(225deg);
-    -ms-transform: rotate(225deg);
-    -webkit-transform: rotate(225deg);
-    -moz-transform: rotate(225deg);
-}
 /*实心三角*/
 .icon-triangedown{/*向下*/
     display: block;
@@ -194,4 +132,52 @@ button[disabled]{
     border-top-width: 10px;
     border-bottom-width: 10px;
 }
+
+/***搜索条-开始***/
+.search-bar{
+    height: 42px;
+}
+.search-bar .search-box{
+    height: 100%;
+    background: #fff;
+    color: #181C1F;
+    border: 1px solid #181C1F;
+    border-radius: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.search-bar .box-wrap{
+    width: 280px;
+    height: 100%;
+    padding: 8px 0 8px 10px;
+    position: relative;
+}
+.search-bar .box{
+    height: 100%;
+    width: 100%;
+    border-right: 1px solid #ddd;
+}
+.search-bar .box-wrap:last-child .box{border: none;}
+.search-bar .box-wrap .icon{
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    color: #999;
+    font-size: 16px;
+    font-weight: bold;
+}
+.search-bar .btn{
+    width: 160px;
+    height: 42px;
+    line-height: 42px;
+    margin-right: 8px;
+}
+.search-bar .btn .icon{
+    margin-right: 5px;
+}
+.search-bar .search-btn{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+/***搜索条-结束***/
 

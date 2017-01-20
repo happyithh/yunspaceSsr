@@ -267,6 +267,6 @@
 
     }
 </script>
-<style lang="sass">
+<style lang="sass" scoped>
     @import "../assets/scss/home.scss";
 </style>

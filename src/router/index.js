@@ -10,6 +10,7 @@ import Event from '../components/event/event.vue'
 import Site from '../components/site/site.vue'
 import SiteHome from '../components/site/home.vue'
 import Activity from '../components/activity/activity.vue'
+import SiteSearch from '../components/site/search.vue'
 
 
 export default new Router({
@@ -20,8 +21,9 @@ export default new Router({
     { path: '/space/:id', component: SpaceDtl },
     { path: '/article/:id', component: ArticleDtl },
     { path: '/event', component: Event },
-    { path: '/site/:id', component: Site },
+    { path: '/site/dtl/:id', component: Site },
     { path: '/activity', component: Activity },
-    { path: '/site', component: SiteHome }
+    { path: '/site', component: SiteHome },
+    { path: '/site/search', component: SiteSearch }
   ]
 })

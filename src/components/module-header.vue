@@ -6,18 +6,36 @@
                     <router-link to="/">云SPACE</router-link>
                     <!--<a href="javascript:;">云SPACE</a>-->
                 </div>
-                <div class="fl nav-location dorpdown">
-                    <!--<p>全国</p>-->
-                    <!--<i class="icon-down"></i>-->
-                    <template>
-                        <el-select v-model="city_id" v-on:change="cityChange" id="cityId">
-                            <el-option
-                                    v-for="item in cities"
-                                    :label="item.name"
-                                    :value="item.id">
-                            </el-option>
-                        </el-select>
-                    </template>
+                <div class="fl nav-location dorpdown city-choose">
+                    <div style="position: relative">
+                        <p>热门测试</p>
+                        <i class="icon-triangedown"></i>
+                    </div>
+                    <!--<template>-->
+                        <!--<el-select v-model="city_id" v-on:change="cityChange" id="cityId">-->
+                            <!--<el-option-->
+                                    <!--v-for="item in cities"-->
+                                    <!--:label="item.name"-->
+                                    <!--:value="item.id">-->
+                            <!--</el-option>-->
+                        <!--</el-select>-->
+                    <!--</template>-->
+                    <div class="city-dorpdown">
+                        <div class="hot-city">
+                            <span class="active">热门城市</span>
+                            <span>北京</span>
+                            <span>北京</span>
+                            <span>北京</span>
+                            <span>北京</span>
+                        </div>
+                        <div class="border-line"></div>
+                        <div class="common-city">
+                            <span v-for="item in [1,1,1,1,1,1,1,1,1,1,1,]">北京</span>
+                            <span>北京</span>
+                            <span>北京</span>
+                            <span>北京</span>
+                        </div>
+                    </div>
                 </div>
                 <ul class="fl navbar clearfix">
                     <!--<router-link tag="li" to="/">-->
@@ -113,166 +131,8 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="sass">
 
-    /****公共导航****/
-    #header {
-        width: 100%;
-        height: 60px;
-        background-color: #272335;
-        min-width: 1200px;
-        overflow: hidden;
-    }
-
-    nav {
-        width: 1200px;
-        height: 100%;
-        line-height: 60px;
-        color: #fff;
-        margin: 0 auto;
-    }
-
-    /*左侧logo+导航*/
-    .logo {
-        display: block;
-        width: 120px;
-        height: 60px;
-        background: url("/static/images/logo.png") no-repeat 0 center;
-        text-indent: -20000px;
-        margin-right: 15px;
-    }
-
-    .logo a {
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
-
-    .nav-location {
-        cursor: pointer;
-        width: 80px;
-        height: 60px;
-        position: relative;
-    }
-
-    .nav-location > p {
-        padding: 0 15px;
-    }
-
-    .nav-location .icon-down {
-        position: absolute;
-        right: 18px;
-        top: 25px;
-        width: 10px;
-        height: 10px;
-        background: url("/static/images/icon-select-down.png") no-repeat center;
-    }
-
-    .navbar li {
-        float: left;
-        width: 80px;
-        height: 100%;
-        text-align: center;
-    }
-
-    .navbar li a {
-        display: block;
-        color: #fff;
-        width: 100%;
-        height: 100%;
-    }
-
-    .navbar li a:hover,
-    .navbar li.current a, .navbar li.router-link-active a {
-        background-color: #fff;
-        color: #000;
-    }
-
-    /*左侧工具条+按钮*/
-    .tools li {
-        float: left;
-        color: #fff;
-        padding: 0 10px;
-    }
-
-    .tools li.spacer {
-        width: 1px;
-        height: 16px;
-        margin-top: 22px;
-        padding: 0;
-        background: #fff;
-        overflow: hidden;
-    }
-
-    .tools li a {
-        display: block;
-        color: #fff;
-        width: 100%;
-        height: 100%;
-    }
-
-    .tools li.tel {
-        position: relative;
-        padding-left: 32px;
-    }
-
-    .tools li.tel .icon-tel {
-        width: 20px;
-        height: 16px;
-        position: absolute;
-        left: 10px;
-        top: 22px;
-        background: url("/static/images/icon-tel.jpg") no-repeat center;
-    }
-
-    nav .btns {
-    }
-
-    nav .btns li {
-        float: left;
-        width: 98px;
-        height: 28px;
-        border: 1px solid #fff;
-        text-align: center;
-        line-height: 28px;
-        margin-top: 15px;
-    }
-
-    nav .btns li a {
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
-
-    nav .btns li a .red {
-        font-size: 12px;
-        color: #e92332;
-        margin-left: 2px;
-    }
-
-    nav .btns li.log-reg a {
-        background: rgba(0, 0, 0, 0.40);
-        color: #fff;
-        overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
-    }
-
-    nav .btns li.log-reg a:hover {
-        background: #fff;
-        color: #000;
-    }
-
-    nav .btns li.inquiry {
-        margin-left: 20px;
-    }
-
-    nav .btns li.inquiry a {
-        background: #fff;
-        color: #000;
-    }
-
-    nav .btns li.inquiry a:hover {
-        background: rgba(0, 0, 0, 0.40);
-        color: #fff;
-    }
+    @import "../assets/scss/header.scss";
 
 </style>
