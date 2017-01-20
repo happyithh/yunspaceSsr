@@ -1,0 +1,81 @@
+.breadCrumb{
+  a,span{
+    color: #8F949C;
+  }
+}
+.form-title{
+  border-bottom: 1px solid #E3E6E9;
+  margin-bottom: 30px;
+  h2{
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    font-size: 20px;
+    padding-bottom: 20px;
+    box-sizing: content-box;
+    color: #181C1F;
+    border-bottom: 2px solid #AA2C3C;
+    margin-bottom: -1px;
+  }
+}
+
+.form-fill{
+  width: 100%;
+  margin: 20px 0;
+  td{
+    padding-bottom: 25px;
+    position: relative;
+    input,select,textarea{
+      display: inline-block;
+      min-height: 36px;
+      padding: 0 14px;
+      background: #F6F6F6;
+      border-radius: 3px;
+    }
+    input{
+      width: 285px;
+    }
+    .send-code{
+      width: 95px;
+      height: 36px;
+      line-height: 36px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      position: absolute;
+      left: 190px;
+      top: 0;
+    }
+    select{
+      min-width: 142px;
+      height: 36px;
+      line-height: 36px;
+      margin-right: 5px;
+    }
+    textarea{
+      padding: 14px;
+      min-width: 285px;
+      min-height: 110px;
+      resize:none;
+    }
+  }
+  td.label{
+    width: 135px;
+    padding-left: 10px;
+    line-height: 36px;
+    vertical-align: top;
+    position: relative;
+    .red{
+      line-height: 20px;
+      position: absolute;
+      left: 0;
+      top: 9px;
+    }
+  }
+
+
+  .btn{
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+  }
+}

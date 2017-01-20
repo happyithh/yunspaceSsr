@@ -1,6 +1,6 @@
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,label,p,blockquote,table,th,td { margin:0; padding:0;box-sizing: border-box;}
 
-body { background:#fff; color:#000; font-size:14px;position: relative;width: 100%;height: 100%; font-family: "PingFangSC-Regular","PingFangHK", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;}
+body { background:#fff; color:#1C2025; font-size:14px;position: relative;width: 100%;height: 100%; font-family: "PingFangSC-Regular","PingFangHK", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;}
 table { border-collapse:collapse;}
 td,th,caption { font-size:14px; }
 h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; }
@@ -8,14 +8,18 @@ address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font
 a { color:#666; text-decoration:none;display: inline-block;}
 img { border:none; }
 ol,ul,li { list-style:none; }
-input, textarea, select, button { font-size:14px; outline: none;border: none;display: inline-block;font-family: "PingFangHK", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif!important;}
+input, textarea, select, button { font-size:14px; outline: none;border: none;display: inline-block;font-family: "PingFangSC-Regular","PingFangHK", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif!important;}
+select{
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
 a,button{
     transition: all .5s;
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
     cursor: pointer;
 }
-a:link {color: #666} /* 未访问时的状态*/
 a:visited {color: #666} /* 已访问时的状态 */
 a:hover {color: #AA2C3C} /* 鼠标划过时的状态 */
 a:active {color: #AA2C3C} /* 鼠标点击那一瞬间的状态 */
@@ -26,6 +30,7 @@ a:active {color: #AA2C3C} /* 鼠标点击那一瞬间的状态 */
 .clearfix:after {content: " "; display: block; height:0; clear:both; visibility: hidden;}
 .clearfix { *zoom:1; }
 .w1200{width: 1200px;margin: auto}
+.w710{width: 710px;}
 .mt20{margin-top: 20px}
 .mb20{margin-bottom: 20px}
 .mt30{margin-top: 30px}
@@ -33,6 +38,7 @@ a:active {color: #AA2C3C} /* 鼠标点击那一瞬间的状态 */
 .ml15{margin-left: 15px}
 .ml20{margin-left: 20px}
 .red{color:#AA2C3C;}
+.underline:hover{text-decoration: underline}
 .text-center{text-align: center}
 button[disabled]{
     background: #999;
@@ -95,7 +101,7 @@ button[disabled]{
 }
 /*满屏黑色遮罩*/
 .mask-bg{
-    background: rgba(0,0,0,.75);
+    background: rgba(0,0,0,.5);
     width: 100%;
     height: 100%;
     position: absolute;
@@ -111,7 +117,7 @@ button[disabled]{
     border: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 7px solid #000;
+    border-top: 7px solid #1C2025;
     position: absolute;
     transition: all linear .2s;
 }
@@ -122,7 +128,7 @@ button[disabled]{
     border: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-bottom: 7px solid #000;
+    border-bottom: 7px solid #1C2025;
     position: absolute;
     transition: all linear .2s;
 }
