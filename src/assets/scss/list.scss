@@ -1,0 +1,92 @@
+/**列表模式**/
+.box-list-box{
+  float: left;
+  width: 100%;
+  height: 226px;
+  padding: 16px 20px;
+  border: 1px solid #e8eaec;
+  margin-top: 20px;
+  .img{
+    width: 292px;
+    height: 100%;
+    margin-right: 16px;
+  }
+  .text{
+    width: 670px;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    h3{
+      font-size: 20px;
+      line-height: 20px;
+      margin-bottom: 27px;
+      a{
+        width: 100%;
+        color: #4b4b4e;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    p{
+      font-size: 14px;
+      line-height: 14px;
+      color: #8F949C;
+    }
+    .assort{
+      margin-bottom: 8px;
+      p{
+        float: left;
+        padding-right: 52px;
+        position: relative;
+        .line{
+          display: inline-block;
+          width: 2px;
+          height: 9px;
+          background: #DEE1E6;
+          position: absolute;
+          top: 3px;
+          right: 25px;
+        }
+      }
+      p:last-child{
+        padding-right: 0;
+      }
+    }
+    .keywords{
+      font-size: 12px;
+      line-height: 12px;
+      margin-top: 27px;
+    }
+    .btn{
+      width: 156px;
+      height: 37px;
+      line-height: 37px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      color: #fff;
+    }
+  }
+
+  .price{
+    text-align: right;
+    p{
+      font-size: 12px;
+      height: 24px;
+      line-height: 24px;
+      color: #484B4E;
+      margin-bottom: 2px;
+      strong{
+        font-size: 24px;
+      }
+    }
+    span{
+      display: block;
+      font-size: 12px;
+      height: 12px;
+      line-height: 12px;
+      color: #999;
+    }
+  }
+}

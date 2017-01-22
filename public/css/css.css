@@ -43,6 +43,14 @@ a:active {color: #AA2C3C} /* 鼠标点击那一瞬间的状态 */
 button[disabled]{
     background: #999;
 }
+/*去掉input[type="number"]上下小箭头*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+input[type="number"]{-moz-appearance:textfield;}
+
 .logregwrap .sendcode[disabled]{
     background: #999;
 }
@@ -91,7 +99,7 @@ button[disabled]{
     -webkit-align-items: center;
     align-items: center;
 }
-.icon{
+.icon,[class^=icon-]{
     display: inline-block;
 }
 .img{display: block;}
