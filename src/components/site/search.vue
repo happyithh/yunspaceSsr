@@ -234,7 +234,7 @@
                 <!--右边地图-star-->
                 <div class="fr side-map">
                     <a class="btn btn-look-sitemap" href="javascript:;">
-                        <i class=""></i>查看场地地图
+                        <i class="icon-icon_mapInfinity"></i>查看场地地图
                     </a>
                 </div>
                 <!--右边地图-end-->
