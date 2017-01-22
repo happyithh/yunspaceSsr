@@ -8,14 +8,15 @@ import SpaceDtl from '../components/space/dtl.vue'
 import ArticleDtl from '../components/news/dtl.vue'
 import Event from '../components/event/event.vue'
 import SiteHome from '../components/site/home.vue'
-import SiteHot from '../components/site/site-hot.vue'
-import SiteHotActivity from '../components/site/site-hot-activity.vue'
-import SiteSelected from '../components/site/site-selected.vue'
+import SiteHot from '../components/site/hot.vue'
+import SiteHotActivity from '../components/site/hot-activity.vue'
+import SiteSelected from '../components/site/selected.vue'
 import RentalSite from '../components/form/rental-site.vue'
 import InquiryList from '../components/inquiry/inquiry-list.vue'
 import Success from '../components/inquiry/success.vue'
 import Activity from '../components/activity/activity.vue'
 import SiteSearch from '../components/site/search.vue'
+import NotFound from '../components/404.vue'
 import Site from '../components/site/dtl.vue'
 
 
@@ -36,7 +37,7 @@ export default new Router({
     { path: '/inquiry', component: InquiryList },
     { path: '/success', component: Success },
     { path: '/activity', component: Activity },
-    { path: '/site', component: SiteHome },
-    { path: '/site/search', component: SiteSearch }
+    { path: '/site/search', component: SiteSearch },
+    { path: '*', component: NotFound },
   ]
 })
