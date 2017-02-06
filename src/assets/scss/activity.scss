@@ -1,0 +1,138 @@
+//标题
+.BorderBotmNone{
+  border-bottom: none !important;
+}
+.site-menu{
+  li{
+    float: left;
+    margin-right: 40px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 24px;
+    color: #999;
+    text-align: center;
+    padding-bottom: 12px;
+    box-sizing: content-box;
+    cursor: pointer;
+  }
+  .current{
+    color: #181C1F;
+    border-bottom: 2px solid #AA2C3C;
+    margin-bottom: -1px;
+    a{
+      color: #AA2C3C;
+    }
+  }
+}
+
+.site-item-news{
+  .item-box{
+    .box-list{
+      width: 860px;
+      li{
+        width: 100%;
+        height: 240px;
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+        padding: 20px;
+        .img{
+          width: 300px;
+          height: 200px;
+        }
+        .text{
+          width: 500px;
+          height: 100%;
+          position: relative;
+          h3{
+            margin-bottom: 16px;
+            a{
+              font-size: 16px;
+              height: 16px;
+              line-height: 16px;
+              color: #000;
+            }
+          }
+          >p{
+            color: #666;
+            overflow: hidden;
+            display: -webkit-box;
+            text-overflow:ellipsis;
+            word-break:break-all;
+            -webkit-box-orient:vertical;
+            -webkit-line-clamp:4;
+          }
+          .taglink{
+            position: absolute;
+            left: 0;
+            bottom: 40px;
+            font-size: 16px;
+            line-height: 16px;
+          }
+          .bottom{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            color: #8F949C;
+            font-size: 12px;
+            .icon{
+              margin-right: 30px;
+            }
+          }
+        }
+      }
+    }
+
+    .sidebar{
+      width: 310px;
+      .about{
+        width: 310px;
+        height: 200px;
+        margin-bottom: 20px;
+        a{
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .hot-site{
+        .item-title{
+          border-bottom: none;
+          margin-bottom: 10px;
+          h2{
+            font-size: 18px;
+            height: 18px;
+            line-height: 18px;
+            .redline{
+              width: 3px;
+              height: 16px;
+              top: 1px;
+            }
+          }
+        }
+        .cont{
+          li{
+            width: 100%;
+            height: 207px;
+            margin-bottom: 20px;
+            position: relative;
+            .img{
+              width: 100%;
+              height: 100%;
+              p{
+                width: 100%;
+                height: 36px;
+                line-height: 36px;
+                background: rgba(0,0,0,.6);
+                color: #fff;
+                position: absolute;
+                bottom: 0;
+                padding: 0 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

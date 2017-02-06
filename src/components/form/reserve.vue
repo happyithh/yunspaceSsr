@@ -27,9 +27,9 @@
                         <p>地址:上海市 徐汇区 幸福路 298号</p>
                         <p>场地类型 </p>
                         <div class="assort clearfix">
-                            <p><i class="icon-icon_spaceBusiness"></i> 徐家汇 <span class="line"></span></p>
+                            <p><i class="icon-icon_spaceArea"></i> 300㎡ <span class="line"></span></p></p>
                             <p><i class="icon-icon_spacePeople"></i> 500人 <span class="line"></span></p>
-                            <p><i class="icon-icon_spaceArea"></i> 300㎡</p>
+                            <p><i class="icon-icon_spaceHeight"></i> 30m <span class="line"></span></p>
                             <p><i class="icon-icon_spaceWeight"></i> 300t</p>
                         </div>
                         <p>套餐详情：？？？</p>

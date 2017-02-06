@@ -248,3 +248,81 @@
 .media-re {
   margin-bottom: 25px;
 }
+
+
+/*场地精华*/
+.site-essence-box{
+  .title{
+    padding-bottom: 50px;
+    h1{
+      box-sizing: content-box;
+      color: #AA2C3C;
+      font-size: 24px;
+      height: 24px;
+      line-height: 24px;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #AA2C3C;
+      width: 96px;
+      margin: 48px auto 20px;
+    }
+    p{
+      text-align: center;
+      color: #666;
+    }
+  }
+  .site-essence{
+    .box{
+      float: left;
+      width: 388px;
+      height: 500px;
+      background: #fff;
+      border: 1px solid #DDDFE2;
+      margin-right: 18px;
+      margin-bottom: 20px;
+      position: relative;
+      .img{
+        width: 388px;
+        height: 287px;
+        margin-left: -1px;
+        margin-top: -1px;
+      }
+      .text{
+        width: 100%;
+        padding: 20px;
+        h2{
+          margin-bottom: 16px;
+          a{
+            font-size: 16px;
+            height: 16px;
+            line-height: 16px;
+            color: #000;
+            font-family: PingFangSC-Medium;
+          }
+        }
+        .des{
+          color: #666;
+          overflow: hidden;
+          display: -webkit-box;
+          text-overflow:ellipsis;
+          word-break:break-all;
+          -webkit-box-orient:vertical;
+          -webkit-line-clamp:5;
+        }
+        .skim{
+          color: #8F949C;
+          font-size: 12px;
+          line-height: 12px;
+          position: absolute;
+          left: 20px;
+          bottom: 20px;
+          i{
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+    .box:nth-child(3n+3){
+      margin-right: 0;
+    }
+  }
+}
