@@ -14,7 +14,7 @@
         <div class="w1200">
 
             <!--空间故事-->
-            <div class="mt50 hot-site">
+            <div class="mt50">
                 <div class="item-title clearfix">
                     <h2><span class="redline"></span>空间故事</h2>
                     <div class="keywords">
@@ -52,7 +52,7 @@
             <!--/广告1-->
 
             <!--推荐场地-->
-            <div class="mt50 hot-site">
+            <div class="mt50">
                 <div class="item-title clearfix">
                     <h2><span class="redline"></span>热推场地</h2>
                     <div class="keywords">
@@ -91,7 +91,7 @@
             <!--/广告条-->
 
             <!--精选分类-->
-            <div class="mt50 hot-site">
+            <div class="mt50">
                 <div class="item-title clearfix">
                     <h2><span class="redline"></span>精选分类</h2>
                     <div class="keywords">
@@ -114,7 +114,7 @@
             <!--/精选分类-->
 
             <!--资讯报道-->
-            <div class="mt50 hot-site">
+            <div class="mt50">
                 <div class="item-title clearfix">
                     <h2><span class="redline"></span>资讯报道</h2>
                     <div class="keywords">

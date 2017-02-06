@@ -35,7 +35,6 @@
     }
 </script>
 
-<style lang="stylus">
-
-
+<style lang="sass">
+    @import "assets/scss/list.scss";
 </style>

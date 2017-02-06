@@ -39,11 +39,20 @@ a:active {color: #AA2C3C} /* 鼠标点击那一瞬间的状态 */
 .ml15{margin-left: 15px}
 .ml20{margin-left: 20px}
 .red{color:#AA2C3C;}
+.blue{color: #708BAE;}
 .underline:hover{text-decoration: underline}
 .text-center{text-align: center}
 button[disabled]{
     background: #999;
 }
+/*去掉input[type="number"]上下小箭头*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+input[type="number"]{-moz-appearance:textfield;}
+
 .logregwrap .sendcode[disabled]{
     background: #999;
 }
@@ -92,7 +101,7 @@ button[disabled]{
     -webkit-align-items: center;
     align-items: center;
 }
-.icon{
+.icon,[class^=icon-]{
     display: inline-block;
 }
 .img{display: block;}
