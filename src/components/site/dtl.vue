@@ -76,19 +76,131 @@
                     餐厅所在的原汇中饭店大楼是一幢兴建于1906年的文艺复兴风格的大楼，历经一个多世纪，依然风姿卓绝。大楼位于南京东路与外滩的交界处，
                     俯瞰黄浦江和浦东的天际线。
                 </div>
+                <div class="site-wrap clearfix">
+                    <div class="fl site-cont clearfix">
+                        <!--列表-开始-->
+                        <div class="box-list clearfix">
+                            <div class="box-list-box" v-for="item in sites">
+                                <a class="fl img" href="javascript:;">
+                                    <img src="" alt="列表模式">
+                                </a>
+                                <div class="fl text">
+                                    <h3>
+                                        <a href="javascript:;">云SPACE 上海国际工业园秀场</a>
+                                    </h3>
+                                    <p class="details">空间简介餐厅所在的原汇中饭店大楼是一幢兴建于1906年的文艺复兴风格的大楼，
+                                        历经一个多世纪，依然风姿卓绝。大楼位于南京东路与外滩的交界处，俯瞰黄浦江和浦东的天际线。</p>
+                                    <div class="assort clearfix">
+                                        <p><i class="icon-icon_spaceArea"></i> 300㎡</p>
+                                        <p><i class="icon-icon_spacePeople"></i> 500人 <span class="line"></span></p>
+                                        <p><i class="icon-icon_spaceHeight"></i> 300㎡</p>
+                                    </div>
+                                    <div class="price">
+                                        <p><strong style="margin-left: -5px">￥80,000</strong>/天 起</p>
+                                        <span>市场价: ¥ 100,000/天</span>
+
+                                        <div class="btn-op clearfix">
+                                            <button class="btn btn-red">立即预订</button>
+                                            <button>加入咨询</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="title-dtl">地图位置</div>
                 <div class="site-map mb30" id="siteMap">
-
                 </div>
+
+
+
             </div>
             <div class="site-dtl-right">
                 <div class="price-op">
-                    <p><span>参考价</span> <span><i class="icon icon-icon_articleCollectSolid"></i>已收藏</span></p>
-                    <p><span>￥80,000<font>/天 起</font> </span><span>市场价: ¥ 100,000/天</span></p>
+                    <div class="price-dtl">
+                        <p><span>参考价</span> <span class="active"><i class="icon icon-icon_articleCollectSolid"></i>已收藏</span></p>
+                        <p><span>￥80,000<font>/天 起</font> </span><span>市场价: ¥ 100,000/天</span></p>
+                    </div>
+                    <div class="btn-op clearfix">
+                        <button class="btn btn-red">立即询价</button>
+                        <button>加入询价</button>
+                    </div>
+                    <div class="price-tel">
+                        <i class="icon icon-icon_headerTel"></i>400-056-0599
+                    </div>
                 </div>
-                <div class="btn-op">
-                    <button class="btn btn-red">立即询价</button>
-                    <button>加入询价</button>
+                <div class="item-title clearfix site-dtl">
+                    <h2><span class="redline"></span>活动案例</h2>
+                    <a class="more" href="/site/hot">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                </div>
+                <div class="event-case border-gray">
+                    <ul>
+                        <li>
+                            <a href="" class="text">边开年会边旅游，会奖旅游最佳目的地——上海</a>
+                            <a href=""><img src="" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="text">边开年会边旅游，会奖旅游最佳目的地——上海</a>
+                            <a href=""><img src="" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="" class="text">边开年会边旅游，会奖旅游最佳目的地——上海</a>
+                            <a href=""><img src="" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item-title clearfix site-dtl">
+                    <h2><span class="redline"></span>热推场地</h2>
+                </div>
+                <div class="hot-site border-gray">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="/static/images/test/3to2.png" alt="">
+                                <p>场地名称场地名称场地名称场</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="/static/images/test/3to2.png" alt="">
+                                <p>场地名称场地名称场地名称场</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item-title clearfix site-dtl">
+                    <h2><span class="redline"></span>配套服务</h2>
+                </div>
+                <div class="supporting-services border-gray">
+                    <ul class="clearfix">
+                        <li class="active">
+                            <div class="bor">
+                                <i class="icon icon-icon_serveStage"></i>
+                            </div>
+                            <p>场地搭建</p>
+                        </li>
+                        <li>
+                            <div class="bor">
+                                <i class="icon icon-icon_serveStage"></i>
+                            </div>
+                            <p>场地搭建</p>
+                        </li>
+                        <li>
+                            <div class="bor">
+                                <i class="icon icon-icon_serveStage"></i>
+                            </div>
+                            <p>场地搭建</p>
+                        </li>
+                        <li>
+                            <div class="bor">
+                                <i class="icon icon-icon_serveStage"></i>
+                            </div>
+                            <p>场地搭建</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -102,7 +214,8 @@
             return {
                 siteDtl:{
                     img_paths:[]
-                }
+                },
+                sites:[1,2,3,4,5,6,7,8,9,10,11,12],
             }
         },
         computed: {
@@ -152,6 +265,7 @@
     }
 </script>
 
-<style src="../../assets/scss/site-dtl.scss" lang="sass" scoped>
-
+<style lang="sass" scoped>
+    @import "../../assets/scss/site-search.scss";
+    @import "../../assets/scss/site-dtl.scss";
 </style>

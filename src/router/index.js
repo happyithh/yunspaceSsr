@@ -20,6 +20,7 @@ import NotFound from '../components/404.vue'
 import Site from '../components/site/dtl.vue'
 import Reserve from '../components/form/reserve.vue'
 import News from '../components/news/home.vue'
+import Map from '../components/map/home.vue'
 
 
 export default new Router({
@@ -42,6 +43,7 @@ export default new Router({
     { path: '/site/search', component: SiteSearch },
     { path: '/site/reserve', component: Reserve },
     { path: '/news', component: News },
+    { path: '/map', component: Map },
     { path: '*', component: NotFound },
   ]
 })
