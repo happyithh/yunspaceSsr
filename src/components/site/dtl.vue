@@ -152,6 +152,6 @@
     }
 </script>
 
-<style src="../../assets/scss/site-dtl.scss" lang="sass">
+<style src="../../assets/scss/site-dtl.scss" lang="sass" scoped>
 
 </style>
