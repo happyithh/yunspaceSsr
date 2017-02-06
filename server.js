@@ -96,6 +96,7 @@ app.get('*', (req, res) => {
             <script src="/static/js/jquery-3.1.1.min.js"></script>
             <link rel="stylesheet" href="/static/swiper/swiper-3.3.1.min.css">
             <script src="/static/swiper/swiper-3.3.1.min.js"></script>
+            <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=aaNCRRcGGai6klHMOGZ8yBbP"></script>
         </head>
         <body ${bodyAttrs.text()}>
         `)

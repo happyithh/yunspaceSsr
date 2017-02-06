@@ -9,11 +9,6 @@
                 <div class="home-search-bar">
                     <search-bar></search-bar>
                 </div>
-                <div class="home-banner-wrap">
-                    <div class="home-banner">
-                        <img src="/static/images/home/banner.jpg">
-                    </div>
-                </div>
             </div>
         </div>
         <div class="w1200">

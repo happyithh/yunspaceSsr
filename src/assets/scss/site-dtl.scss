@@ -8,12 +8,157 @@
   width: 860px;
   padding: 0 18px;
   background-color: #fff;
+  float: left;
+  border: 1px solid #E9EBEC;
+  margin-bottom: 50px;
   h1{
     padding: 28px 0;
     font-size: 20px;
     line-height: 20px;
   }
+  .base-info{
+    .title{
+      font-size: 14px;
+      color: #8DA3BE;
+      line-height: 14px;
+      margin-bottom: 18px;
+      i{
+        margin-right: 10px;
+      }
+    }
+    .piece{
+      width: 274px;
+      float: left;
+      padding-right: 20px;
+    }
+    .base-inner{
+      margin-bottom: 10px;
+      p{
+        float: left;
+        color: #999;
+        max-width: 204px;
+        font-size: 12px;
+      }
+      p.gan{
+        padding: 0 6px;
+      }
+    }
+  }
+  .site-map{
+    width: 804px;
+    height: 345px;
+  }
 }
-body #app{
-  background-color: #fbfbfb;
+body{
+  background-color: #fbfbfb!important;
+}
+.banner{
+  margin-bottom: 38px;
+}
+.title-dtl{
+  border-left: 2px solid #666;
+  font-size: 14px;
+  color: #666666;
+  line-height: 14px;
+  padding-left: 10px;
+  margin-bottom: 30px;
+}
+.supporting-img{
+  padding: 0 10px;
+  margin: 0 -12px;
+  .piece{
+    &.active{
+      .icon-img{
+        background-color: #DDE9F9;
+        i{
+          color: #5C8BC4;
+        }
+      }
+    }
+    width: 73px;
+    float: left;
+    .icon-img{
+      margin-bottom: 4px;
+      width: 48px;
+      height: 48px;
+      margin-left: 12px;
+      background-color: #ECECEC;
+      border-radius: 8px;
+      text-align: center;
+      line-height: 48px;
+      font-size: 22px;
+      i{
+        color: #bbb;
+      }
+    }
+    p{
+      font-size: 12px;
+      color: #666666;
+      text-align: center;
+    }
+  }
+}
+.site-info{
+  font-size: 12px;
+  color: #666;
+  padding: 0 12px;
+  line-height: 20px;
+}
+.site-dtl-right{
+  width: 310px;
+  float: right;
+}
+.price-op{
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #E9EBEC;
+  p{
+    &:first-child{
+      span{
+        color: #AFB1B4;
+        font-size: 12px;
+        line-height: 12px;
+        &:last-child{
+          float: right;
+          i{
+            margin-right: 5px;
+            vertical-align: -1px;
+          }
+        }
+      }
+    }
+    &:last-child{
+      padding-bottom: 10px;
+      padding-top: 15px;
+      border-bottom: 1px dashed #ddd;
+      font{
+        font-size: 12px;
+        color: #1E0000;
+        line-height: 20px;
+      }
+      span{
+        &:first-child{
+          font-size: 20px;
+          color: #484B4E;
+          line-height: 20px;
+        }
+        &:last-child{
+          font-size: 12px;
+          color: #999999;
+          line-height: 12px;
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}
+.btn-op{
+  padding: 15px;
+  button{
+    &:first-child{
+      width: 156px;
+      height: 40px;
+      line-height: 40px;
+    }
+  }
 }
