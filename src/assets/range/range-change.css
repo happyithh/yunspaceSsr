@@ -1,3 +1,44 @@
 .theme-green .back-bar{
     height: 2px;
+    background: none;
+    background-color: #AA2C3C;
+}
+.theme-green .back-bar .selected-bar{
+    background: none;
+    background-color: #AA2C3C;
+}
+.theme-green .back-bar .pointer{
+    cursor: pointer;
+    background: none;
+    height: 12px;
+    width: 12px;
+    background-color: #181C1F;
+    border: 0;
+
+    /*中心点*/
+    text-align: center;
+}
+.theme-green .scale span{
+    /*display: none;*/
+    border: 0;
+    height: 4px;
+    width: 4px;
+    background-color: #AA2C3C;
+    border-radius: 50%;
+    top: -5px;
+}
+.theme-green .back-bar .pointer:before{
+    content: '';
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: 5px;
+}
+.theme-green .scale ins{
+    margin-top: 10px;
+    width: 30px;
+    text-align: center;
+    color: #666;
 }

@@ -8,7 +8,41 @@
                     <span>不限</span>
                 </div>
                 <div class="price-slider">
-                    <input class="range-slider" type="hidden" value="25,75"/>
+                    <input class="range-slider" type="hidden" value="0,150"/>
+                </div>
+                <div class="title mb10">
+                    <span>配套服务</span>
+                    <i class="icon icon-icon_selectDownArrowThin"></i>
+                </div>
+                <div class="choose-fw">
+                    <el-checkbox-group v-model="checkList">
+                        <el-checkbox label="复选框 A"></el-checkbox>
+                        <el-checkbox label="复选框 B"></el-checkbox>
+                        <el-checkbox label="复选框 C"></el-checkbox>
+                        <el-checkbox label="禁用"></el-checkbox>
+                        <el-checkbox label="选中且禁用"></el-checkbox>
+                    </el-checkbox-group>
+                </div>
+                <button class="search-btn mb20">搜索</button>
+                <div class="sort-type mb15">
+                    <span>默认</span>
+                    <font>|</font>
+                    <span>价格<i class="icon icon-icon_rankArrowUp"></i></span>
+                    <font>|</font>
+                    <span>人数<i class="icon icon-icon_rankArrowUp"></i></span>
+                </div>
+                <div class="site-list">
+                    <ul>
+                        <li v-for="i in [1,1,1,1]">
+                            <a href=""><img src="/static/images/test/3to2.png" alt=""></a>
+                            <a class="title">上海龙猫咖啡</a>
+                            <div class="dtl">
+                                <span><i class="icon icon-icon_spaceArea"></i>300㎡</span>
+                                <font>|</font>
+                                <span><i class="icon icon-icon_spacePeople"></i> 500人</span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -30,6 +64,7 @@
         data() {
             return {
                 mapOptions : {minZoom:12,maxZoom:18,enableMapClick:false},
+                checkList: ['选中且禁用','复选框 A']
             }
         },
 
@@ -68,7 +103,7 @@
                 from: 0,
                 to: 150,
                 step: 25,
-                scale: [0,25,50,75,100,125,150],
+                scale: [0,'2万','5万','10万','20万','50万','不限'],
                 format: '%s',
                 width: 380,
                 showLabels: false,
@@ -94,4 +129,5 @@
     @import "../../assets/scss/map.scss";
     @import "../../assets/range/jquery.range.css";
     @import "../../assets/range/range-change.css";
+    @import "../../assets/css/el-change-new.css";
 </style>
