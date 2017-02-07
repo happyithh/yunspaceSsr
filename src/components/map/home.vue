@@ -44,6 +44,11 @@
             }
         },
         mounted () {
+            $('.view,#map,#app').css({
+                'height' : '100%',
+                'width' : '100%'
+            })
+
             var self = this;
             self.$store.commit('LOADING', false)
             var map = new BMap.Map("map",self.mapOptions);
@@ -61,12 +66,12 @@
 
             $('.range-slider').jRange({
                 from: 0,
-                to: 100,
+                to: 150,
                 step: 25,
                 scale: [0,25,50,75,100,125,150],
                 format: '%s',
-                width: 300,
-                showLabels: true,
+                width: 380,
+                showLabels: false,
                 isRange : true,
                 snap: true
             });
