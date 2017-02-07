@@ -120,39 +120,60 @@
 
                         <div class="citySelection" style="height: 100%;">
                             <div class="swiper-wrapper swiper-container">
+                                <!--<div class="swiper-slide">-->
+                                    <!--<a href="">-->
+                                        <!--<img src="" alt="">-->
+                                        <!--<p class="tag">秀场展馆</p>-->
+                                    <!--</a>-->
+                                <!--</div>-->
                                 <div class="swiper-slide">
-                                    <a href="">
-                                        <img src="" alt="">
-                                        <p class="tag">秀场展馆</p>
+                                    <a href="" title="秀场展馆">
+                                        <img src="/static/images/selected/xiuchangzhanguan.jpg" alt="秀场展馆">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="">
-                                        <img src="" alt="">
-                                        <p class="tag">特色场地</p>
-                                    </a></div>
-                                <div class="swiper-slide">
-                                    <a href="">
-                                        <img src="" alt="">
-                                        <p class="tag">商业广场</p>
+                                    <a href="" title="特色场地">
+                                        <img src="/static/images/selected/tesechangdi.jpg" alt="特色场地">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="">
-                                        <img src="" alt="">
-                                        <p class="tag">影业剧院</p>
+                                    <a href="" title="商业广场">
+                                        <img src="/static/images/selected/shangyeguangchang.jpg" alt="商业广场">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="">
-                                        <img src="" alt="">
-                                        <p class="tag">高端会所</p>
+                                    <a href="" title="公共空间">
+                                        <img src="/static/images/selected/gonggongkongjian.jpg" alt="公共空间">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="">
-                                        <img src="" alt="">
-                                        <p class="tag">会务中心</p>
+                                    <a href="" title="高端会所">
+                                        <img src="/static/images/selected/gaoduanhuisuo.jpg" alt="高端会所">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="" title="会务中心">
+                                        <img src="/static/images/selected/huiwuzhongxin.jpg" alt="会务中心">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="" title="酒吧餐厅">
+                                        <img src="/static/images/selected/jiubacanting.jpg" alt="酒吧餐厅">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="" title="艺术画廊">
+                                        <img src="/static/images/selected/yishuhualang.jpg" alt="艺术画廊">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="" title="星级酒店">
+                                        <img src="/static/images/selected/xingjijiudian.jpg" alt="星级酒店">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="" title="体育场馆">
+                                        <img src="/static/images/selected/tiyuchangguan.jpg" alt="体育场馆">
                                     </a>
                                 </div>
                             </div>
