@@ -136,3 +136,140 @@
   }
 }
 
+//配套服务
+.supporting{
+  .title{
+    padding-bottom: 10px;
+  }
+  .SupportingList{
+    li{
+      float: left;
+      width: 80px;
+      margin-right: 20px;
+      text-align: center;
+      .box{
+        width: 100%;
+        height: 80px;
+        border: 1px solid #DDDFE2;
+        i{
+          font-size: 50px;
+          line-height: 80px;
+        }
+      }
+      p{
+        font-size: 14px;
+        height: 14px;
+        line-height: 14px;
+        color: #666;
+        margin-top: 10px;
+      }
+    }
+    li.red{
+      .box{
+        border-color: #AA2C3C;
+      }
+      p{
+        color: #AA2C3C;
+      }
+    }
+    li:last-child{
+      margin-right: 0;
+    }
+  }
+  .phone{
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    height: 78px;
+    line-height: 78px;
+    border-top: 1px dotted #AA2C3C;
+    border-bottom: 1px dotted #AA2C3C;
+    margin: 30px 0;
+  }
+  //配套服务详情
+  .SupportingDtl{
+    overflow: hidden;
+    li{
+      width: 990px;
+      height: 360px;
+      border: 1px solid #DDDFE2;
+      margin: 20px auto 0;
+      padding: 30px;
+      .img{
+        width: 400px;
+        height: 300px;
+      }
+      .cont{
+        width: 500px;
+        h3{
+          font-size: 16px;
+          line-height: 16px;
+          margin-bottom: 10px;
+          color: #000;
+          font-family: PingFangSC-Medium;
+        }
+        span{
+          display: block;
+          color: #666;
+          margin-bottom: 15px;
+          font-size: 14px;
+          line-height: 14px;
+        }
+        .text{
+          color: #666;
+          overflow: hidden;
+          display: -webkit-box;  /*将对象作为弹性盒子模型显示*/
+          text-overflow:ellipsis;
+          word-break:break-all;
+          -webkit-box-orient:vertical;/*伸缩盒对象的子元素的排列方式-垂直*/
+          -webkit-line-clamp:12; /*限制在一个块级元素显示的文本的行数*/
+        }
+      }
+    }
+  }
+
+  //合作伙伴
+  .friends{
+    margin-bottom: 80px;
+    li{
+      float: left;
+      width: 285px;
+      height: 260px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #DDDFE2;
+      .img{
+        width: 100%;
+        height: 190px;
+      }
+      h3{
+        margin: 12px 10px 10px;
+        font-family: PingFangHK-Medium;
+        font-size: 16px;
+        line-height: 16px;
+        a{
+          display: block;
+          color: #000;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        a:hover{
+          color: #AA2C3C;
+        }
+      }
+      p{
+        color: #666;
+        font-size: 14px;
+        line-height: 14px;
+        margin: 0 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    li:nth-child(4n+4){
+      margin-right: 0;
+    }
+  }
+}
