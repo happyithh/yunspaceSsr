@@ -7,6 +7,9 @@
                     <span>价格范围</span>
                     <span>不限</span>
                 </div>
+                <div class="price-slider">
+                    <input class="range-slider" type="hidden" value="25,75"/>
+                </div>
             </div>
         </div>
 
@@ -56,6 +59,18 @@
                 }
             },'上海');
 
+            $('.range-slider').jRange({
+                from: 0,
+                to: 100,
+                step: 25,
+                scale: [0,25,50,75,100,125,150],
+                format: '%s',
+                width: 300,
+                showLabels: true,
+                isRange : true,
+                snap: true
+            });
+
         },
         preFetch: fetchData,
 
@@ -72,4 +87,6 @@
 </script>
 <style lang="sass" scoped>
     @import "../../assets/scss/map.scss";
+    @import "../../assets/range/jquery.range.css";
+    @import "../../assets/range/range-change.css";
 </style>
