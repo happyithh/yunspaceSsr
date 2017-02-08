@@ -2,14 +2,14 @@ import 'es6-promise/auto'
 import { app, store } from './app'
 
 //me
-import Vue from 'vue'
-import Element from 'element-ui'
-Vue.use(Element)
-
-import 'public/css/css.css';
-import 'public/css/el-change.css';
-import 'public/css/public.css';
-import 'public/css/icon.css'
+// import Vue from 'vue'
+// import Element from 'element-ui'
+// Vue.use(Element)
+//
+// import 'public/css/css.css';
+// import 'public/css/el-change.css';
+// import 'public/css/public.css';
+// import 'public/css/icon.css'
 //me
 
 // prime the store with server-initialized state.

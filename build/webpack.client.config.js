@@ -38,7 +38,11 @@ if (process.env.NODE_ENV === 'production') {
     stylus: ExtractTextPlugin.extract({
       loader: 'css-loader!stylus-loader',
       fallbackLoader: 'vue-style-loader' // <- this is a dep of vue-loader
-    })
+    }),
+      sass: ExtractTextPlugin.extract({ // css 需要 提前
+          loader: 'css-loader!sass-loader',
+          fallbackLoader: 'vue-style-loader' // <- this is a dep of vue-loader
+      })
   }
 
   config.plugins.push(

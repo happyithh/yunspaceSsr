@@ -44,7 +44,7 @@ function parseIndex(template) {
     const contentMarker = '<!-- APP -->'
     const i = template.indexOf(contentMarker)
     return {
-        head: template.slice(0, i),
+        head: template.slice(0, i).replace("<head>","").replace("</head>",""),
         tail: template.slice(i + contentMarker.length)
     }
 }
@@ -97,6 +97,7 @@ app.get('*', (req, res) => {
             <link rel="stylesheet" href="/static/swiper/swiper-3.3.1.min.css">
             <script src="/static/swiper/swiper-3.3.1.min.js"></script>
             <script src="/static/range/jquery.range.js"></script>
+            ${indexHTML.head}
             <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=aaNCRRcGGai6klHMOGZ8yBbP"></script>
         </head>
         <body ${bodyAttrs.text()}>

@@ -1,0 +1,160 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,label,p,blockquote,table,th,td { margin:0; padding:0;box-sizing: border-box;}
+
+body { background:#fff; color:#1C2025; font-size:14px;position: relative;width: 100%;height: 100%; font-family: "PingFangSC-Regular","PingFangHK", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;}
+html,body{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+table { border-collapse:collapse;}
+td,th,caption { font-size:14px; }
+h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
+a { color:#666; text-decoration:none;display: inline-block;}
+img { border:none; }
+ol,ul,li { list-style:none; }
+input, textarea, select, button { font-size:14px; outline: none;border: none;display: inline-block;font-family: "PingFangSC-Regular","PingFangHK", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif!important;}
+select{
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+a,button{
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    cursor: pointer;
+}
+a:visited {color: #666} /* 已访问时的状态 */
+a:hover {color: #AA2C3C} /* 鼠标划过时的状态 */
+a:active {color: #AA2C3C} /* 鼠标点击那一瞬间的状态 */
+.fl{float: left;}
+.fr{float: right;}
+
+.hide{display: none;}
+.clearfix:after {content: " "; display: block; height:0; clear:both; visibility: hidden;}
+.clearfix { *zoom:1; }
+.w1200{width: 1200px;margin: auto}
+.w710{width: 710px;}
+.mt20{margin-top: 20px}
+.mb20{margin-bottom: 20px}
+.mb30{margin-bottom: 30px}
+.mb10{margin-bottom: 10px}
+.mb15{margin-bottom: 15px}
+.mt30{margin-top: 30px}
+.ml10{margin-left: 10px}
+.ml15{margin-left: 15px}
+.ml20{margin-left: 20px}
+.red{color:#AA2C3C;}
+.blue{color: #708BAE;}
+.underline:hover{text-decoration: underline}
+.text-center{text-align: center}
+button[disabled]{
+    background: #999;
+}
+/*去掉input[type="number"]上下小箭头*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+input[type="number"]{-moz-appearance:textfield;}
+
+.logregwrap .sendcode[disabled]{
+    background: #999;
+}
+
+/*按钮样式*/
+.btn{
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 4px;
+}
+.btn-red{ background: #AA2C3C; }
+.btn-red:hover{ background: #c13849; }
+.btn-black{ background: #181C1F; }
+.btn-black:hover{ background: #1f2931; }
+.btn-border-back{
+    background: #fff;
+    color: #181C1F;
+    border: 1px solid #181C1F;
+}
+/*字体*/
+.font-medium{
+    font-family: PingFangSC-Medium;
+}
+.font-regular{
+    font-family: PingFangSC-Regular;
+}
+.font-thin{
+    font-family:PingFangSC-Thin;
+}
+
+
+
+.display-center{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.icon,[class^=icon-]{
+    display: inline-block;
+}
+.img{display: block;}
+.img img{
+    width: 100%;
+    height: 100%;
+}
+/*满屏黑色遮罩*/
+.mask-bg{
+    background: rgba(0,0,0,.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top:0;
+    z-index: 1;
+}
+/*实心三角*/
+.icon-triangedown{/*向下*/
+    display: block;
+    width: 0px;
+    height: 0px;
+    border: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #1C2025;
+    position: absolute;
+    transition: all linear .2s;
+}
+.icon-triangeup{/*向上*/
+    display: block;
+    width: 0px;
+    height: 0px;
+    border: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 7px solid #1C2025;
+    position: absolute;
+    transition: all linear .2s;
+}
+.triange-bg{
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+}
+
+
+

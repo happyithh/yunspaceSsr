@@ -11,6 +11,10 @@
 </template>
 
 <script>
+    import Vue from 'vue'
+    import Element from 'element-ui'
+    Vue.use(Element)
+
     import ModuleFooter from './components/module-footer.vue'
     import ModuleHeader from './components/module-header.vue'
     export default {
@@ -37,4 +41,8 @@
 
 <style lang="sass">
     @import "assets/scss/list.scss";
+    @import 'assets/css/css.css';
+    @import 'assets/css/el-change.css';
+    @import 'assets/css/public.css';
+    @import 'assets/css/icon.css';
 </style>
