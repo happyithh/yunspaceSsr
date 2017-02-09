@@ -70,7 +70,7 @@
             <div class="recommend-site clearfix">
                 <div class="site-piece" v-for="item in hotSites">
                     <a href="" title="">
-                        <img src="/static/images/test/3to2.png" alt="">
+                        <img :src="item.site_pictures.length > 0 ? item.site_pictures[0]['url_400_267'] : ''" alt="">
                     </a>
                     <div class="des">
                         <a href="" class="title" v-html="item.title"></a>
@@ -79,10 +79,10 @@
                     </div>
                     <div class="other">
                         <span>
-                            <i class="icon icon-icon_spaceBusiness"></i>徐家汇
+                            <i class="icon icon-icon_spaceBusiness"></i>{{item.district}}
                             <i class="boder-left-line"></i>
                         </span>
-                        <span><i class="icon icon-icon_spacePeople"></i>500人</span>
+                        <span><i class="icon icon-icon_spacePeople"></i>{{item.max_people}}人</span>
                     </div>
                 </div>
             </div>
