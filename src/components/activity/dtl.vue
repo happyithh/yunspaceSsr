@@ -4,7 +4,7 @@
         <div class="breadCrumb w1200">
             <a href="javascript:;" class="red">活动</a>
             <span class="icon-icon_moreArrowRight"></span>
-            <a href="javascript:;">空间故事</a>
+            <a href="javascript:;">品牌案例</a>
         </div>
         <!--面包屑-end-->
 

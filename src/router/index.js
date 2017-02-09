@@ -16,6 +16,8 @@ import InquiryList from '../components/inquiry/inquiry-list.vue'
 import Success from '../components/inquiry/success.vue'
 import Activity from '../components/activity/home.vue'
 import ActivityList from '../components/activity/list.vue'
+import ActivityDtl from '../components/activity/dtl.vue'
+import ActivitySupporting from '../components/activity/supporting.vue'
 import SiteSearch from '../components/site/search.vue'
 import NotFound from '../components/404.vue'
 import Site from '../components/site/dtl.vue'
@@ -44,6 +46,8 @@ export default new Router({
     { path: '/success', component: Success },
     { path: '/activity', component: Activity },
     { path: '/activity/list', component: ActivityList },
+    { path: '/activity/dtl', component: ActivityDtl },
+    { path: '/activity/supporting', component: ActivitySupporting },
     { path: '/site/search', component: SiteSearch },
     { path: '/site/reserve', component: Reserve },
     { path: '/news', component: News },

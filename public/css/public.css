@@ -29,6 +29,20 @@
     left: 0;
     top: 2px;
 }
+.item-title.small{
+    border-bottom: none;
+    margin-bottom: 10px;
+}
+.item-title.small h2{
+    font-size: 18px;
+    height: 18px;
+    line-height: 18px;
+}
+.item-title.small h2 .redline{
+    width: 3px;
+    height: 16px;
+    top: 1px;
+}
 .item-title .keywords{
     background: #fff;
     height: 14px;

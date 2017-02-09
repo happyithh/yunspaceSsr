@@ -1,3 +1,149 @@
+//首页
+.activity-box{
+  margin-bottom: 40px;
+  .casebox{
+    width: 860px;
+    .casebox-list{
+      overflow: hidden;
+      li{
+        float: left;
+        width: 272px;
+        height: 266px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        .img{
+          width: 100%;
+          height: 182px;
+        }
+        h3{
+          margin: 10px 0;
+          font-size: 16px;
+          height: 16px;
+          line-height: 16px;
+          a{
+            color: #000;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+        .tag{
+          height: 15px;
+          line-height: 15px;
+          font-size: 14px;
+          border-left: 3px solid #AA2C3C;
+          padding-left: 10px;
+          color: #666;
+        }
+        .link{
+          width: 100%;
+          font-size: 16px;
+          height: 16px;
+          line-height: 16px;
+          color: #AA2C3C;
+          margin-top: 10px;
+          span{
+            display: inline-block;
+            max-width: 86%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          i{
+            font-size: 14px;
+            margin-left: 16px;
+            position: relative;
+            bottom: 2px;
+          }
+        }
+      }
+      li:nth-child(3n+3),li:last-child{
+        margin-right: 0;
+      }
+    }
+    .casebox-list.big{
+      li{
+        width: 420px;
+        height: 393px;
+        .img{
+          height: 315px;
+        }
+      }
+    }
+    .industryBox,.starBox{
+      li{
+        height: 288px;
+        h3{
+          height: 44px;
+          line-height: 1.35em;
+          font-family: PingFangSC-Medium;
+          a{
+            display: -webkit-box;
+            text-overflow:ellipsis;
+            word-break:break-all;
+            -webkit-box-orient:vertical;
+            -webkit-line-clamp:2;
+            white-space: normal;
+          }
+        }
+      }
+    }
+    .starBox{
+      li{
+        border: 1px solid #DDDFE2;
+        height: 305px;
+        .img{
+          width: 272px;
+          margin-top: -1px;
+          margin-left: -1px;
+        }
+        h3,.tag,.link{
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+    }
+    .ad{
+      width: 100%;
+      height: 120px;
+      margin-top: 20px;
+    }
+  }
+  .sidebar{
+    width: 310px;
+    .cont{
+      width: 100%;
+      padding-left: 20px;
+      padding-top: 20px;
+      border: 1px solid #ddd;
+      li{
+        float: left;
+        margin-right: 15px;
+        margin-bottom: 20px;
+        i{
+          width: 80px;
+          height: 80px;
+          line-height: 80px;
+          background: #f5f5f5;
+          text-align: center;
+          font-size: 50px;
+          color: #666;
+        }
+        p{
+          text-align: center;
+          margin-top:10px;
+          line-height: 14px;
+          color: #666;
+        }
+      }
+    }
+  }
+}
+
+
+
 //标题
 .BorderBotmNone{
   border-bottom: none !important;
@@ -95,20 +241,6 @@
         }
       }
       .hot-site{
-        .item-title{
-          border-bottom: none;
-          margin-bottom: 10px;
-          h2{
-            font-size: 18px;
-            height: 18px;
-            line-height: 18px;
-            .redline{
-              width: 3px;
-              height: 16px;
-              top: 1px;
-            }
-          }
-        }
         .cont{
           li{
             width: 100%;
@@ -136,3 +268,140 @@
   }
 }
 
+//配套服务
+.supporting{
+  .title{
+    padding-bottom: 10px;
+  }
+  .SupportingList{
+    li{
+      float: left;
+      width: 80px;
+      margin-right: 20px;
+      text-align: center;
+      .box{
+        width: 100%;
+        height: 80px;
+        border: 1px solid #DDDFE2;
+        i{
+          font-size: 50px;
+          line-height: 80px;
+        }
+      }
+      p{
+        font-size: 14px;
+        height: 14px;
+        line-height: 14px;
+        color: #666;
+        margin-top: 10px;
+      }
+    }
+    li.red{
+      .box{
+        border-color: #AA2C3C;
+      }
+      p{
+        color: #AA2C3C;
+      }
+    }
+    li:last-child{
+      margin-right: 0;
+    }
+  }
+  .phone{
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    height: 78px;
+    line-height: 78px;
+    border-top: 1px dotted #AA2C3C;
+    border-bottom: 1px dotted #AA2C3C;
+    margin: 30px 0;
+  }
+  //配套服务详情
+  .SupportingDtl{
+    overflow: hidden;
+    li{
+      width: 990px;
+      height: 360px;
+      border: 1px solid #DDDFE2;
+      margin: 20px auto 0;
+      padding: 30px;
+      .img{
+        width: 400px;
+        height: 300px;
+      }
+      .cont{
+        width: 500px;
+        h3{
+          font-size: 16px;
+          line-height: 16px;
+          margin-bottom: 10px;
+          color: #000;
+          font-family: PingFangSC-Medium;
+        }
+        span{
+          display: block;
+          color: #666;
+          margin-bottom: 15px;
+          font-size: 14px;
+          line-height: 14px;
+        }
+        .text{
+          color: #666;
+          overflow: hidden;
+          display: -webkit-box;  /*将对象作为弹性盒子模型显示*/
+          text-overflow:ellipsis;
+          word-break:break-all;
+          -webkit-box-orient:vertical;/*伸缩盒对象的子元素的排列方式-垂直*/
+          -webkit-line-clamp:12; /*限制在一个块级元素显示的文本的行数*/
+        }
+      }
+    }
+  }
+
+  //合作伙伴
+  .friends{
+    margin-bottom: 80px;
+    li{
+      float: left;
+      width: 285px;
+      height: 260px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #DDDFE2;
+      .img{
+        width: 100%;
+        height: 190px;
+      }
+      h3{
+        margin: 12px 10px 10px;
+        font-family: PingFangHK-Medium;
+        font-size: 16px;
+        line-height: 16px;
+        a{
+          display: block;
+          color: #000;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        a:hover{
+          color: #AA2C3C;
+        }
+      }
+      p{
+        color: #666;
+        font-size: 14px;
+        line-height: 14px;
+        margin: 0 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    li:nth-child(4n+4){
+      margin-right: 0;
+    }
+  }
+}

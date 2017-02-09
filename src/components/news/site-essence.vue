@@ -8,7 +8,7 @@
         </div>
         <!--面包屑-end-->
 
-        <div class="w1200 site-essence-box">
+        <div class="w1200 center-box">
             <div class="title">
                 <h1 class="font-medium">场地精华</h1>
                 <p>极佳的商业空间场地，给您前所未有的体验</p>

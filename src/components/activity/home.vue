@@ -3,7 +3,7 @@
         <!--第一部分banner等-开始-->
         <div class="w1200 mt20 clearfix">
             <!--轮播图开始-->
-           <div class="banner event-swiper">
+            <div class="banner event-swiper">
                <div class="swiper-container activityBannner">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide "  v-for="item in reSites">
@@ -15,88 +15,125 @@
                     <!-- Add Pagination -->
                     <div class="swiper-pagination"></div>
                     <!-- 如果需要导航按钮 -->
-                    <div class="swiper-button-prev">
-                        <i class="icon-arrowleft1"></i>
+                    <div class="swiper-button swiper-button-prev">
+                        <i class="icon icon-arrowleft1"></i>
                     </div>
-                    <div class="swiper-button-next">
-                        <i class="icon-arrowright1"></i>
-                    </div>
-                </div>
-           </div>
-           <!--轮播图结束-->
-            <!--左边-->
-            <div class="fl">
-                <div class="content clearfix">
-                <!--品牌案例开始-->
-                    <div class="LogoCase">
-                        <h1>品牌案例</h1>
-                    </div>
-                   <div class="LogoCaseContent clearfix fl">
-                       <a href="javascript:;">
-                           <img src="/static/images/test/3to2bak.png" alt="">
-                       </a>
-                       <div class="title">Club Med 欢乐冰雪体验活动</div>
-                       <span>| 创意活动</span>
-                       <p>art + space <i class="icon-arrowright"></i> </p>
-                   </div>
-                   <div class="LogoCaseContent nopadding fl">
-                       <a href="javascript:;">
-                           <img src="/static/images/test/3to2bak.png" alt="">
-                       </a>
-                       <div class="title">Club Med 欢乐冰雪体验活动</div>
-                       <span>| 创意活动</span>
-                       <p>art + space <i class="icon-arrowright"></i> </p>
-                   </div>
-                   <div class="hotSite fl" v-for='item in Site'>
-                       <a href="javascript:;">
-                           <img src="/static/images/test/3to2bak.png" alt="">
-                       </a>
-                       <div class="title">Club Med 欢乐冰雪体验活动</div>
-                       <span>| 创意活动</span>
-                       <p>art + space <i class="icon-arrowright"></i></p>
-                   </div>
-                </div>
-                 <!--品牌案例结束-->
-                <!--AD-->
-                <div class="ad clearfix">
-                    <img src="/static/images/test/2.png" alt="">
-                </div>
-                <!--行业案例开始-->
-                <div class="industryBox">
-                    <div class="LogoCase clearfix">
-                        <h1>行业案例</h1>
-                    </div>
-                    <div class="industryCase">
-                        <div class="hotSite fl" v-for='item in 6'>
-                        <a href="javascript:;">
-                            <img src="/static/images/test/3to2bak.png" alt="">
-                        </a>
-                        <div class="title">Club Med 欢乐冰雪体验活动</div>
-                        <span>| 创意活动</span>
-                        <p>art + space <i class="icon-arrowright"></i> </p>
-                    </div>
+                    <div class="swiper-button swiper-button-next">
+                        <i class="icon icon-arrowright1"></i>
                     </div>
                 </div>
-                <!--行业案例结束-->
-                <!--明星案例开始-->
-                <div class="industryBox">
-                    <div class="LogoCase clearfix">
-                        <h1>明星案例</h1>
-                    </div>
-                    <div class="industryCase">
-                        <div class="hotSite fl" v-for='item in 6'>
-                        <a href="javascript:;">
-                            <img src="/static/images/test/3to2bak.png" alt="">
-                        </a>
-                        <div class="title">Club Med 欢乐冰雪体验活动</div>
-                        <span>| 创意活动</span>
-                        <p>art + space <i class="icon-arrowright"></i></p>
-                    </div>
-                    </div>
-                </div>
-                <!--明星案例结束-->
             </div>
-           
+            <!--轮播图结束-->
+
+
+            <div class="activity-box mt50 clearfix">
+                <!--左边-->
+                <div class="fl casebox">
+                    <!--品牌案例开始-->
+                    <div class="logoBox clearfix">
+                        <div class="item-title clearfix">
+                            <h2><span class="redline"></span>品牌案例</h2>
+                            <a class="more" href="javascript:;">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                        </div>
+
+                        <ul class="casebox-list big clearfix">
+                            <li v-for="item in 2">
+                                <a class="img" href="javascript:;" title="">
+                                    <img src="" alt="">
+                                </a>
+                                <h3><a href="" title="">Club Med 欢乐冰雪体验活动</a></h3>
+                                <p class="tag">创意活动</p>
+                                <a href="" class="link red">
+                                    <span>art + space</span>
+                                    <i class="icon-icon_moreArrowRight"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="casebox-list clearfix">
+                            <li v-for="item in 3">
+                                <a class="img" href="javascript:;" title="">
+                                    <img src="" alt="">
+                                </a>
+                                <h3><a href="" title="">Club Med 欢乐冰雪体验活动</a></h3>
+                                <p class="tag">创意活动</p>
+                                <a href="" class="link red">
+                                    <span>携京东白条落户新天地</span>
+                                    <i class="icon-icon_moreArrowRight"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                     <!--品牌案例结束-->
+
+                    <!--AD-->
+                    <a class="ad img" href="" title="">
+                        <img src="" >
+                    </a>
+
+                    <!--行业案例开始-->
+                    <div class="industryBox mt50">
+                        <div class="item-title clearfix">
+                            <h2><span class="redline"></span>行业案例</h2>
+                            <a class="more" href="javascript:;">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                        </div>
+
+                        <ul class="casebox-list clearfix">
+                            <li v-for="item in 6">
+                                <a class="img" href="javascript:;" title="">
+                                    <img src="" alt="">
+                                </a>
+                                <h3><a href="" title="">“先生公司”亮相K11 快闪店成购物中心新宠</a></h3>
+                                <p class="tag">创意活动</p>
+                                <a href="" class="link red">
+                                    <span>携京东白条落户新天地</span>
+                                    <i class="icon-icon_moreArrowRight"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--行业案例结束-->
+                    <!--明星案例开始-->
+                    <div class="starBox mt30">
+                        <div class="item-title clearfix">
+                            <h2><span class="redline"></span>明星案例</h2>
+                            <a class="more" href="javascript:;">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                        </div>
+
+                        <ul class="casebox-list clearfix">
+                            <li v-for="item in 6">
+                                <a class="img" href="javascript:;" title="">
+                                    <img src="" alt="">
+                                </a>
+                                <h3><a href="" title="">《微微一笑很倾城》开启泛娱乐IP多维度营销先河</a></h3>
+                                <p class="tag">创意活动</p>
+                                <a href="" class="link red">
+                                    <span>携京东白条落户新天地</span>
+                                    <i class="icon-icon_moreArrowRight"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--明星案例结束-->
+                </div>
+
+                <!--右边-->
+                <div class="fr sidebar">
+                    <!--配套服务-star-->
+                    <div class="hot news">
+                        <div class="item-title small clearfix">
+                            <h2><span class="redline"></span>配套服务</h2>
+                            <a class="more" href="/site/hot">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                        </div>
+
+                        <ul class="cont clearfix">
+                            <li v-for="item in 12">
+                                <i class="icon-icon_serveStage"></i>
+                                <p>场地搭建</p>
+                            </li>
+                        </ul>
+                    </div><!--配套服务-end-->
+                </div>
+            </div>
            
         </div>
     </div>
@@ -181,22 +218,9 @@
     }
 </script>
 
-<style scoped>
-html, body {
-    position: relative;
-    height: 100%;
-}
-.content .nopadding{
-    padding-right:0; 
-}
-body {
-    background: #eee;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color:#000;
-    margin: 0;
-    padding: 0;
-}
+<style lang="sass" scoped>
+    @import "../../assets/scss/activity.scss";
+
 .swiper-container {
     width: 100%;
     height: 100%;
@@ -229,141 +253,57 @@ body {
     height:400px;
     
 }
- p{
-    color: #AA2C3C;
-}
-
 .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
     opacity: .35;
     cursor: auto;
     pointer-events: none;
 }
+body .swiper-button-prev,
+body .swiper-button-next{
+    font-size: 20px;
+    color: #000;
+}
 body .swiper-button-next {
     right: 0;
     left: auto;
-    font-size: 30px;
-    padding: 20px 5px;
-    background-image: none;
-    background-color: rgba(255,255,255,.5);
 }
 body .swiper-button-prev{
-    font-size: 30px;
-    padding: 20px 5px;
-    background-image: none;
-    background-color: rgba(255,255,255,.5);
+
 }
 .swiper-button-next, .swiper-button-prev {
+    width: 50px;
+    height: 100px;
+    background-image: none;
+    background-color: rgba(255,255,255,.3);
+    font-size: 16px;
     position: absolute;
     top: 50%;
     left: 0;
-    width: 27px;
-    height: 44px;
-    margin-top: -22px;
+    margin-top: -50px;
     z-index: 10;
     cursor: pointer;
-    -moz-background-size: 27px 44px;
-    -webkit-background-size: 27px 44px;
-    background-size: 27px 44px;
-    background-position: center;
-    background-repeat: no-repeat;
 }
-.swiper-pagination-bullet {
-    width: 6px;
-    height: 6px;
+.swiper-button .icon{
     display: inline-block;
-    border-radius: 100%;
-    background: #ffffff;
-    opacity: 1;
-   
-}
-.swiper-pagination-bullet-active {
-    width: 7px;
-    height: 7px;
-    display: inline-block;
-    border-radius: 50%;
-    background: rgba(255,255,255,0);
-    border: 2px solid #ffffff;
-
+    width: 14px;
+    height:14px;
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
 }
 .icon-arrowright1{/*分页器向右*/
-    display: inline-block;
-    width: 20px!important;
-    height:20px!important;
     border-left: 1px solid #000;
     border-top: 1px solid #000;
-    transform: rotate(135deg);
-    -ms-transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    -moz-transform: rotate(135deg);
+    right: 22px;
 }
 .icon-arrowleft1{/*分页器向左*/
-    display: inline-block;
-    width: 20px!important;
-    height:20px!important;
-    margin-left: 5px;
-    border-left: 1px solid #000;
-    border-top: 1px solid #000;
-    transform: rotate(135deg);
-    -ms-transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    -moz-transform: rotate(135deg);
-}
-.icon-arrowright{/*分页器向右*/
-    display: inline-block;
-    color: #AA2C3C;
-    border-left: 1px solid #AA2C3C;
-    border-top: 1px solid #AA2C3C;
-    transform: rotate(135deg);
-    -ms-transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    -moz-transform: rotate(135deg);
+    left: 20px;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
 }
 
-.content{
-    margin-top:50px;
-    width: 880px;
-    height:750px;
-}
-.LogoCase h1{
-    font-size: 24px;
-    color: #666666;
-   
-}
-.LogoCaseContent{
-    padding-right:20px; 
-    padding-top: 30px;
-    padding-bottom: 20px;
-}
-.LogoCaseContent img{
-    width: 420px;
-    height: 315px;
-}
-.hotSite{
-    padding-top: 30px;
-    padding-right: 20px;
-}
-.hotSite img{
-    width: 273px;
-    height: 182px;
-}
-.ad{
-    width: 880px;
-    height: 120px;
-    padding: 30px 0;
-    
-}
-.industryBox{
-    margin-top:50px;
-    width: 880px;
-    height:662px;
-}
-.starCase{
-    width: 273.3px;
-    height: 321px;
-    border: 1px solid #666666;
-}
-
-
-
-.el-select .el-input .el-input__inner{text-indent: 10px;}
 </style>
