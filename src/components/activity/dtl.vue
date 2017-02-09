@@ -66,7 +66,7 @@
             <div class="fr sidebar">
                 <!--关联场地-->
                 <div class="relation-site">
-                    <div class="item-title clearfix">
+                    <div class="item-title small clearfix">
                         <h2><span class="redline"></span>关联场地</h2>
                     </div>
                     <ul class="cont">
@@ -94,7 +94,7 @@
                 </div>
                 <!--热推场地-star-->
                 <div class="hot site">
-                    <div class="item-title clearfix">
+                    <div class="item-title small clearfix">
                         <h2><span class="redline"></span>热推场地</h2>
                         <a class="more" href="/site/hot">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                     </div>
@@ -118,7 +118,7 @@
                 </div><!--热推场地-end-->
                 <!--推荐文章-star-->
                 <div class="hot news">
-                    <div class="item-title clearfix">
+                    <div class="item-title small clearfix">
                         <h2><span class="redline"></span>推荐文章</h2>
                         <a class="more" href="/site/hot">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                     </div>

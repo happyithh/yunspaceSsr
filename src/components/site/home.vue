@@ -143,7 +143,7 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="" title="公共空间">
-                                        <img src="/static/images/selected/gonggongkongjian.jpg" alt="公共空间">
+                                        <img src="/static/images/selected/gonggongkongjian.jpg.jpg" alt="公共空间">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">

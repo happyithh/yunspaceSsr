@@ -63,7 +63,7 @@
 
                         <!--热推场地-star-->
                         <div class="hot-site">
-                            <div class="item-title clearfix">
+                            <div class="item-title small clearfix">
                                 <h2><span class="redline"></span>热推场地</h2>
                                 <a class="more" href="/site/hot">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                             </div>

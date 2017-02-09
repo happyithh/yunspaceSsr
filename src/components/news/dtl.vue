@@ -89,7 +89,7 @@
             <div class="fr sidebar">
                 <!--推荐文章-star-->
                 <div class="hot news">
-                    <div class="item-title clearfix">
+                    <div class="item-title small clearfix">
                         <h2><span class="redline"></span>热推场地</h2>
                         <a class="more" href="/site/hot">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                     </div>
