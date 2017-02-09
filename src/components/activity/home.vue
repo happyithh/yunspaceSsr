@@ -3,7 +3,7 @@
         <!--第一部分banner等-开始-->
         <div class="w1200 mt20 clearfix">
             <!--轮播图开始-->
-           <div class="banner event-swiper">
+            <div class="banner event-swiper">
                <div class="swiper-container activityBannner">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide "  v-for="item in reSites">
@@ -22,84 +22,118 @@
                         <i class="icon icon-arrowright1"></i>
                     </div>
                 </div>
-           </div>
-           <!--轮播图结束-->
-            <!--左边-->
-            <div class="fl">
-                <div class="content clearfix">
-                <!--品牌案例开始-->
-                    <div class="item-title clearfix">
-                        <h2><span class="redline"></span>品牌案例</h2>
-                        <a class="more" href="javascript:;">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
-                    </div>
-                   <div class="LogoCaseContent clearfix fl">
-                       <a href="javascript:;">
-                           <img src="/static/images/test/3to2bak.png" alt="">
-                       </a>
-                       <div class="title">Club Med 欢乐冰雪体验活动</div>
-                       <span>| 创意活动</span>
-                       <p>art + space <i class="icon-arrowright"></i> </p>
-                   </div>
-                   <div class="LogoCaseContent fl">
-                       <a href="javascript:;">
-                           <img src="/static/images/test/3to2bak.png" alt="">
-                       </a>
-                       <div class="title">Club Med 欢乐冰雪体验活动</div>
-                       <span>| 创意活动</span>
-                       <p>art + space <i class="icon-arrowright"></i> </p>
-                   </div>
-                   <div class="hotSite fl" v-for='item in Site'>
-                       <a href="javascript:;">
-                           <img src="/static/images/test/3to2bak.png" alt="">
-                       </a>
-                       <div class="title">Club Med 欢乐冰雪体验活动</div>
-                       <span>| 创意活动</span>
-                       <p>art + space <i class="icon-arrowright"></i></p>
-                   </div>
-                </div>
-                 <!--品牌案例结束-->
-                <!--AD-->
-                <div class="ad clearfix">
-                    <img src="/static/images/test/2.png" alt="">
-                </div>
-                <!--行业案例开始-->
-                <div class="industryBox">
-                    <div class="item-title clearfix">
-                        <h2><span class="redline"></span>行业案例</h2>
-                        <a class="more" href="javascript:;">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
-                    </div>
-                    <div class="industryCase">
-                        <div class="hotSite fl" v-for='item in 6'>
-                        <a href="javascript:;">
-                            <img src="/static/images/test/3to2bak.png" alt="">
-                        </a>
-                        <div class="title">Club Med 欢乐冰雪体验活动</div>
-                        <span>| 创意活动</span>
-                        <p>art + space <i class="icon-arrowright"></i> </p>
-                    </div>
-                    </div>
-                </div>
-                <!--行业案例结束-->
-                <!--明星案例开始-->
-                <div class="industryBox">
-                    <div class="item-title clearfix">
-                        <h2><span class="redline"></span>明星案例</h2>
-                        <a class="more" href="javascript:;">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
-                    </div>
-                    <div class="industryCase">
-                        <div class="hotSite fl" v-for='item in 6'>
-                        <a href="javascript:;">
-                            <img src="/static/images/test/3to2bak.png" alt="">
-                        </a>
-                        <div class="title">Club Med 欢乐冰雪体验活动</div>
-                        <span>| 创意活动</span>
-                        <p>art + space <i class="icon-arrowright"></i></p>
-                    </div>
-                    </div>
-                </div>
-                <!--明星案例结束-->
             </div>
-           
+            <!--轮播图结束-->
+
+
+            <div class="activity-box mt50 clearfix">
+                <!--左边-->
+                <div class="fl casebox">
+                    <!--品牌案例开始-->
+                    <div class="logoBox clearfix">
+                        <div class="item-title clearfix">
+                            <h2><span class="redline"></span>品牌案例</h2>
+                            <a class="more" href="javascript:;">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                        </div>
+
+                        <ul class="casebox-list big clearfix">
+                            <li v-for="item in 2">
+                                <a class="img" href="javascript:;" title="">
+                                    <img src="" alt="">
+                                </a>
+                                <h3><a href="" title="">Club Med 欢乐冰雪体验活动</a></h3>
+                                <p class="tag">创意活动</p>
+                                <a href="" class="link red">
+                                    <span>art + space</span>
+                                    <i class="icon-icon_moreArrowRight"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="casebox-list clearfix">
+                            <li v-for="item in 3">
+                                <a class="img" href="javascript:;" title="">
+                                    <img src="" alt="">
+                                </a>
+                                <h3><a href="" title="">Club Med 欢乐冰雪体验活动</a></h3>
+                                <p class="tag">创意活动</p>
+                                <a href="" class="link red">
+                                    <span>携京东白条落户新天地</span>
+                                    <i class="icon-icon_moreArrowRight"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                     <!--品牌案例结束-->
+
+                    <!--AD-->
+                    <a class="ad img" href="" title="">
+                        <img src="" >
+                    </a>
+
+                    <!--行业案例开始-->
+                    <div class="industryBox mt50">
+                        <div class="item-title clearfix">
+                            <h2><span class="redline"></span>行业案例</h2>
+                            <a class="more" href="javascript:;">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                        </div>
+
+                        <ul class="casebox-list clearfix">
+                            <li v-for="item in 6">
+                                <a class="img" href="javascript:;" title="">
+                                    <img src="" alt="">
+                                </a>
+                                <h3><a href="" title="">“先生公司”亮相K11 快闪店成购物中心新宠</a></h3>
+                                <p class="tag">创意活动</p>
+                                <a href="" class="link red">
+                                    <span>携京东白条落户新天地</span>
+                                    <i class="icon-icon_moreArrowRight"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--行业案例结束-->
+                    <!--明星案例开始-->
+                    <div class="starBox mt30">
+                        <div class="item-title clearfix">
+                            <h2><span class="redline"></span>明星案例</h2>
+                            <a class="more" href="javascript:;">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                        </div>
+
+                        <ul class="casebox-list clearfix">
+                            <li v-for="item in 6">
+                                <a class="img" href="javascript:;" title="">
+                                    <img src="" alt="">
+                                </a>
+                                <h3><a href="" title="">《微微一笑很倾城》开启泛娱乐IP多维度营销先河</a></h3>
+                                <p class="tag">创意活动</p>
+                                <a href="" class="link red">
+                                    <span>携京东白条落户新天地</span>
+                                    <i class="icon-icon_moreArrowRight"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--明星案例结束-->
+                </div>
+
+                <!--右边-->
+                <div class="fr sidebar">
+                    <!--配套服务-star-->
+                    <div class="hot news">
+                        <div class="item-title small clearfix">
+                            <h2><span class="redline"></span>配套服务</h2>
+                            <a class="more" href="/site/hot">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                        </div>
+
+                        <ul class="cont clearfix">
+                            <li v-for="item in 12">
+                                <i class="icon-icon_serveStage"></i>
+                                <p>场地搭建</p>
+                            </li>
+                        </ul>
+                    </div><!--配套服务-end-->
+                </div>
+            </div>
            
         </div>
     </div>
@@ -184,7 +218,9 @@
     }
 </script>
 
-<style scoped>
+<style lang="sass" scoped>
+    @import "../../assets/scss/activity.scss";
+
 .swiper-container {
     width: 100%;
     height: 100%;
@@ -270,47 +306,4 @@ body .swiper-button-prev{
     border-bottom: 1px solid #000;
 }
 
-.content{
-    margin-top:50px;
-    width: 860px;
-}
-.LogoCaseContent{
-    margin-right: 20px;
-    margin-bottom: 20px;
-}
-.LogoCaseContent:last-child{
-    margin-right: 0;
-}
-.LogoCaseContent img{
-    width: 420px;
-    height: 315px;
-}
-.hotSite{
-    padding-top: 30px;
-    padding-right: 20px;
-}
-.hotSite img{
-    width: 273px;
-    height: 182px;
-}
-.ad{
-    width: 880px;
-    height: 120px;
-    padding: 30px 0;
-    
-}
-.industryBox{
-    margin-top:50px;
-    width: 880px;
-    height:662px;
-}
-.starCase{
-    width: 273.3px;
-    height: 321px;
-    border: 1px solid #666666;
-}
-
-
-
-.el-select .el-input .el-input__inner{text-indent: 10px;}
 </style>
