@@ -29,6 +29,20 @@
     left: 0;
     top: 2px;
 }
+.item-title.small{
+    border-bottom: none;
+    margin-bottom: 10px;
+}
+.item-title.small h2{
+    font-size: 18px;
+    height: 18px;
+    line-height: 18px;
+}
+.item-title.small h2 .redline{
+    width: 3px;
+    height: 16px;
+    top: 1px;
+}
 .item-title .keywords{
     background: #fff;
     height: 14px;
@@ -233,7 +247,29 @@
     right: -25px;
 }
 
-
+/***轮播点点***/
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+    bottom: 12px;
+}
+body .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #fff;
+    opacity: 1;
+    transition: all .1s;
+}
+body .swiper-pagination-bullet-active {
+    width: 7px;
+    height: 7px;
+    display: inline-block;
+    border-radius: 100%;
+    background: rgba(255,255,255,0);
+    border: 2px solid #ffffff !important;
+    position: relative;
+    top: 2px;
+}
 
 
 
