@@ -73,9 +73,9 @@
                         <img src="/static/images/test/3to2.png" alt="">
                     </a>
                     <div class="des">
-                        <a href="" class="title">上海龙猫咖啡</a>
-                        <p class="p1">云SPACE价:<span>￥30,000/天 起</span></p>
-                        <p>市场价: ￥30,000/天 起</p>
+                        <a href="" class="title" v-html="item.title"></a>
+                        <p class="p1">云SPACE价:<span>{{item.special_price}}</span></p>
+                        <p>市场价: {{item.market_price}}</p>
                     </div>
                     <div class="other">
                         <span>
