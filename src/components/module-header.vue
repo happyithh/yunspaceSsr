@@ -53,7 +53,7 @@
                     <router-link tag="li" to="/activity">
                         <a>活动</a>
                     </router-link>
-                    <router-link tag="li" to="/ip">
+                    <router-link tag="li" to="/news">
                         <a>资讯</a>
                     </router-link>
 
