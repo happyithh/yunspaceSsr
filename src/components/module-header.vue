@@ -30,10 +30,7 @@
                         </div>
                         <div class="border-line"></div>
                         <div class="common-city">
-                            <span v-for="item in [1,1,1,1,1,1,1,1,1,1,1,]">北京</span>
-                            <span>北京</span>
-                            <span>北京</span>
-                            <span>北京</span>
+                            <span v-for="item in cities">{{item.name}}</span>
                         </div>
                     </div>
                 </div>
