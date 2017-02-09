@@ -25,19 +25,23 @@
                     <a class="more" href="">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                 </div>
             </div>
-            <div class="swiper-container module-one">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"  v-for="item in reSites">
-                        <a href="" title class="main-img">
-                            <img src="/static/images/test/3to2.png" alt="">
-                            <p class="add"><i class="icon icon-icon_typeSpace"></i>宁波当代艺术馆</p>
-                        </a>
-                        <a href="" class="title">相遇1844·相约1892 瑞士劳芬设计名流派对</a>
-                        <span class="other">3621 · 展览展示 · 时尚行业</span>
+            <div class="swiper-side-arrow">
+                <div class="swiper-container module-one">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"  v-for="item in spaceStorys">
+                            <a href="" title class="main-img">
+                                <img :src="item.img_paths.length > 0 ? item.img_paths[0]['url_400_267'] : ''" alt="">
+                                <p class="add"><i class="icon icon-icon_typeSpace"></i><span v-html="item.space_title"></span></p>
+                            </a>
+                            <a href="" class="title" v-html="item.title"></a>
+                            <span class="other"><i class="icon icon-icon_articleGoodLine"></i>{{item.up_number}} · {{item.brand}} · {{item.activity_type}}</span>
+                        </div>
                     </div>
-
                 </div>
+                <span class="arrow-left arrow"><i class="icon icon-icon_switchArrowLeft"></i></span>
+                <span class="arrow-right arrow"><i class="icon icon-icon_switchArrowRight"></i></span>
             </div>
+
             <!--/空间故事-->
 
             <!--广告1-->
@@ -64,7 +68,7 @@
                 </div>
             </div>
             <div class="recommend-site clearfix">
-                <div class="site-piece" v-for="item in reSites">
+                <div class="site-piece" v-for="item in hotSites">
                     <a href="" title="">
                         <img src="/static/images/test/3to2.png" alt="">
                     </a>
@@ -203,13 +207,13 @@
             this.$store.commit('LOADING', false)
             setTimeout(function () {
                 var citySelectionSwiper = new Swiper('.module-one', {
-//                nextButton: '.citysubject .btnright',
-//                prevButton: '.citysubject .btnleft',
+                    nextButton: '.swiper-side-arrow .arrow-right',
+                    prevButton: '.swiper-side-arrow .arrow-letf',
                     loop : true,
                     slidesPerView: 3,
                     paginationClickable: true,
                     spaceBetween: 18,
-//                    autoplay: 3000
+                    autoplay: 3500
                 });
             })
         },
@@ -235,18 +239,13 @@
             homeData(){
                 return this.$store.state.homeData
             },
-            spaceRecommend(){
-                return this.$store.state.homeData.home_recommend_space
+            spaceStorys(){
+                return this.$store.state.homeData.space_storys
             },
-            newFindTopFour(){
-                return this.$store.state.homeData.home_new_find_top
+            hotSites(){
+                return this.$store.state.homeData.hot_sites
             },
-            newFindRandom(){
-                return this.$store.state.homeData.home_new_find_random
-            },
-            caseSelected(){
-                return this.$store.state.homeData.home_case_selected
-            },
+
             mediaReport(){
                 return this.$store.state.homeData.home_media
             }

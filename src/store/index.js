@@ -23,7 +23,8 @@ const defaultState = {
         spaces:''
     },
     homeData:{
-        home_recommend_space : []
+        space_storys : [],
+        hot_sites : []
     },
     EventHome:{
         banners:[],
@@ -72,7 +73,6 @@ const mutations = {
 
     HOME_DATA:(state, data)=>{
         state.homeData = data
-        state.homeData.home_recommend_space = data.home_recommend_space
     },
 
     SPACE_DTL_DATA:(state, data)=>{

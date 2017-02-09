@@ -212,6 +212,27 @@
     border: 1px solid #E9EBEC;
 }
 
+/*swiper 左右箭头*/
+.swiper-side-arrow{
+    position: relative;
+}
+.swiper-side-arrow .arrow{
+    position: absolute;
+    top:50%;
+    margin-top: -26px;
+    cursor: pointer;
+}
+.swiper-side-arrow .arrow i{
+    color: #ADADAD;
+    font-size: 22px;
+}
+.swiper-side-arrow .arrow-left{
+    left: -25px;
+}
+.swiper-side-arrow .arrow-right{
+    right: -25px;
+}
+
 
 
 
