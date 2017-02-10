@@ -4,11 +4,9 @@
 
         <div class="home-banner-search">
             <!--搜索-->
-            <div class="home-search clearfix">
-                <div class="banner-tip font-thin">简单而直接的方式</div>
-                <div class="home-search-bar">
-                    <search-bar></search-bar>
-                </div>
+            <div class="banner-tip font-thin">简单而直接的方式</div>
+            <div class="home-search-bar">
+                <search-bar></search-bar>
             </div>
         </div>
         <div class="w1200">
