@@ -208,7 +208,7 @@
             setTimeout(function () {
                 var citySelectionSwiper = new Swiper('.module-one', {
                     nextButton: '.swiper-side-arrow .arrow-right',
-                    prevButton: '.swiper-side-arrow .arrow-letf',
+                    prevButton: '.swiper-side-arrow .arrow-left',
                     loop : true,
                     slidesPerView: 3,
                     paginationClickable: true,

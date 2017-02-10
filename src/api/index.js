@@ -3,6 +3,8 @@ const host = "http://172.16.0.48:3000/api_v2/";
 export const YUNAPI = {
     host: host,
     home : host + 'index.json',
+    findSite : host + 'sites.json',
+    siteDtl : host + 'sites/',
     // spaceDtl : host + 'api/spaces',
     // articleDtl : host + 'api/informations',
     // event : host + 'api/activities',

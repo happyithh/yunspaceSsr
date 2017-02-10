@@ -226,8 +226,8 @@
     border: 1px solid #E9EBEC;
 }
 
-/*swiper 左右箭头*/
-.swiper-side-arrow{
+/*swiper 左右箭头 首页*/
+.swiper-side-arrow,.swiper-site-dtl-banner{
     position: relative;
 }
 .swiper-side-arrow .arrow{
@@ -247,6 +247,33 @@
     right: -25px;
 }
 
+/*swiper 左右箭头 场地详情页*/
+.swiper-site-dtl-banner .arrow{
+    position: absolute;
+    top:50%;
+    margin-top: -26px;
+    cursor: pointer;
+    background-color: rgba(0,0,0,.3);
+    z-index: 222;
+    padding: 20px 0;
+}
+.swiper-site-dtl-banner .arrow i{
+    color: #fff;
+    font-size: 32px;
+}
+.swiper-site-dtl-banner .arrow-left{
+    left: 8px;
+    padding-right: 5px;
+    transform:rotate(180deg);
+    -ms-transform:rotate(180deg); 	/* IE 9 */
+    -moz-transform:rotate(180deg); 	/* Firefox */
+    -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+    -o-transform:rotate(180deg);
+}
+.swiper-site-dtl-banner .arrow-right{
+    right: 8px;
+    padding-right: 5px;
+}
 /***轮播点点***/
 .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
     bottom: 12px;

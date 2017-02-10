@@ -195,11 +195,11 @@
 
     function fetchData(store){
 //        store.commit('LOADING', true)
-//        return store.dispatch(`getSiteHomeData`,{
+        return store.dispatch(`getFindSiteData`,{
 //                    id : store.state.route.params.id
-//                }).then(() => {
-//                    store.commit('LOADING', false)
-//    })
+                }).then(() => {
+                    store.commit('LOADING', false)
+        })
     }
 
     export default {

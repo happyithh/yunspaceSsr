@@ -26,6 +26,9 @@ const defaultState = {
         space_storys : [],
         hot_sites : []
     },
+    FindSite:{
+        
+    },
     EventHome:{
         banners:[],
         subjects:[],
@@ -51,7 +54,9 @@ const defaultState = {
         articlesHot:[]
     },
     SiteDtlData:{
-        dtl:'',
+        dtl:{
+            site_pictures:[]
+        },
         spaces:'',
         relate_topics:'',
         relate_articles:''
@@ -74,20 +79,28 @@ const mutations = {
     HOME_DATA:(state, data)=>{
         state.homeData = data
     },
+    
+    FIND_SITE_DATA:(state, data)=>{
+        state.FindSite = data
+    },
 
     SPACE_DTL_DATA:(state, data)=>{
         state.SpaceDtlData.dtl = data.space
+        // state.SpaceDtlData.space = data.site_spaces
         // state.homeData.home_recommend_space = data.home_recommend_space
     },
     ARTICLE_DTL_DATA(state, data){
         state.ArticleDtlData.dtl = data.information
         state.ArticleDtlData.spaces = data.space
     },
+
+    //场地详情
     SITE_DTL_DATA(state, data){
         state.SiteDtlData.dtl = data.site
         state.SiteDtlData.spaces = data.site_spaces
-        state.SiteDtlData.relate_topics = data.relate_topics
-        state.SiteDtlData.relate_articles = data.relate_articles
+        // state.SiteDtlData.spaces = data.site_spaces
+        // state.SiteDtlData.relate_topics = data.relate_topics
+        // state.SiteDtlData.relate_articles = data.relate_articles
     },
     EVENT_HOME_DATA(state, data){
         

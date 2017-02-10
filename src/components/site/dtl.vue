@@ -6,18 +6,18 @@
             <span class="icon-icon_moreArrowRight"></span>
             <a href="javascript:;" class="red">找场地</a>
             <span class="icon-icon_moreArrowRight"></span>
-            <a href="javascript:;">场地名称</a>
+            <a href="javascript:;" v-html="siteDtl.title">场地名称</a>
         </div>
         <!--面包屑-end-->
 
         <div class="w1200 mt30 clearfix">
             <div class="site-dtl-left">
-                <h1>场地名称</h1>
-                <div class="banner" >
+                <h1 v-html="siteDtl.title">场地名称</h1>
+                <div class="banner swiper-site-dtl-banner" >
                     <div class="swiper-container banner-swiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide" v-for="item in [1,2,3,1,1]">
-                                <img class="imgload" src="/static/images/test/3to2.png">
+                            <div class="swiper-slide" v-for="item in siteDtl.site_pictures">
+                                <img class="imgload" :src="item.url_790_526">
                             </div>
                             <!--<div class="swiper-slide">-->
                             <!--<img class="imgload" src="http://www.atool.org/placeholder.png?size=790x526&text=图片&&bg=836&fg=fff" alt="首页banner图片01">-->
@@ -31,23 +31,31 @@
                         <div class="swiper-pagination"></div>
 
                         <!-- 如果需要导航按钮 -->
-                        <div class="yun-swiper-prev" v-if="siteDtl.img_paths.length > 1">
-                            <span class="icon-arrowleft"></span>
-                        </div>
-                        <div class="yun-swiper-next" v-if="siteDtl.img_paths.length > 1">
-                            <span class="icon-arrowright"></span>
-                        </div>
                     </div>
+                    <span class="arrow-left arrow"><i class="icon icon-icon_moreArrowRight"></i></span>
+                    <span class="arrow-right arrow"><i class="icon icon-icon_moreArrowRight"></i></span>
                 </div>
                 <div class="title-dtl">基础信息</div>
                 <div class="base-info clearfix mb20">
-                    <div class="fl piece" v-for="item in [1,1,1]">
+                    <div class="fl piece">
                         <p class="title"><i class="icon icon-icon_detailsAddress"></i>地理位置</p>
-                        <div class="base-inner clearfix"><p>城市</p> <p class="gan"> - </p> <p>商业发布、展览展示、文体娱乐商业发布、
-                            展览展示、文体娱乐</p></div>
-                        <div class="base-inner clearfix"><p>城市</p> <p class="gan"> - </p> <p>上海</p></div>
-                        <div class="base-inner clearfix"><p>城市</p> <p class="gan"> - </p> <p>商业发布、展览展示、文体娱乐商业发布、
-                            展览展示、文体娱乐</p></div>
+                        <div class="base-inner clearfix"><p>城市</p> <p class="gan"> - </p> <p>{{siteDtl.city_name}}</p></div>
+                        <div class="base-inner clearfix"><p>行政区域</p> <p class="gan"> - </p> <p>{{siteDtl.district}}</p></div>
+                        <div class="base-inner clearfix"><p>所属商圈</p> <p class="gan"> - </p> <p>{{siteDtl.business_circles}}</p></div>
+                        <div class="base-inner clearfix"><p>具体位置</p> <p class="gan"> - </p> <p>{{siteDtl.address}}</p></div>
+                    </div>
+                    <div class="fl piece">
+                        <p class="title"><i class="icon icon-icon_detailsStandard"></i>空间标准</p>
+                        <div class="base-inner clearfix"><p>使用面积</p> <p class="gan"> - </p> <p>{{siteDtl.size}}</p></div>
+                        <div class="base-inner clearfix"><p>容纳人数</p> <p class="gan"> - </p> <p>{{siteDtl.people}}</p></div>
+                        <div class="base-inner clearfix"><p>空间层高</p> <p class="gan"> - </p> <p>{{siteDtl.height}}</p></div>
+                        <div class="base-inner clearfix"><p>空间承重</p> <p class="gan"> - </p> <p>{{siteDtl.weight}}</p></div>
+                    </div>
+                    <div class="fl piece">
+                        <p class="title"><i class="icon icon-icon_detailsAddress"></i>类型相关</p>
+                        <div class="base-inner clearfix"><p>场地类型</p> <p class="gan"> - </p> <p>{{siteDtl.site_type}}</p></div>
+                        <div class="base-inner clearfix"><p>行业类型</p> <p class="gan"> - </p> <p>{{siteDtl.industry_field}}</p></div>
+                        <div class="base-inner clearfix"><p>活动类型</p> <p class="gan"> - </p> <p>{{siteDtl.event_type}}</p></div>
                     </div>
                 </div>
                 <div class="title-dtl">配套设施</div>
@@ -72,32 +80,31 @@
                     </div>
                 </div>
                 <div class="title-dtl">场地介绍</div>
-                <div class="site-info mb30">
-                    餐厅所在的原汇中饭店大楼是一幢兴建于1906年的文艺复兴风格的大楼，历经一个多世纪，依然风姿卓绝。大楼位于南京东路与外滩的交界处，
-                    俯瞰黄浦江和浦东的天际线。
+                <div class="site-info mb30" v-html="siteDtl.brand_story">
+
                 </div>
                 <div class="site-wrap clearfix">
                     <div class="fl site-cont clearfix">
                         <!--列表-开始-->
                         <div class="box-list clearfix">
-                            <div class="box-list-box" v-for="item in sites">
+                            <div class="box-list-box" v-for="item in spaces">
                                 <a class="fl img" href="javascript:;">
-                                    <img src="" alt="列表模式">
+                                    <img :src="item.img_paths.length > 0 ? item.img_paths[0]['url_400_267'] : ''" alt="列表模式">
                                 </a>
                                 <div class="fl text">
                                     <h3>
-                                        <a href="javascript:;">云SPACE 上海国际工业园秀场</a>
+                                        <a href="javascript:;" v-html="item.name"></a>
                                     </h3>
-                                    <p class="details">空间简介餐厅所在的原汇中饭店大楼是一幢兴建于1906年的文艺复兴风格的大楼，
-                                        历经一个多世纪，依然风姿卓绝。大楼位于南京东路与外滩的交界处，俯瞰黄浦江和浦东的天际线。</p>
+                                    <p class="details">{{item.introduced}}</p>
                                     <div class="assort clearfix">
-                                        <p><i class="icon-icon_spaceArea"></i> 300㎡</p>
-                                        <p><i class="icon-icon_spacePeople"></i> 500人 <span class="line"></span></p>
-                                        <p><i class="icon-icon_spaceHeight"></i> 300㎡</p>
+                                        <p><i class="icon-icon_spaceArea"></i> {{item.area}}㎡</p>
+                                        <p><i class="icon-icon_spacePeople"></i> {{item.people}}人 <span class="line"></span></p>
+                                        <p><i class="icon-icon_spaceHeight"></i> {{item.height}}m</p>
                                     </div>
                                     <div class="price">
-                                        <p><strong style="margin-left: -5px">￥80,000</strong>/天 起</p>
-                                        <span>市场价: ¥ 100,000/天</span>
+                                        <!--<p><strong style="margin-left: -5px">￥80,000</strong>/天 起</p>-->
+                                        <p>{{item.special_price}}</p>
+                                        <span>市场价: {{item.market_price}}</span>
 
                                         <div class="btn-op clearfix">
                                             <button class="btn btn-red">立即预订</button>
@@ -122,7 +129,8 @@
                 <div class="price-op">
                     <div class="price-dtl">
                         <p><span>参考价</span> <span class="active"><i class="icon icon-icon_articleCollectSolid"></i>已收藏</span></p>
-                        <p><span>￥80,000<font>/天 起</font> </span><span>市场价: ¥ 100,000/天</span></p>
+                        <!--<p><span>￥80,000<font>/天 起</font> </span><span>市场价: ¥ 100,000/天</span></p>-->
+                        <p><span>{{siteDtl.lower_price}} </span><span>市场价: {{siteDtl.market_price}}</span></p>
                     </div>
                     <div class="btn-op clearfix">
                         <button class="btn btn-red">立即询价</button>
@@ -208,13 +216,18 @@
 </template>
 
 <script>
+    function fetchData(store){
+//        store.commit('LOADING', true)
+        return store.dispatch(`getSiteDtlData`,{
+                    id : store.state.route.params.id
+                }).then(() => {
+                    store.commit('LOADING', false)
+        })
+    }
     export default {
         name: 'app',
         data(){
             return {
-                siteDtl:{
-                    img_paths:[]
-                },
                 sites:[1,2,3,4,5,6,7,8,9,10,11,12],
             }
         },
@@ -223,19 +236,32 @@
                 return this.$store.state.loading
             }
         },
-
+        computed: {
+            cities (){
+                return this.$store.state.cities
+            },
+            siteDtl(){
+                return this.$store.state.SiteDtlData.dtl
+            },
+            spaces(){
+                return this.$store.state.SiteDtlData.spaces
+            }
+        },
         mounted () {
             var swiper = new Swiper('.banner-swiper', {
-                nextButton: '.yun-swiper-next',
-                prevButton: '.yun-swiper-prev',
-                pagination: '.swiper-pagination',
+                nextButton: '.arrow-right',
+                prevButton: '.arrow-left',
+//                pagination: '.swiper-pagination',
                 paginationType: 'fraction',
                 paginationHide:true,
-                autoplay: 3000
+                autoplay: 3500
             });
             this.initMap()
         },
-
+        preFetch: fetchData,
+        beforeMount () {
+            fetchData(this.$store)
+        },
         methods: {
             initMap(){
                 var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL});

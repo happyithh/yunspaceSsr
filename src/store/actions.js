@@ -29,6 +29,31 @@ export const getHomeData = ({ commit, state }) => {
         console.log(error)
     })
 }
+//找场地首页数据
+export const getFindSiteData = ({ commit, state }) => {
+    return request.get(YUNAPI.findSite,{
+        params:{
+            city_id:1
+        }
+    }).then((response) => {
+        if (response.statusText === 'OK') {
+            commit('FIND_SITE_DATA', response.data)
+        }
+    }).catch((error) => {
+        console.log(error)
+    })
+}
+//找场地详情
+export const getSiteDtlData = ({ commit, state },{id}) => {
+    return request.get(YUNAPI.siteDtl + id + '.json',{
+    }).then((response) => {
+        if (response.statusText === 'OK') {
+            commit('SITE_DTL_DATA', response.data)
+        }
+    }).catch((error) => {
+        console.log(error)
+    })
+}
 // 空间详情数据
 export const getSpaceDtlData = ({ commit, state },{id}) => {
     return request.get(YUNAPI.spaceDtl + '/' + id + '.json',{
@@ -41,21 +66,6 @@ export const getSpaceDtlData = ({ commit, state },{id}) => {
         console.log(error)
     })
 }
-
-// 文章详情数据
-export const getSiteDtlData = ({ commit, state },{id}) => {
-    return request.get(YUNAPI.siteDtl + '/' + id + '.json',{
-
-    }).then((response) => {
-        if (response.statusText === 'OK') {
-            commit('SITE_DTL_DATA', response.data)
-            // console.log(response)
-        }
-    }).catch((error) => {
-        console.log(error)
-    })
-}
-
 // 文章详情数据
 export const getArticleDtlData = ({ commit, state },{id}) => {
     return request.get(YUNAPI.articleDtl + '/' + id + '.json',{
