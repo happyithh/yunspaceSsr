@@ -5,25 +5,6 @@
             <div class="footer">
                 <ul class="footer_left">
                     <li>
-                        <div class="footer-item-title">我要办活动</div>
-                        <span class="span-line"></span>
-                        <p><a target="_blank" href="/spaces">空间场地</a></p>
-                        <p><a target="_blank" href="http://www.yunspace.com.cn/service">配套服务</a></p>
-                        <p><a target="_blank" href="http://www.yunspace.com.cn/set_list">超值套餐</a></p>
-                        <p><a target="_blank" href="/found">云·发现</a></p>
-                        <p><a target="_blank" href="http://www.yunspace.com.cn/vendor">服务商户</a></p>
-                        <p><a target="_blank" href="http://www.yunspace.com.cn">2016旧版网站</a></p>
-                    </li>
-                    <li>
-                        <div class="footer-item-title">业务合作</div>
-                        <span class="span-line"></span>
-                        <p><a target="_blank" href="http://www.yunspace.com.cn/join/index">城市合伙人</a></p>
-                        <p><a target="_blank" href="http://www.yunspace.com.cn/site_join">场地出租</a></p>
-                        <p><a target="_blank" href="http://www.yunspace.com.cn/article/3140721.html">我要投稿</a></p>
-                        <p><a target="_blank" href="http://www.yunspace.com.cn/article/3142345.html">文创项目加入</a></p>
-                        <p><a target="_blank" href="http://www.yunspace.com.cn/article/3135554.html">关于短租/快闪店</a></p>
-                    </li>
-                    <li>
                         <div class="footer-item-title">云·SPACE</div>
                         <span class="span-line"></span>
                         <!--<p><a target="_blank" href="/about/news">官方新闻</a></p>-->
@@ -34,28 +15,36 @@
                         <p><a target="_blank" href="http://www.yunspace.com.cn/yunspace/recruitment">职位招聘</a></p>
                         <!--<p><a target="_blank" href="/about/contact">联系我们</a></p>-->
                         <p><a target="_blank" href="http://www.yunspace.com.cn/yunspace/contact_us">联系我们</a></p>
+                        <p><a href="http://www2.yunspace.com.cn/">返回旧版</a></p>
                     </li>
-                    <li style="margin-right: 40px">
+                    <li>
+                        <div class="footer-item-title">业务合作</div>
+                        <span class="span-line"></span>
+                        <p><a target="_blank" href="http://www.yunspace.com.cn/join/index">城市合伙人</a></p>
+                        <p><a target="_blank" href="http://www.yunspace.com.cn/site_join">场地出租</a></p>
+                        <p><a target="_blank" href="http://www.yunspace.com.cn/article/3142345.html">文创项目加入</a></p>
+                        <p><a target="_blank" href="http://www.yunspace.com.cn/article/3135554.html">关于短租/快闪店</a></p>
+                    </li>
+                    <li>
+                        <div class="footer-item-title">我要办活动</div>
+                        <span class="span-line"></span>
+                        <p><a target="_blank" href="/spaces">空间场地</a></p>
+                        <p><a target="_blank" href="http://www.yunspace.com.cn/service">配套服务</a></p>
+                        <p><a target="_blank" href="http://www.yunspace.com.cn/set_list">超值套餐</a></p>
+                        <p><a target="_blank" href="/found">云·发现</a></p>
+                        <p><a target="_blank" href="http://www.yunspace.com.cn/vendor">服务商户</a></p>
+                    </li>
+                    <li class="code">
                         <div class="footer-item-title">服务号</div>
                         <span class="span-line"></span>
                         <p class="weixin2"><img src="/static/images/qrcode-cbz.jpg" width="120"></p>
                     </li>
-                    <li>
+                    <li class="code shanghai">
                         <div class="footer-item-title">云space上海</div>
                         <span class="span-line"></span>
                         <p class="weixin2"><img src="/static/images/qrcode-sh.jpg" width="120"></p>
                     </li>
                 </ul>
-
-                <div class="tip-footer clearfix">
-                    <p>服务热线 - 400-056-0599</p>
-                    <p>
-                        服务邮箱 - <a href="mailto:service@yunspace.com.cn">service@yunspace.com.cn</a>
-                    </p>
-                    <p>
-                        联系地址 - 淮海西路570号红坊创意园 F211（近民生美术馆）</p>
-                    <div class="clear"></div>
-                </div>
             </div>
 
         </div>
@@ -105,7 +94,7 @@
     .footer-outside {
         width: 100%;
         min-width: 1200px;
-        background-color: #202830;
+        background-color: #181C1F;
         height: auto;
         overflow: hidden;
     }
@@ -115,7 +104,7 @@
         width: 1200px;
         height: auto;
         overflow: hidden;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
 
     .footer_left {
@@ -125,7 +114,7 @@
 
     .footer_left li {
         float: left;
-        margin-right: 140px;
+        width: 265px;
         color: #c7c7c7;
     }
 
@@ -140,6 +129,22 @@
 
     .footer_left li p a:hover {
         color: #fff;
+    }
+    .footer_left li.code{
+        width: auto;
+        padding: 0 30px;
+    }
+    .footer_left li.code p{
+        height: auto;
+        line-height: 1;
+    }
+    .footer_left li.code img{
+        width: 80px;
+        height: 80px;
+    }
+    .footer_left li.shanghai{
+        margin-right: 0;
+        float: right;
     }
 
     .footer-item-title {
@@ -183,7 +188,7 @@
     .bottom-outside {
         width: 100%;
         height: 50px;
-        background-color: #171e25;
+        background-color: #181C1F;
         min-width: 1200px;
         overflow: hidden;
     }
@@ -209,8 +214,9 @@
     }
 
     .bottom a {
-        color: #9e9e9e;
+        color: #6E7277;
         display: inline;
+        font-size: 12px;
     }
 
     /*友情链接*/

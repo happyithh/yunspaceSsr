@@ -3,7 +3,9 @@
         <nav class="clearfix">
             <div class="fl">
                 <div class="fl logo">
-                    <router-link to="/">云SPACE</router-link>
+                    <router-link to="/" title="云SPACE" class="img">
+                        <img src="/static/images/logo.png" alt="云SPACE">
+                    </router-link>
                     <!--<a href="javascript:;">云SPACE</a>-->
                 </div>
                 <div class="fl nav-location dorpdown city-choose">
@@ -11,15 +13,6 @@
                         <p>热门测试</p>
                         <i class="icon-triangedown"></i>
                     </div>
-                    <!--<template>-->
-                        <!--<el-select v-model="city_id" v-on:change="cityChange" id="cityId">-->
-                            <!--<el-option-->
-                                    <!--v-for="item in cities"-->
-                                    <!--:label="item.name"-->
-                                    <!--:value="item.id">-->
-                            <!--</el-option>-->
-                        <!--</el-select>-->
-                    <!--</template>-->
                     <div class="city-dorpdown">
                         <div class="hot-city">
                             <span class="active">热门城市</span>
@@ -35,12 +28,6 @@
                     </div>
                 </div>
                 <ul class="fl navbar clearfix">
-                    <!--<router-link tag="li" to="/">-->
-                    <!--<a href="/" target="_blank">首页</a>-->
-                    <!--</router-link>-->
-                    <!--<li :class="this.$router.path == '/' ? 'current' : '' ">-->
-                    <!--<router-link to="/">首页</router-link>-->
-                    <!--</li>-->
                     <router-link tag="li" to="/" exact>
                         <a>首页</a>
                     </router-link>
@@ -53,17 +40,33 @@
                     <router-link tag="li" to="/news">
                         <a>资讯</a>
                     </router-link>
-
-                    <li>
-                        <a href="http://www2.yunspace.com.cn/">
-                            返回旧版
-                        </a>
-                    </li>
                     <!--<li><a target="_blank" href="javascript:;">新发现</a></li>-->
                 </ul>
             </div>
+            <!--工具条-开始-->
+            <div class="fr clearfix">
+                <ul class="fl tools clearfix">
+                    <router-link tag="li" to="/">
+                        <a href="javascript:;" title="场地加盟">场地加盟<i class="line"></i></a>
+                    </router-link>
+                    <router-link tag="li" to="/">
+                        <a href="javascript:;" title="城市运营商">城市运营商<i class="line"></i></a>
+                    </router-link>
+                    <router-link class="phone" tag="li" to="/">
+                        <i class="icon-icon_headerTel"></i>
+                        400-056-0599
+                    </router-link>
+                </ul>
+                <div class="fl logreg">
+                    <a href="javascript:;" class="fl log">登录</a>
+                    <a href="javascript:;" class="fr reg">注册</a>
+                </div>
+                <div class="fl aboutlist">
+                    <i class="icon-icon_headerList red"></i>
+                    <a href="javascript:;">咨询清单(0)</a>
+                </div>
+            </div>
         </nav>
-        </div>
 
     </header>
 
