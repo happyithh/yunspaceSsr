@@ -7,7 +7,7 @@ export const YUNAPI = {
     siteDtl : host + 'sites/',
     // spaceDtl : host + 'api/spaces',
     // articleDtl : host + 'api/informations',
-    // event : host + 'api/activities',
+    eventHome : host + 'events',
     // openShop : host + 'api/informations/get_retail',
     // findIp : host + 'api/projects/ip_project',
     // article : host + 'api/informations',

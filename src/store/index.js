@@ -61,6 +61,12 @@ const defaultState = {
         relate_topics:'',
         relate_articles:''
     },
+    EventHome:{
+        band_events:'',
+        industry_events:'',
+        star_events:'',
+    },
+
     loading : false,
 }
 
@@ -102,8 +108,13 @@ const mutations = {
         // state.SiteDtlData.relate_topics = data.relate_topics
         // state.SiteDtlData.relate_articles = data.relate_articles
     },
+
+    //活动首页
     EVENT_HOME_DATA(state, data){
-        
+        console.log(data,333)
+        state.EventHome.band_events = data.band_events
+        state.EventHome.industry_events = data.industry_events
+        state.EventHome.star_events = data.star_events
     },
 
     LOADING(state,value){
