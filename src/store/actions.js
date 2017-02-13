@@ -80,8 +80,8 @@ export const getArticleDtlData = ({ commit, state },{id}) => {
 }
 
 //办活动首页
-export const getEventData = ({ commit, state }) => {
-    return request.get(YUNAPI.event+'.json',{
+export const getEventHomeData = ({ commit, state }) => {
+    return request.get(YUNAPI.eventHome+'.json',{
 
     }).then((response) => {
         if (response.statusText === 'OK') {

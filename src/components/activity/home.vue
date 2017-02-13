@@ -141,10 +141,13 @@
 
 </template>
 <script>
-    // import '../../../static/swiper/swiper.js'
-    function fetchData(store) {
+    function fetchData(store){
 //        store.commit('LOADING', true)
-        return store.dispatch(`getEventData`).then(() => {store.commit('LOADING', false)})
+        return store.dispatch(`getEventHomeData`,{
+        }).then(() => {
+            store.commit('LOADING', false)
+
+        })
     }
     export default{
         data(){
@@ -159,18 +162,16 @@
         
         components: {},
         computed: {
-            banners(){return this.$store.state.EventHome.banners},
-            subjects(){return this.$store.state.EventHome.subjects},
-            venues(){return this.$store.state.EventHome.venues},
-            discounts(){return this.$store.state.EventHome.discounts},
-            eventcases(){return this.$store.state.EventHome.eventcases},
-            toplists(){return this.$store.state.EventHome.toplists},
-            searchCondition (){
-                return this.$store.state.searchCondition
+            band_events(){
+                return this.$store.state.EventHome.band_events
             },
-            cityHotKeyword(){
-                return this.$store.state.cityHotKeyword
-            }
+            industry_events(){
+                return this.$store.state.EventHome.industry_events
+            },
+            star_events(){
+                return this.$store.state.EventHome.star_events
+            },
+
         },
         mounted () {
             var self=this;
