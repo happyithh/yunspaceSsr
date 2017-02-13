@@ -10,16 +10,15 @@
                 </div>
                 <div class="fl nav-location dorpdown city-choose">
                     <div style="position: relative">
-                        <p>热门测试</p>
+                        <p>上海</p>
                         <i class="icon-triangedown"></i>
                     </div>
                     <div class="city-dorpdown">
                         <div class="hot-city">
                             <span class="active">热门城市</span>
+                            <span>上海</span>
                             <span>北京</span>
-                            <span>北京</span>
-                            <span>北京</span>
-                            <span>北京</span>
+                            <span>广州</span>
                         </div>
                         <div class="border-line"></div>
                         <div class="common-city">

@@ -13,7 +13,7 @@
         <div class="w1200 mt30 clearfix">
             <div class="site-dtl-left">
                 <h1 v-html="siteDtl.title">场地名称</h1>
-                <div class="banner swiper-site-dtl-banner" >
+                <div class="banner swiper-site-dtl-banner" v-show="siteDtl.site_pictures.length > 0">
                     <div class="swiper-container banner-swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide" v-for="item in siteDtl.site_pictures">
@@ -102,8 +102,8 @@
                                         <p><i class="icon-icon_spaceHeight"></i> {{item.height}}m</p>
                                     </div>
                                     <div class="price">
-                                        <!--<p><strong style="margin-left: -5px">￥80,000</strong>/天 起</p>-->
-                                        <p>{{item.special_price}}</p>
+                                        <p><strong style="margin-left: -5px">{{item.special_price}}</strong></p>
+                                        <!--<p>{{item.special_price}}</p>-->
                                         <span>市场价: {{item.market_price}}</span>
 
                                         <div class="btn-op clearfix">

@@ -243,7 +243,6 @@
             hotSites(){
                 return this.$store.state.homeData.hot_sites
             },
-
             mediaReport(){
                 return this.$store.state.homeData.home_media
             }

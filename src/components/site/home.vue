@@ -25,10 +25,11 @@
             <div class="section site-item itembox">
                 <div class="item-title clearfix">
                     <ul class="fl tab-menu site-menu clearfix">
+
                         <li>展览展示</li>
-                        <li>商业发布</li>
-                        <li class="current">晚会年会</li>
-                        <li>论坛会议</li>
+                        <!--<li>商业发布</li>-->
+                        <!--<li class="current">晚会年会</li>-->
+                        <!--<li>论坛会议</li>-->
                     </ul>
 
                     <a class="more" href="">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
@@ -91,10 +92,10 @@
                 </div>
 
                 <ul class="cont clearfix">
-                    <li v-for="item in siteRecommend">
+                    <li v-for="item in hotSites">
                         <a href="" title="">
                             <img src="" alt="">
-                            <p>上海植物园第一会所会场</p>
+                            <p v-html="item.title"></p>
                         </a>
                     </li>
                 </ul>
@@ -249,6 +250,9 @@
             SearchBar
         },
         computed: {
+            hotSites(){ // 热推场地
+                return this.$store.state.FindSite.hotSites
+            },
         },
         methods: {
             init : function () {

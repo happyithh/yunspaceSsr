@@ -27,7 +27,7 @@ const defaultState = {
         hot_sites : []
     },
     FindSite:{
-        
+        hotSites :[]
     },
     EventHome:{
         banners:[],
@@ -81,7 +81,7 @@ const mutations = {
     },
     
     FIND_SITE_DATA:(state, data)=>{
-        state.FindSite = data
+        state.FindSite.hotSites = data.hot_sites
     },
 
     SPACE_DTL_DATA:(state, data)=>{
