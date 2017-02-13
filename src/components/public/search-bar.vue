@@ -4,12 +4,36 @@
     <div class="search-bar clearfix">
         <div class="fl search-box clearfix">
             <div class="fl box-wrap">
-                <input class="box" type="text" placeholder="目的">
-                <i class="icon icon-icon_selectDownArrowThin"></i>
+                <!--<input class="box" type="text" placeholder="目的">-->
+                <!--<i class="icon icon-icon_selectDownArrowThin"></i>-->
+
+                <!--<ul class="boxcont">-->
+                    <!--<li>展览展示</li>-->
+                    <!--<li class="current">商业发布</li>-->
+                    <!--<li>晚会年会</li>-->
+                    <!--<li>展览展示</li>-->
+                    <!--<li>商业发布</li>-->
+                    <!--<li>晚会年会</li>-->
+                <!--</ul>-->
+                <el-select v-model="searchCity" placeholder="目的">
+                    <el-option
+                            v-for="item in options"
+                            :label="item.label"
+                            :value="item.value">
+                    </el-option>
+                </el-select>
             </div>
             <div class="fl box-wrap">
-                <input class="box" type="text" placeholder="面积">
-                <i class="icon icon-icon_selectDownArrowThin"></i>
+                <!--<input class="box" type="text" placeholder="面积">-->
+                <!--<i class="icon icon-icon_selectDownArrowThin"></i>-->
+
+                <el-select v-model="searchCity" placeholder="面积">
+                    <el-option
+                            v-for="item in options"
+                            :label="item.label"
+                            :value="item.value">
+                    </el-option>
+                </el-select>
             </div>
         </div>
 
@@ -21,17 +45,70 @@
 </template>
 
 <script>
-
     module.exports = {
-        props: {
-            "title": {
-                type: String,
-                default: "标题"
+        data(){
+            return {
+                options: [{
+                    value: '选项1',
+                    label: '黄金糕'
+                }, {
+                    value: '选项2',
+                    label: '双皮奶'
+                }, {
+                    value: '选项3',
+                    label: '蚵仔煎'
+                }, {
+                    value: '选项4',
+                    label: '龙须面'
+                }, {
+                    value: '选项5',
+                    label: '北京烤鸭'
+                }],
+                searchCity: '',
             }
+
+
+        },
+
+        components: {},
+        computed: {
+        },
+        mounted () {
+            var self=this;
+//            self.getBanner();
+        },
+        methods: {
+
         }
     }
 </script>
 
 <style scoped>
+
+    .boxcont{
+        width: 100%;
+        max-height: 275px;
+        background: #fff;
+        text-align: left;
+        border: 1px solid #181C1F;
+        margin-left: -1px;
+        margin-top: 11px;
+    }
+    .boxcont li{
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        text-indent: 10px;
+        cursor: pointer;
+    }
+    .boxcont li:hover{
+        background-color: #eee;
+    }
+    .boxcont li.current{
+        background: #AA2C3C;
+        color: #fff;
+    }
+
+
 
 </style>

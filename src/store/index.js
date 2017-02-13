@@ -29,14 +29,6 @@ const defaultState = {
     FindSite:{
         hotSites :[]
     },
-    EventHome:{
-        banners:[],
-        subjects:[],
-        venues:[],
-        discounts:[],
-        eventcases:[],
-        toplists:[]
-    },
     OpenShopData:{
         specials:[],
         topLists:[],
@@ -62,6 +54,11 @@ const defaultState = {
         relate_articles:''
     },
     EventHome:{
+        band_events:'',
+        industry_events:'',
+        star_events:'',
+    },
+    EventList:{
         band_events:'',
         industry_events:'',
         star_events:'',
@@ -111,10 +108,14 @@ const mutations = {
 
     //活动首页
     EVENT_HOME_DATA(state, data){
-        console.log(data,333)
         state.EventHome.band_events = data.band_events
         state.EventHome.industry_events = data.industry_events
         state.EventHome.star_events = data.star_events
+    },
+    //活动列表
+    EVENT_LIST_DATA(state, data){
+        state.EventList= data.evets_list
+        console.log(data,333)
     },
 
     LOADING(state,value){

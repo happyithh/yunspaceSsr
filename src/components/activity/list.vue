@@ -22,7 +22,7 @@
                 <div class="item-box clearfix">
                     <div class="fl mb30 box-list clearfix">
                         <ul>
-                            <li class="" v-for="item in aboutcases">
+                            <li v-for="item in evets_list">
                                 <a class="fl img" href="javascript:;">
                                     <img src="" alt="">
                                 </a>
@@ -91,11 +91,12 @@
 <script>
     function fetchData(store){
 //        store.commit('LOADING', true)
-//        return store.dispatch(`getSiteHomeData`,{
-//                    id : store.state.route.params.id
-//                }).then(() => {
-//                    store.commit('LOADING', false)
-//    })
+        return store.dispatch(`getEventListData`,{
+            type: '品牌案例',
+        }).then(() => {
+            store.commit('LOADING', false)
+
+        })
     }
 
     export default {
@@ -106,6 +107,17 @@
                 aboutcases:[1,2,3,4,5,6,7,8,9,10],
                 siteRecommend:[1,2,3,4,5]
             }
+        },
+        computed: {
+            band_events(){
+                return this.$store.state.EventList.band_events
+            },
+//            industry_events(){
+//                return this.$store.state.EventList.industry_events
+//            },
+//            star_events(){
+//                return this.$store.state.EventList.star_events
+//            },
         },
 
         metaInfo(){

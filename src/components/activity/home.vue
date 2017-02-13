@@ -37,11 +37,11 @@
                         </div>
 
                         <ul class="casebox-list big clearfix">
-                            <li v-for="item in 2">
-                                <a class="img" href="javascript:;" title="">
-                                    <img src="" alt="">
+                            <li v-for="(item,index) in band_events" v-if="index<2">
+                                <a class="img" :href="'/article/'+item.id" :title="item.title">
+                                    <img :src="item.first_picture.url" :alt="item.title">
                                 </a>
-                                <h3><a href="" title="">Club Med 欢乐冰雪体验活动</a></h3>
+                                <h3><a :href="'/article/'+item.id">{{item.title}}</a></h3>
                                 <p class="tag">创意活动</p>
                                 <a href="" class="link red">
                                     <span>art + space</span>
@@ -50,14 +50,14 @@
                             </li>
                         </ul>
                         <ul class="casebox-list clearfix">
-                            <li v-for="item in 3">
-                                <a class="img" href="javascript:;" title="">
-                                    <img src="" alt="">
+                            <li v-for="(item,index) in band_events" v-if="index >= 2">
+                                <a class="img" :href="'/article/'+item.id" :title="item.title">
+                                    <img :src="item.first_picture.url" :alt="item.title">
                                 </a>
-                                <h3><a href="" title="">Club Med 欢乐冰雪体验活动</a></h3>
+                                <h3><a :href="'/article/'+item.id">{{item.title}}</a></h3>
                                 <p class="tag">创意活动</p>
                                 <a href="" class="link red">
-                                    <span>携京东白条落户新天地</span>
+                                    <span>art + space</span>
                                     <i class="icon-icon_moreArrowRight"></i>
                                 </a>
                             </li>
@@ -78,11 +78,11 @@
                         </div>
 
                         <ul class="casebox-list clearfix">
-                            <li v-for="item in 6">
-                                <a class="img" href="javascript:;" title="">
-                                    <img src="" alt="">
+                            <li v-for="item in industry_events">
+                                <a class="img" :href="'/article/'+item.id" :title="item.title">
+                                    <img :src="item.first_picture.url" :alt="item.title">
                                 </a>
-                                <h3><a href="" title="">“先生公司”亮相K11 快闪店成购物中心新宠</a></h3>
+                                <h3><a :href="'/article/'+item.id">{{item.title}}</a></h3>
                                 <p class="tag">创意活动</p>
                                 <a href="" class="link red">
                                     <span>携京东白条落户新天地</span>
@@ -100,11 +100,11 @@
                         </div>
 
                         <ul class="casebox-list clearfix">
-                            <li v-for="item in 6">
-                                <a class="img" href="javascript:;" title="">
-                                    <img src="" alt="">
+                            <li v-for="item in star_events">
+                                <a class="img" :href="'/article/'+item.id" :title="item.title">
+                                    <img :src="item.first_picture.url" :alt="item.title">
                                 </a>
-                                <h3><a href="" title="">《微微一笑很倾城》开启泛娱乐IP多维度营销先河</a></h3>
+                                <h3><a :href="'/article/'+item.id">{{item.title}}</a></h3>
                                 <p class="tag">创意活动</p>
                                 <a href="" class="link red">
                                     <span>携京东白条落户新天地</span>
@@ -144,6 +144,7 @@
     function fetchData(store){
 //        store.commit('LOADING', true)
         return store.dispatch(`getEventHomeData`,{
+//            id:,
         }).then(() => {
             store.commit('LOADING', false)
 
@@ -153,8 +154,6 @@
         data(){
             return {
                reSites:[1,2,3,4,5],
-               Case:[1,2],
-               Site:[1,2,3]
                 }
                
                
