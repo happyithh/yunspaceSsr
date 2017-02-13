@@ -46,7 +46,7 @@ export default new Router({
     { path: '/success', component: Success },
     { path: '/activity', component: Activity },
     { path: '/activity/list', component: ActivityList },
-    { path: '/activity/dtl', component: ActivityDtl },
+    { path: '/activity/dtl/:id', component: ActivityDtl },
     { path: '/activity/supporting', component: ActivitySupporting },
     { path: '/site/search', component: SiteSearch },
     { path: '/site/reserve', component: Reserve },

@@ -106,6 +106,18 @@ export const getEventHomeData = ({ commit, state }) => {
         console.log(error)
     })
 }
+//办活动列表页
+export const getEventListData = ({ commit, state }) => {
+    return request.get(YUNAPI.eventList+'.json',{
+
+    }).then((response) => {
+        if (response.statusText === 'OK') {
+            commit('EVENT_LIST_DATA', response.data)
+        }
+    }).catch((error) => {
+        console.log(error)
+    })
+}
 
 //要新发现首页
 export const getNewFoundData = ({ commit, state }) => {

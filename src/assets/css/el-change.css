@@ -13,12 +13,9 @@ body .el-pagination{
 .pagination-fore-end .el-pagination .btn-next,
 .pagination-fore-end .el-pagination .btn-prev,
 .pagination-fore-end .el-pager li:hover{
-  border-left: 1px solid #000;
-  border-right: 1px solid #000;
   border: 1px solid #000;
   background-color: #fff;
   margin-right: 8px;
-  border: 1px solid #000;
   font-size: 14px;
   width: 28px;
   height: 28px;
@@ -118,7 +115,7 @@ body .el-pagination{
     width: 100%;
 }
 .el-loading-yun .el-loading-bubble{
-    background-color: #272335;
+    background-color: #AA2C3C;
 }
 .el-loading-yun .el-loading-spinner .path{
     stroke-width: 3px;
@@ -146,7 +143,7 @@ body .el-select-dropdown{
     border-radius: 0;
     box-shadow: none;
     border: none;
-    margin: 2px 0;
+    margin: 9px 0 2px;
 }
 body .el-input__icon{
     color: #000;font-size: 0;line-height: 16px;
@@ -165,7 +162,7 @@ body .el-select .el-input .el-input__icon{
     font-size: 0;
     right: 12px;
 }
-body .el-input__icon+.el-input__inner{padding-right: 32px;}
+body .el-input__icon+.el-input__inner{padding-right: 32px;border-right: 1px solid #ddd;}
 body .nav-location .el-input__icon+.el-input__inner{padding-right: 26px;}
 body .el-input__inner{border: 0;}
 body .el-select-dropdown__list{ padding: 0; }
@@ -174,7 +171,7 @@ body .el-select-dropdown__list::-webkit-scrollbar {
     width: 6px;
 }
 body .el-select-dropdown__list::-webkit-scrollbar-thumb {
-    background: #272335;
+    background: #AA2C3C;
     border-radius: 3px;
 }
 ::-webkit-scrollbar-track {
@@ -199,7 +196,7 @@ body .home-search .el-input__icon{
     right: 20px;
 }
 body  .el-select-dropdown__item.selected.hover,
-body  .el-select-dropdown__item.selected{background: #272335;}
+body  .el-select-dropdown__item.selected{background: #AA2C3C;}
 body  .el-select-dropdown__item.hover{background: #eee;}
 body .el-select .el-input .el-input__icon{
     -webkit-transform: translateY(-50%) rotateZ(0deg);
