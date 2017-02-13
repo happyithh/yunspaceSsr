@@ -54,6 +54,21 @@ export const getSiteDtlData = ({ commit, state },{id}) => {
         console.log(error)
     })
 }
+//找场地列表
+export const getSiteListData = ({ commit, state },{type}) => {
+    return request.get(YUNAPI.sitesList,{
+        params:{
+            type:type
+        }
+    }).then((response) => {
+        if (response.statusText === 'OK') {
+            response.data.type = type
+            commit('SITE_LIST_DATA', response.data)
+        }
+    }).catch((error) => {
+        console.log(error)
+    })
+}
 // 空间详情数据
 export const getSpaceDtlData = ({ commit, state },{id}) => {
     return request.get(YUNAPI.spaceDtl + '/' + id + '.json',{

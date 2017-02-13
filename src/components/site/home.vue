@@ -26,7 +26,7 @@
                 <div class="item-title clearfix">
                     <ul class="fl tab-menu site-menu clearfix">
 
-                        <li>展览展示</li>
+                        <li :class="{ current :  index == 0}" v-for="(value,key,index) in typeSites">{{key}}</li>
                         <!--<li>商业发布</li>-->
                         <!--<li class="current">晚会年会</li>-->
                         <!--<li>论坛会议</li>-->
@@ -35,49 +35,28 @@
                     <a class="more" href="">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                 </div>
 
-                <div class="tab-box site-cont site-cont-index clearfix">
-                    <div class="cont clearfix">
-                        <div class="box" v-for="item in sites">
+                <div class="tab-box site-cont site-cont-index clearfix" style="min-height: 831px">
+
+                    <!--<div class="cont current clearfix">-->
+                        <!--<div class="box" v-for="item in sites">-->
+                            <!--<a href="javascript:;">-->
+                                <!--<img src="" alt="上海1933老厂房">-->
+                                <!--<p class="text">上海1933老厂房</p>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                        <!--<div class="box-more">-->
+                            <!--<a href="javascript:;"><img src="" alt="更多展览展示"></a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div :class="{ current :  index == 0}" class="cont clearfix" v-for="(value,key,index) in typeSites">
+                        <div class="box" v-for="item in value">
                             <a href="javascript:;">
                                 <img src="" alt="上海1933老厂房">
-                                <p class="text">上海1933老厂房</p>
+                                <p class="text">{{item.title}}</p>
                             </a>
                         </div>
                         <div class="box-more">
                             <a href="javascript:;"><img src="" alt="更多展览展示"></a>
-                        </div>
-                    </div>
-                    <div class="cont clearfix">
-                        <div class="box" v-for="item in sites">
-                            <a href="javascript:;">
-                                <img src="" alt="上海1933老厂房">
-                                <p class="text">上海1933老厂房</p>
-                            </a>
-                        </div>
-                        <div class="box-more">
-                            <a href="javascript:;"><img src="" alt="更多商业发布"></a>
-                        </div>
-                    </div>
-                    <div class="cont current clearfix">
-                        <div class="box" v-for="item in sites">
-                            <a href="javascript:;">
-                                <img src="" alt="上海1933老厂房">
-                                <p class="text">上海1933老厂房</p>
-                            </a>
-                        </div>
-                        <div class="box-more">
-                            <a href="javascript:;"><img src="" alt="更多晚会年会"></a>
-                        </div>
-                    </div>
-                    <div class="cont clearfix">
-                        <div class="box" v-for="item in sites">
-                            <a href="javascript:;">
-                                <img src="" alt="上海1933老厂房">
-                                <p class="text">上海1933老厂房</p>
-                            </a>
-                        </div>
-                        <div class="box-more">
-                            <a href="javascript:;"><img src="" alt="更多论坛会议"></a>
                         </div>
                     </div>
                 </div>
@@ -144,7 +123,7 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="" title="公共空间">
-                                        <img src="/static/images/selected/gonggongkongjian.jpg.jpg" alt="公共空间">
+                                        <img src="/static/images/selected/gonggongkongjian.jpg" alt="公共空间">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
@@ -253,6 +232,9 @@
             hotSites(){ // 热推场地
                 return this.$store.state.FindSite.hotSites
             },
+            typeSites(){
+                return this.$store.state.FindSite.typeSites
+            }
         },
         methods: {
             init : function () {

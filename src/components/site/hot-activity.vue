@@ -36,8 +36,8 @@
                         <div class="box-list">
                             <div class="box" v-for="item in sites">
                                 <a href="javascript:;">
-                                    <img src="" alt="上海1933老厂房">
-                                    <p class="text">上海1933老厂房</p>
+                                    <img src="" :alt="item.title">
+                                    <p class="text" v-html="item.title">场地名称</p>
                                 </a>
                             </div>
                         </div>
@@ -46,31 +46,28 @@
 
                     <!--列表模式-开始-->
                     <div class="cont list-cont clearfix">
-                        <div class="tags">
-                            <a href="javascript:;" class="active">全部分类</a>
-                            <a href="javascript:;" v-for="item in tags">秀场展馆</a>
-                        </div>
-                        <div class="box-list">
+                        <div class="box-list clearfix">
                             <div class="box-list-box" v-for="item in sites">
                                 <a class="fl img" href="javascript:;">
                                     <img src="" alt="列表模式">
                                 </a>
                                 <div class="fl text">
                                     <h3>
-                                        <a href="javascript:;">云SPACE 上海国际工业园秀场</a>
+                                        <a href="javascript:;" v-html="item.title">场地名字</a>
                                     </h3>
                                     <div class="assort clearfix">
-                                        <p><i class="icon-icon_spaceBusiness"></i> 徐家汇 <span class="line"></span></p>
-                                        <p><i class="icon-icon_spacePeople"></i> 500人 <span class="line"></span></p>
-                                        <p><i class="icon-icon_spaceArea"></i> 300㎡</p>
+                                        <p><i class="icon-icon_spaceBusiness"></i> {{item.district}} <span class="line"></span></p>
+                                        <p><i class="icon-icon_spacePeople"></i> {{item.max_people}}人 <span class="line"></span></p>
+                                        <p><i class="icon-icon_spaceArea"></i> {{item.max_size}}㎡</p>
                                     </div>
                                     <p><i class="icon-icon_spaceRecommend"></i> 推荐理由：Boom Shakalaka~</p>
-                                    <p class="keywords">商业发布／主题派对／时尚走秀／动漫游戏／展览展示</p>
+                                    <!--<p class="keywords">商业发布／主题派对／时尚走秀／动漫游戏／展览展示</p>-->
+                                    <p class="keywords">{{item.event_type}}</p>
                                     <a class="btn btn-red" href="javascript:;">加入咨询</a>
                                 </div>
                                 <div class="fr price">
-                                    <p><strong>￥80,000</strong>/天 起</p>
-                                    <span>市场价: ¥ 100,000/天</span>
+                                    <p><strong>{{item.lower_price}}</strong></p>
+                                    <span>市场价: {{item.market_price}}</span>
                                 </div>
                             </div>
                         </div>
@@ -86,19 +83,19 @@
 </template>
 <script>
     function fetchData(store){
-//        store.commit('LOADING', true)
-//        return store.dispatch(`getSiteHomeData`,{
-//                    id : store.state.route.params.id
-//                }).then(() => {
-//                    store.commit('LOADING', false)
-//    })
+        store.commit('LOADING', true)
+        return store.dispatch(`getSiteListData`,{
+                    type : 'events'
+                }).then(() => {
+                    store.commit('LOADING', false)
+        })
     }
 
     export default {
         data() {
             return {
                 hotTags:[1,2,3,4,5],
-                sites:[1,2,3,4,5,6,7,8,9,10,11,12],
+//                sites:[1,2,3,4,5,6,7,8,9,10,11,12],
                 siteRecommend:[1,2,3,4,5,6,7,8,9,10,11,12],
                 tags:[1,2,3,4,5,6]
             }
@@ -135,6 +132,9 @@
             fetchData(this.$store)
         },
         computed: {
+            sites(){
+                return this.$store.state.SiteList.events
+            }
         },
         methods: {
 

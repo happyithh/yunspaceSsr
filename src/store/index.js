@@ -27,7 +27,13 @@ const defaultState = {
         hot_sites : []
     },
     FindSite:{
-        hotSites :[]
+        hotSites :[],
+        typeSites : []
+    },
+    SiteList:{
+        hot : [],
+        selected : [],
+        events : []
     },
     EventHome:{
         banners:[],
@@ -36,22 +42,6 @@ const defaultState = {
         discounts:[],
         eventcases:[],
         toplists:[]
-    },
-    OpenShopData:{
-        specials:[],
-        topLists:[],
-        recommendSpace:[],
-        selectedCase:[]
-    },
-    IpData:{
-        ipCase:[],
-        ipProject:[],
-        ipRecommend:[],
-        ipType:[]
-    },
-    NewFoundData:{
-        articles:[],
-        articlesHot:[]
     },
     SiteDtlData:{
         dtl:{
@@ -88,6 +78,7 @@ const mutations = {
     
     FIND_SITE_DATA:(state, data)=>{
         state.FindSite.hotSites = data.hot_sites
+        state.FindSite.typeSites = data.sites
     },
 
     SPACE_DTL_DATA:(state, data)=>{
@@ -98,6 +89,19 @@ const mutations = {
     ARTICLE_DTL_DATA(state, data){
         state.ArticleDtlData.dtl = data.information
         state.ArticleDtlData.spaces = data.space
+    },
+
+    //场地列表页
+    SITE_LIST_DATA(state, data){
+        if( data.type == ''){
+            state.SiteList.hot = data.sites
+        }
+        if( data.type == 'chosen'){
+            state.SiteList.selected = data.sites
+        }
+        if( data.type == 'events'){
+            state.SiteList.events = data.sites
+        }
     },
 
     //场地详情

@@ -6,6 +6,7 @@ export const YUNAPI = {
     home : host + 'index.json',
     findSite : host + 'sites.json',
     siteDtl : host + 'sites/',
+    sitesList : host + 'sites/list.json',
     // spaceDtl : host + 'api/spaces',
     // articleDtl : host + 'api/informations',
     eventHome : host + 'events',
