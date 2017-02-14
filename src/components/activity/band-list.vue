@@ -13,16 +13,16 @@
             <div class="mt50 site-item-news itembox">
                 <div class="item-title BorderBotmNone clearfix">
                     <ul class="site-menu clearfix">
-                        <li class="current"><a href="">品牌案例</a></li>
-                        <li><a href="">行业案例</a></li>
-                        <li><a href="">明星案例</a></li>
+                        <li class="current"><a href="/activity/band">品牌案例</a></li>
+                        <li><a href="/activity/industry">行业案例</a></li>
+                        <li><a href="/activity/star">明星案例</a></li>
                     </ul>
                 </div>
 
                 <div class="item-box clearfix">
                     <div class="fl mb30 box-list clearfix">
                         <ul>
-                            <li v-for="item in evets_list">
+                            <li v-for="item in band_events">
                                 <a class="fl img" href="javascript:;">
                                     <img src="" alt="">
                                 </a>
@@ -92,7 +92,7 @@
     function fetchData(store){
 //        store.commit('LOADING', true)
         return store.dispatch(`getEventListData`,{
-            type: '品牌案例',
+            type: '',
         }).then(() => {
             store.commit('LOADING', false)
 
@@ -112,12 +112,6 @@
             band_events(){
                 return this.$store.state.EventList.band_events
             },
-//            industry_events(){
-//                return this.$store.state.EventList.industry_events
-//            },
-//            star_events(){
-//                return this.$store.state.EventList.star_events
-//            },
         },
 
         metaInfo(){
@@ -139,8 +133,6 @@
 
         beforeMount () {
             fetchData(this.$store)
-        },
-        computed: {
         },
         methods: {
 
