@@ -31,12 +31,12 @@
                     <div class="cont matrix-cont current clearfix">
                         <div class="tags">
                             <a href="javascript:;" class="active">全部分类</a>
-                            <a href="javascript:;" v-for="item in tags">秀场展馆</a>
+                            <a @click="getSpaceWithSpaceType(value)" href="javascript:;" v-for="(value,key) in spaceType">{{key}}</a>
                         </div>
                         <div class="box-list">
                             <div class="box" v-for="item in sites">
                                 <a href="javascript:;">
-                                    <img src="" :alt="item.title">
+                                    <img :src="item.logo" :alt="item.title">
                                     <p class="text" v-html="item.title">场地名称</p>
                                 </a>
                             </div>
@@ -82,6 +82,8 @@
     </div>
 </template>
 <script>
+    import {YUNAPI} from '../../api'
+    import store from '../../store'
     function fetchData(store){
         store.commit('LOADING', true)
         return store.dispatch(`getSiteListData`,{
@@ -134,10 +136,39 @@
         computed: {
             sites(){
                 return this.$store.state.SiteList.selected
+            },
+            allTags (){
+                return this.$store.state.allTags
+            },
+            spaceType(){
+                return this.$store.state.allTags.space_type
+            },
+            activityType(){
+                return this.$store.state.allTags.activity_type
+            },
+            spaceType(){
+                return this.$store.state.allTags.space_type
             }
         },
         methods: {
+            getSpaceWithSpaceType(category){
+                var self = this;
+                $.ajax({
+                    url:YUNAPI.sitesList,
+                    data:{
+                        type:'chosen',
+                        site_type : category
+                    },
+                    success:function (data) {
+                        data.type = 'chosen'
+                        store.commit('SITE_LIST_DATA',data)
+                    },
+                    error : function () {
 
+                    }
+
+                })
+            }
         }
     }
 

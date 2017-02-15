@@ -5,8 +5,6 @@
             <router-view class="view"></router-view>
         </transition>
         <module-footer></module-footer>
-        <div v-loading="loading" class="el-loading-yun"></div>
-        <div v-if="loading" class="loading-bg"></div>
     </div>
 </template>
 
@@ -14,6 +12,12 @@
     import Vue from 'vue'
     import Element from 'element-ui'
     Vue.use(Element)
+
+    function fetchData(store){
+        return store.dispatch(`getAllTags`,{
+                }).then(() => {
+        })
+    }
 
     import ModuleFooter from './components/module-footer.vue'
     import ModuleHeader from './components/module-header.vue'
@@ -31,7 +35,11 @@
             ModuleFooter, ModuleHeader
         },
         mounted () {
-            this.$store.dispatch('getAllTags')
+        },
+        preFetch: fetchData,
+
+        beforeMount () {
+            fetchData(this.$store)
         },
 
         methods: {}

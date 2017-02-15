@@ -79,6 +79,7 @@ const defaultState = {
     },
 
     loading : false,
+    allTags : {}
 }
 
 const inBrowser = typeof window !== 'undefined'
@@ -114,6 +115,7 @@ const mutations = {
 
     //场地列表页
     SITE_LIST_DATA(state, data){
+        console.log(data)
         if( data.type == ''){
             state.SiteList.hot = data.sites
         }
