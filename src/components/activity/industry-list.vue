@@ -23,26 +23,26 @@
                     <div class="fl mb30 box-list clearfix">
                         <ul>
                             <li v-for="item in industry_events">
-                                <a class="fl img" href="javascript:;">
-                                    <img src="" alt="">
+                                <a class="fl img"  :href="'/article/'+item.id">
+                                    <img :src="item.first_picture.url" :alt="item.title">
                                 </a>
                                 <div class="fr text">
                                     <h3>
-                                        <a href="javascript:;">云space上海壹秀秀场@你，这里有Nike秋冬新品</a>
+                                        <a :href="'/article/'+item.id">{{item.title}}</a>
                                     </h3>
-                                    <p class="des">他们来自日本，他们成群结队，他们热衷调皮捣蛋，他们是一群呆萌又聪明的阳光鸡Piyodamari，他们带给你欢乐和轻松，忘缺旧烦恼，迎接新的丁酉（鸡）年。</p>
+                                    <p class="des">{{item.abstract}}</p>
                                     <a class="taglink red" href="javascript:;">上海壹秀秀场&nbsp;&nbsp;<i class="icon-icon_moreArrowRight"></i></a>
                                     <div class="bottom">
                                         <div class="fl icon skim">
                                             <i class="icon-icon_articleBrowserLine"></i>
-                                            2048
+                                            {{item.viewed}}
                                         </div>
                                         <div class="fl icon zan">
                                             <i class="icon-icon_articleGoodLine"></i>
-                                            19
+                                            {{item.up_number}}
                                         </div>
 
-                                        <div class="fr time">2016-12-15</div>
+                                        <div class="fr time">{{item.updated_at}}</div>
                                     </div>
                                 </div>
                             </li>

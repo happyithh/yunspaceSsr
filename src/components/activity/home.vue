@@ -1,7 +1,7 @@
 <template>
     <div>
         <!--第一部分banner等-开始-->
-        <div class="w1200 mt20 clearfix">
+        <div class="w1200 clearfix">
             <!--轮播图开始-->
             <div class="banner event-swiper">
                <div class="swiper-container activityBannner">
