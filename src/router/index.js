@@ -15,7 +15,9 @@ import RentalSite from '../components/form/rental-site.vue'
 import InquiryList from '../components/inquiry/inquiry-list.vue'
 import Success from '../components/inquiry/success.vue'
 import Activity from '../components/activity/home.vue'
-import ActivityList from '../components/activity/list.vue'
+import ActivityBandList from '../components/activity/band-list.vue'
+import ActivityIndustryList from '../components/activity/industry-list.vue'
+import ActivityStarList from '../components/activity/star-list.vue'
 import ActivityDtl from '../components/activity/dtl.vue'
 import ActivitySupporting from '../components/activity/supporting.vue'
 import SiteSearch from '../components/site/search.vue'
@@ -45,7 +47,9 @@ export default new Router({
     { path: '/inquiry', component: InquiryList },
     { path: '/success', component: Success },
     { path: '/activity', component: Activity },
-    { path: '/activity/list', component: ActivityList },
+    { path: '/activity/band', component: ActivityBandList },
+    { path: '/activity/industry', component: ActivityIndustryList },
+    { path: '/activity/star', component: ActivityStarList },
     { path: '/activity/dtl/:id', component: ActivityDtl },
     { path: '/activity/supporting', component: ActivitySupporting },
     { path: '/site/search', component: SiteSearch },

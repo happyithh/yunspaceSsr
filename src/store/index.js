@@ -51,14 +51,6 @@ const defaultState = {
         articles:[],
         articlesHot:[]
     },
-    EventHome:{
-        banners:[],
-        subjects:[],
-        venues:[],
-        discounts:[],
-        eventcases:[],
-        toplists:[]
-    },
     SiteDtlData:{
         dtl:{
             site_pictures:[]
@@ -144,8 +136,16 @@ const mutations = {
     },
     //活动列表
     EVENT_LIST_DATA(state, data){
-        state.EventList= data.evets_list
-        console.log(data,333)
+        if(data.type == ''){
+            state.EventList.band_events = data.evets_list
+        }
+        if(data.type == '行业案例'){
+            state.EventList.industry_events = data.evets_list
+        }
+        if(data.type == '明星案例'){
+            state.EventList.star_events = data.evets_list
+        }
+
     },
 
     LOADING(state,value){

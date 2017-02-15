@@ -13,36 +13,36 @@
             <div class="mt50 site-item-news itembox">
                 <div class="item-title BorderBotmNone clearfix">
                     <ul class="site-menu clearfix">
-                        <li class="current"><a href="">品牌案例</a></li>
-                        <li><a href="">行业案例</a></li>
-                        <li><a href="">明星案例</a></li>
+                        <li><a href="/activity/band">品牌案例</a></li>
+                        <li><a href="/activity/industry">行业案例</a></li>
+                        <li class="current"><a href="/activity/star">明星案例</a></li>
                     </ul>
                 </div>
 
                 <div class="item-box clearfix">
                     <div class="fl mb30 box-list clearfix">
                         <ul>
-                            <li v-for="item in evets_list">
-                                <a class="fl img" href="javascript:;">
-                                    <img src="" alt="">
+                            <li v-for="item in star_events">
+                                <a class="fl img"  :href="'/article/'+item.id">
+                                    <img :src="item.first_picture.url" :alt="item.title">
                                 </a>
                                 <div class="fr text">
                                     <h3>
-                                        <a href="javascript:;">云space上海壹秀秀场@你，这里有Nike秋冬新品</a>
+                                        <a :href="'/article/'+item.id">{{item.title}}</a>
                                     </h3>
-                                    <p class="des">他们来自日本，他们成群结队，他们热衷调皮捣蛋，他们是一群呆萌又聪明的阳光鸡Piyodamari，他们带给你欢乐和轻松，忘缺旧烦恼，迎接新的丁酉（鸡）年。</p>
+                                    <p class="des">{{item.abstract}}</p>
                                     <a class="taglink red" href="javascript:;">上海壹秀秀场&nbsp;&nbsp;<i class="icon-icon_moreArrowRight"></i></a>
                                     <div class="bottom">
                                         <div class="fl icon skim">
                                             <i class="icon-icon_articleBrowserLine"></i>
-                                            2048
+                                            {{item.viewed}}
                                         </div>
                                         <div class="fl icon zan">
                                             <i class="icon-icon_articleGoodLine"></i>
-                                            19
+                                            {{item.up_number}}
                                         </div>
 
-                                        <div class="fr time">2016-12-15</div>
+                                        <div class="fr time">{{item.updated_at}}</div>
                                     </div>
                                 </div>
                             </li>
@@ -92,7 +92,7 @@
     function fetchData(store){
 //        store.commit('LOADING', true)
         return store.dispatch(`getEventListData`,{
-            type: '品牌案例',
+            type: '',
         }).then(() => {
             store.commit('LOADING', false)
 
@@ -109,15 +109,9 @@
             }
         },
         computed: {
-            band_events(){
-                return this.$store.state.EventList.band_events
+            star_events(){
+                return this.$store.state.EventList.star_events
             },
-//            industry_events(){
-//                return this.$store.state.EventList.industry_events
-//            },
-//            star_events(){
-//                return this.$store.state.EventList.star_events
-//            },
         },
 
         metaInfo(){
@@ -139,8 +133,6 @@
 
         beforeMount () {
             fetchData(this.$store)
-        },
-        computed: {
         },
         methods: {
 

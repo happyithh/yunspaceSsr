@@ -107,11 +107,12 @@ export const getEventHomeData = ({ commit, state }) => {
     })
 }
 //办活动列表页
-export const getEventListData = ({ commit, state }) => {
+export const getEventListData = ({ commit, state },{type}) => {
     return request.get(YUNAPI.eventList+'.json',{
 
     }).then((response) => {
         if (response.statusText === 'OK') {
+            response.data.type = type
             commit('EVENT_LIST_DATA', response.data)
         }
     }).catch((error) => {
