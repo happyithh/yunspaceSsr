@@ -38,7 +38,7 @@ export default new Router({
     { path: '/space/:id', component: SpaceDtl },
     { path: '/article/:id', component: ArticleDtl },
     { path: '/event', component: Event },
-    { path: '/site/dtl/:id', component: Site },
+    { path: '/site/:id', component: Site },
     { path: '/site', component: SiteHome },
     { path: '/site/hot', component: SiteHot },
     { path: '/site/activity', component: SiteHotActivity },

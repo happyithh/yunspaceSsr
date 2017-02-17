@@ -16,10 +16,10 @@ export const getAllTags = ({ commit, state }) => {
 }
 
 //首页数据获取
-export const getHomeData = ({ commit, state }) => {
+export const getHomeData = ({ commit, state },{cityId}) => {
     return request.get(YUNAPI.home,{
         params:{
-            city_id:1
+            city_id:cityId || 1
         }
     }).then((response) => {
         if (response.statusText === 'OK') {

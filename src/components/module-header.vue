@@ -16,13 +16,13 @@
                     <div class="city-dorpdown">
                         <div class="hot-city">
                             <span class="active">热门城市</span>
-                            <span>上海</span>
-                            <span>北京</span>
-                            <span>广州</span>
+                            <a href="?city_id=1">上海</a>
+                            <a href="?city_id=2">北京</a>
+                            <a>广州</a>
                         </div>
                         <div class="border-line"></div>
                         <div class="common-city">
-                            <span v-for="item in cities">{{item.name}}</span>
+                            <a :href="'?city_id='+item.id" v-for="item in cities">{{item.name}}</a>
                         </div>
                     </div>
                 </div>
@@ -72,13 +72,13 @@
 </template>
 
 <script>
-    const fetchInitialData = store => {
-
-//            store.dispatch(`getHomeData`)
-//            store.dispatch(`getAllTags`)
-//            store.dispatch(`getTopics`)
-        return store.dispatch(`getAllTags`)
-    }
+//    const fetchInitialData = store => {
+//
+////            store.dispatch(`getHomeData`)
+////            store.dispatch(`getAllTags`)
+////            store.dispatch(`getTopics`)
+//        return store.dispatch(`getAllTags`)
+//    }
     module.exports = {
         data() {
             const isInitialRender = !this.$root._isMounted

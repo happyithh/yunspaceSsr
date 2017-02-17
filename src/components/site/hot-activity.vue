@@ -30,8 +30,8 @@
                     <!--矩阵模式-开始-->
                     <div class="cont matrix-cont current clearfix">
                         <div class="tags">
-                            <a href="javascript:;" class="active">全部分类</a>
-                            <a @click="getSpaceWithEventType(value)" href="javascript:;" v-for="(value,key) in activityType">{{key}}</a>
+                            <a href="javascript:;" :class="{ active : !selectEventType }" @click="getSpaceWithEventType('')">全部分类</a>
+                            <a :class="{ active : value == selectEventType }" @click="getSpaceWithEventType(value)" href="javascript:;" v-for="(value,key) in activityType">{{key}}</a>
                         </div>
                         <div class="box-list">
                             <div class="box" v-for="item in sites">
@@ -100,7 +100,8 @@
                 hotTags:[1,2,3,4,5],
 //                sites:[1,2,3,4,5,6,7,8,9,10,11,12],
                 siteRecommend:[1,2,3,4,5,6,7,8,9,10,11,12],
-                tags:[1,2,3,4,5,6]
+                tags:[1,2,3,4,5,6],
+                selectEventType : ''
             }
         },
 
@@ -160,14 +161,21 @@
         methods: {
             getSpaceWithEventType(category){
                 var self = this;
+                self.selectEventType = category
+
+                var data = {
+                    type:'events',
+                };
+
+                if(category){
+                    data['event_type'] = category
+                }
+
                 $.ajax({
                     url:YUNAPI.sitesList,
-                    data:{
-                        type:'events',
-                        event_type : category
-                    },
+                    data:data,
                     success:function (data) {
-                        data.type = 'event'
+                        data.type = 'events'
                         store.commit('SITE_LIST_DATA',data)
                     },
                     error : function () {

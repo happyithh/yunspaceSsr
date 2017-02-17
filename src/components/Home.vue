@@ -67,11 +67,11 @@
             </div>
             <div class="recommend-site clearfix">
                 <div class="site-piece" v-for="item in hotSites">
-                    <a href="" title="">
+                    <router-link :to="'/site/'+item.id" title="">
                         <img :src="item.site_pictures.length > 0 ? item.site_pictures[0]['url_400_267'] : ''" alt="">
-                    </a>
+                    </router-link>
                     <div class="des">
-                        <a href="" class="title" v-html="item.title"></a>
+                        <router-link :to="'/site/'+item.id" class="title" v-html="item.title"></router-link>
                         <p class="p1">云SPACE价:<span>{{item.special_price}}</span></p>
                         <p>市场价: {{item.market_price}}</p>
                     </div>
@@ -129,29 +129,34 @@
             </div>
             <div class="media-re clearfix">
                 <div class="media-left clearfix">
-                    <a href="" title="" class="media-piece">
-                        <img src="/static/images/test/3to2.png" alt="">
+                    <a href="" title="" class="media-piece" v-for="(item,index) in mediaReport" v-if="index < 2">
+                        <img :src="item.img_paths.length > 0 ? item.img_paths[0]['url_400_267'] : ''" alt="">
                         <div class="des">
-                            <p>商业时尚的汇聚地及潮流风向标的起源地</p>
-                            <p>2016-10-24</p>
+                            <p v-html="item.title"></p>
+                            <p>{{item.i_time}}</p>
                         </div>
                     </a>
-                    <a href="" title="" class="media-piece">
-                        <img src="/static/images/test/3to2.png" alt="">
-                        <div class="des">
-                            <p>商业时尚的汇聚地及潮流风向标的起源地</p>
-                            <p>2016-10-24</p>
-                        </div>
-                    </a>
+                    <!--<a href="" title="" class="media-piece">-->
+                        <!--<img src="/static/images/test/3to2.png" alt="">-->
+                        <!--<div class="des">-->
+                            <!--<p>商业时尚的汇聚地及潮流风向标的起源地</p>-->
+                            <!--<p>2016-10-24</p>-->
+                        <!--</div>-->
+                    <!--</a>-->
                 </div>
                 <div class="media-right">
                     <ul>
-                        <li v-for="item in media">
-                            <a href="">
-                                <span>【搭建课堂】《华胥引》电影命名《鲛珠传》 打造IP六联动</span>
-                                <span class="time">2016-10-24</span>
+                        <li v-for="(item,index) in mediaReport" v-if="index >= 2 && index < 10">
+                            <!--<a href="">-->
+                                <!--<span>【搭建课堂】《华胥引》电影命名《鲛珠传》 打造IP六联动</span>-->
+                                <!--<span class="time">2016-10-24</span>-->
+                                <!--<div class="border-line"></div>-->
+                            <!--</a>-->
+                            <router-link :to="'/article/'+item.id">
+                                <span v-html="item.title"></span>
+                                <span class="time">{{item.i_time}}</span>
                                 <div class="border-line"></div>
-                            </a>
+                            </router-link>
 
                         </li>
                     </ul>
@@ -173,7 +178,9 @@
 
 <script>
     function fetchData(store) {
-        return store.dispatch(`getHomeData`)
+        return store.dispatch(`getHomeData`,{
+            cityId : store.state.route.query.city_id
+        })
     }
     import {mapGetters} from 'vuex'
     import SearchBar from './public/search-bar.vue'
@@ -244,8 +251,8 @@
                 return this.$store.state.homeData.hot_sites
             },
             mediaReport(){
-                return this.$store.state.homeData.home_media
-            }
+                return this.$store.state.homeData.media
+            },
         },
         methods: {
             homeDoSearch(){}
