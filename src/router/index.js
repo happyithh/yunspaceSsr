@@ -22,7 +22,7 @@ import ActivitySupporting from '../components/activity/supporting.vue'
 import SiteSearch from '../components/site/search.vue'
 import NotFound from '../components/404.vue'
 import Site from '../components/site/dtl.vue'
-import Reserve from '../components/form/reserve.vue'
+import Booking from '../components/form/booking.vue'
 import News from '../components/news/home.vue'
 import Map from '../components/map/home.vue'
 import NewsList1 from '../components/news/list1.vue'
@@ -54,7 +54,7 @@ export default new Router({
     { path: '/activity/star', component: ActivityStarList },
     { path: '/activity/supporting', component: ActivitySupporting },
     { path: '/site/search', component: SiteSearch },
-    { path: '/site/reserve', component: Reserve },
+    { path: '/booking', component: Booking },
     { path: '/news', component: News },
     { path: '/map', component: Map },
     { path: '/news/list1', component: NewsList1 },

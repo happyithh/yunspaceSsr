@@ -143,13 +143,14 @@
 </template>
 <script>
     function fetchData(store){
-//        store.commit('LOADING', true)
-//        return store.dispatch(`getSiteHomeData`,{
-//                    id : store.state.route.params.id
-//                }).then(() => {
-//                    store.commit('LOADING', false)
-//    })
+        store.commit('LOADING', true)
+        return store.dispatch(`getNewsData`,{
+//            city_id:1
+        }).then(() => {
+            store.commit('LOADING', false)
+        })
     }
+
 
     export default {
         data() {
@@ -162,6 +163,12 @@
                 newsRecommend:[1,2,3,4,5],
                 hotSite:[1,2,3]
             }
+        },
+
+        computed: {
+//            cities (){
+//                return this.$store.state.cities
+//            },
         },
 
         metaInfo(){
@@ -183,8 +190,6 @@
 
         beforeMount () {
             fetchData(this.$store)
-        },
-        computed: {
         },
         methods: {
 

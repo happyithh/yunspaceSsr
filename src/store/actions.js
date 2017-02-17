@@ -134,6 +134,18 @@ export const getNewsHomeData = ({ commit, state }) => {
         console.log(error)
     })
 }
+//文章详情
+export const getNewsData = ({ commit, state }) => {
+    return request.post(YUNAPI.newsHome+'.json',{
+
+    }).then((response) => {
+        if (response.statusText === 'OK') {
+            commit('NEWS_DATA', response.data)
+        }
+    }).catch((error) => {
+        console.log(error)
+    })
+}
 
 //资讯列表
 export const getNewsListData = ({ commit, state },{type}) => {
@@ -157,6 +169,18 @@ export const getSiteSelectedData = ({ commit, state }) => {
     }).then((response) => {
         if (response.statusText === 'OK') {
             commit('SITE_SELECTED_DATA', response.data)
+        }
+    }).catch((error) => {
+        console.log(error)
+    })
+}
+//立即预定
+export const getBookingData = ({ commit, state }) => {
+    return request.get(YUNAPI.booking+'.json',{
+
+    }).then((response) => {
+        if (response.statusText === 'OK') {
+            commit('BOOKING_DATA', response.data)
         }
     }).catch((error) => {
         console.log(error)

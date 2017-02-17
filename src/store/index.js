@@ -168,6 +168,16 @@ const mutations = {
         state.NewsHome.tops = data.tops
     },
 
+    //文章详情
+    NEWS_DATA(state, data){
+        console.log(data,777)
+        state.NewsHome.articles = data.articles
+        state.NewsHome.evaluates = data.evaluates
+        state.NewsHome.selecteds = data.selecteds
+        state.NewsHome.teachings = data.teachings
+        state.NewsHome.tops = data.tops
+    },
+
     //资讯列表
     NEWS_LIST_DATA(state, data){
         state.NewsList.articles = data.articles
@@ -176,6 +186,12 @@ const mutations = {
     //场地精华
     SITE_SELECTED_DATA(state, data){
         state.SiteEssence = data.articles
+    },
+
+    //立即预定
+    BOOKING_DATA(state,data){
+
+        console.log(data,999)
     },
 
     LOADING(state,value){
