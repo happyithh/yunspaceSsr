@@ -69,6 +69,17 @@ const defaultState = {
         industry_events:'',
         star_events:'',
     },
+    NewsList:{
+        articles:'',
+    },
+    NewsHome:{
+        articles:'',
+        evaluates:'',
+        selecteds:'',
+        teachings:'',
+        tops:'',
+    },
+    SiteEssence:'',
 
     loading : false,
     allTags : {}
@@ -146,6 +157,25 @@ const mutations = {
             state.EventList.star_events = data.evets_list
         }
 
+    },
+
+    //资讯首页
+    NEWS_HOME_DATA(state, data){
+        state.NewsHome.articles = data.articles
+        state.NewsHome.evaluates = data.evaluates
+        state.NewsHome.selecteds = data.selecteds
+        state.NewsHome.teachings = data.teachings
+        state.NewsHome.tops = data.tops
+    },
+
+    //资讯列表
+    NEWS_LIST_DATA(state, data){
+        state.NewsList.articles = data.articles
+    },
+
+    //场地精华
+    SITE_SELECTED_DATA(state, data){
+        state.SiteEssence = data.articles
     },
 
     LOADING(state,value){

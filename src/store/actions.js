@@ -87,6 +87,7 @@ export const getArticleDtlData = ({ commit, state },{id}) => {
 
     }).then((response) => {
         if (response.statusText === 'OK') {
+
             commit('ARTICLE_DTL_DATA', response.data)
         }
     }).catch((error) => {
@@ -109,11 +110,53 @@ export const getEventHomeData = ({ commit, state }) => {
 //办活动列表页
 export const getEventListData = ({ commit, state },{type}) => {
     return request.get(YUNAPI.eventList+'.json',{
-
+        params:{
+            type:type
+        }
     }).then((response) => {
         if (response.statusText === 'OK') {
             response.data.type = type
             commit('EVENT_LIST_DATA', response.data)
+        }
+    }).catch((error) => {
+        console.log(error)
+    })
+}
+//资讯首页
+export const getNewsHomeData = ({ commit, state }) => {
+    return request.get(YUNAPI.newsHome+'.json',{
+
+    }).then((response) => {
+        if (response.statusText === 'OK') {
+            commit('NEWS_HOME_DATA', response.data)
+        }
+    }).catch((error) => {
+        console.log(error)
+    })
+}
+
+//资讯列表
+export const getNewsListData = ({ commit, state },{type}) => {
+    return request.get(YUNAPI.newsList + '.json', {
+        params:{
+            type:type
+        }
+    }).then((response) => {
+        if (response.statusText === 'OK') {
+            response.data.type = type
+            commit('NEWS_LIST_DATA', response.data)
+        }
+    }).catch((error) => {
+        console.log(error)
+    })
+}
+//场地精华
+export const getSiteSelectedData = ({ commit, state }) => {
+    return request.get(YUNAPI.siteSelected+'.json',{
+
+    }).then((response) => {
+        if (response.statusText === 'OK') {
+            commit('SITE_SELECTED_DATA', response.data)
         }
     }).catch((error) => {
         console.log(error)

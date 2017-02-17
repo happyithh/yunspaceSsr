@@ -13,36 +13,36 @@
             <div class="mt50 site-item-news itembox">
                 <div class="item-title BorderBotmNone clearfix">
                     <ul class="site-menu clearfix">
-                        <li class="current"><a href="">TOP榜单</a></li>
-                        <li><a href="">场地评测</a></li>
-                        <li><a href="">搭建学堂</a></li>
-                        <li><a href="">场地快报</a></li>
+                        <li><a href="/news/list1">TOP榜单</a></li>
+                        <li class="current"><a href="/news/list2">场地评测</a></li>
+                        <li><a href="/news/list3">搭建学堂</a></li>
+                        <li><a href="/news/list4">场地快报</a></li>
                     </ul>
                 </div>
 
                 <div class="item-box clearfix">
                     <div class="fl mb30 box-list clearfix">
                         <ul>
-                            <li class="" v-for="item in aboutcases">
-                                <a class="fl img" href="javascript:;">
-                                    <img src="" alt="">
+                            <li v-for="item in newsList">
+                                <a class="fl img" :href="'/article/'+item.id">
+                                    <img :src="item.img_paths[0].url_329_400" :alt="item.title">
                                 </a>
                                 <div class="fr text">
                                     <h3>
-                                        <a href="javascript:;">云space上海壹秀秀场@你，这里有Nike秋冬新品</a>
+                                        <a class="fl img" :href="'/article/'+item.id">云space上海壹秀秀场@你，这里有Nike秋冬新品</a>
                                     </h3>
-                                    <p class="des">他们来自日本，他们成群结队，他们热衷调皮捣蛋，他们是一群呆萌又聪明的阳光鸡Piyodamari，他们带给你欢乐和轻松，忘缺旧烦恼，迎接新的丁酉（鸡）年。</p>
+                                    <p class="des">{{item.abstract}}</p>
                                     <div class="bottom">
                                         <div class="fl icon skim">
                                             <i class="icon-icon_articleBrowserLine"></i>
-                                            2048
+                                            {{item.viewed}}
                                         </div>
                                         <div class="fl icon zan">
                                             <i class="icon-icon_articleGoodLine"></i>
-                                            19
+                                            {{item.up_number}}
                                         </div>
 
-                                        <div class="fr time">2016-12-15</div>
+                                        <div class="fr time">{{item.created_at}}</div>
                                     </div>
                                 </div>
                             </li>
@@ -69,7 +69,7 @@
                             </div>
 
                             <ul class="cont clearfix">
-                                <li v-for="item in siteRecommend">
+                                <li v-for="item in 4">
                                     <a class="img" href="" title="">
                                         <img src="" alt="">
                                         <p>上海植物园第一会所会场</p>
@@ -90,21 +90,18 @@
 </template>
 <script>
     function fetchData(store){
-//        store.commit('LOADING', true)
-//        return store.dispatch(`getSiteHomeData`,{
-//                    id : store.state.route.params.id
-//                }).then(() => {
-//                    store.commit('LOADING', false)
-//    })
+        store.commit('LOADING', true)
+        return store.dispatch(`getNewsListData`,{
+            type : '场地评测'
+        }).then(() => {
+            store.commit('LOADING', false)
+        })
     }
 
     export default {
         data() {
             return {
                 hotTags:[1,2,3,4,5],
-                sites:[1,2,3,4,5,6,7,8,9,10,11,12],
-                aboutcases:[1,2,3,4,5,6,7,8,9,10],
-                siteRecommend:[1,2,3,4,5]
             }
         },
 
@@ -129,6 +126,9 @@
             fetchData(this.$store)
         },
         computed: {
+            newsList(){
+                return this.$store.state.NewsList.articles
+            },
         },
         methods: {
 

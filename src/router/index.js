@@ -4,8 +4,8 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 import Home from '../components/Home.vue'
-import SpaceDtl from '../components/space/dtl.vue'
 import ArticleDtl from '../components/news/dtl.vue'
+import ArticleTopListDtl from '../components/news/dtl-toplist.vue'
 import Event from '../components/event/event.vue'
 import SiteHome from '../components/site/home.vue'
 import SiteHot from '../components/site/hot.vue'
@@ -18,7 +18,6 @@ import Activity from '../components/activity/home.vue'
 import ActivityBandList from '../components/activity/band-list.vue'
 import ActivityIndustryList from '../components/activity/industry-list.vue'
 import ActivityStarList from '../components/activity/star-list.vue'
-import ActivityDtl from '../components/activity/dtl.vue'
 import ActivitySupporting from '../components/activity/supporting.vue'
 import SiteSearch from '../components/site/search.vue'
 import NotFound from '../components/404.vue'
@@ -26,7 +25,10 @@ import Site from '../components/site/dtl.vue'
 import Reserve from '../components/form/reserve.vue'
 import News from '../components/news/home.vue'
 import Map from '../components/map/home.vue'
-import NewsList from '../components/news/list.vue'
+import NewsList1 from '../components/news/list1.vue'
+import NewsList2 from '../components/news/list2.vue'
+import NewsList3 from '../components/news/list3.vue'
+import NewsList4 from '../components/news/list4.vue'
 import NewsSite from '../components/news/site-essence.vue'
 
 
@@ -35,8 +37,8 @@ export default new Router({
   scrollBehavior: () => ({ y: 0 }),
   routes: [
     { path: '/', component: Home },
-    { path: '/space/:id', component: SpaceDtl },
     { path: '/article/:id', component: ArticleDtl },
+    { path: '/article-toplist/:id', component: ArticleTopListDtl },
     { path: '/event', component: Event },
     { path: '/site/dtl/:id', component: Site },
     { path: '/site', component: SiteHome },
@@ -50,13 +52,15 @@ export default new Router({
     { path: '/activity/band', component: ActivityBandList },
     { path: '/activity/industry', component: ActivityIndustryList },
     { path: '/activity/star', component: ActivityStarList },
-    { path: '/activity/dtl/:id', component: ActivityDtl },
     { path: '/activity/supporting', component: ActivitySupporting },
     { path: '/site/search', component: SiteSearch },
     { path: '/site/reserve', component: Reserve },
     { path: '/news', component: News },
     { path: '/map', component: Map },
-    { path: '/news/list', component: NewsList },
+    { path: '/news/list1', component: NewsList1 },
+    { path: '/news/list2', component: NewsList2 },
+    { path: '/news/list3', component: NewsList3 },
+    { path: '/news/list4', component: NewsList4 },
     { path: '/news/site', component: NewsSite },
     { path: '*', component: NotFound },
   ]

@@ -1,6 +1,7 @@
 // const host = "http://api.yunspace.com.cn/";
-// const host = "http://172.16.0.48:3000/api_v2/";
-const host = "http://172.16.0.180:3000/api_v2/";
+const host = "http://192.168.10.208:3000/api_v2/";
+// const host = "http://172.16.0.114:3000/api_v2/";
+// const host = "http://172.16.0.180:3000/api_v2/";
 export const YUNAPI = {
     host: host,
     home : host + 'index.json',
@@ -11,6 +12,9 @@ export const YUNAPI = {
     // articleDtl : host + 'api/informations',
     eventHome : host + 'events',
     eventList : host + 'events/list',
+    newsList : host + 'articles/list',
+    newsHome : host + 'articles',
+    siteSelected : host + 'articles/get_site_selected',
     // openShop : host + 'api/informations/get_retail',
     // findIp : host + 'api/projects/ip_project',
     // article : host + 'api/informations',

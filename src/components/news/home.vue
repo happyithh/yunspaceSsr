@@ -5,27 +5,27 @@
             <div class="site-essence mt30">
                 <div class="item-title clearfix">
                     <h2><span class="redline"></span>场地精华</h2>
-                    <a class="more" href="javascript:;">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                    <a class="more" href="/news/site">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                 </div>
 
                 <ul class="cont clearfix">
-                    <li v-for="item in siteEssenceTop">
-                        <a href="" title="">
-                            <img src="" alt="">
+                    <li v-for="(item,index) in selecteds" v-if="index < 3">
+                        <a :href="'/article/'+item.id">
+                            <img :src="item.img_paths[0].url_420_300" :alt="item.title">
                             <div class="des">
-                                <h3>小型圣诞派对 包场过圣诞</h3>
-                                <p>高性价比包场办个主题趴，从平安夜嗨到圣诞！</p>
+                                <h3>{{item.title}}</h3>
+                                <p>{{item.abstract}}</p>
                             </div>
                         </a>
                     </li>
                 </ul>
                 <ul class="cont small clearfix">
-                    <li v-for="item in siteEssence">
-                        <a href="" title="">
-                            <img src="" alt="">
+                    <li v-for="(item,index) in selecteds" v-if="index >= 3">
+                        <a :href="'/article/'+item.id">
+                            <img :src="item.img_paths[0].url_390_260" :alt="item.title">
                             <div class="des">
-                                <h3>小型圣诞派对 包场过圣诞</h3>
-                                <p>高性价比包场办个主题趴，从平安夜嗨到圣诞！</p>
+                                <h3>{{item.title}}</h3>
+                                <p>{{item.abstract}}</p>
                             </div>
                         </a>
                     </li>
@@ -37,17 +37,17 @@
             <div class="top-list mt30">
                 <div class="item-title clearfix">
                     <h2><span class="redline"></span>TOP榜单</h2>
-                    <a class="more" href="javascript:;">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                    <a class="more" href="/news/list1">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                 </div>
 
                 <ul class="cont clearfix">
-                    <li v-for="item in toplist">
-                        <a class="img" href="" title="">
-                            <img src="" alt="">
-                            <span class="numb">1</span>
+                    <li v-for="(item,index) in tops">
+                        <a class="img" :href="'/article-toplist/'+item.id" :title="item.title">
+                            <img :src="item.img_paths[0].url_420_300" :alt="item.title">
+                            <span class="numb">{{index+1}}</span>
                         </a>
                         <div class="des">
-                            <h3><a href="" title="">寻找沪上最有青春气息的好去处！</a></h3>
+                            <h3><a :href="'/article-toplist/'+item.id">{{item.title}}</a></h3>
                         </div>
                     </li>
                 </ul>
@@ -58,19 +58,19 @@
             <div class="site-evaluate mt30">
                 <div class="item-title clearfix">
                     <h2><span class="redline"></span>场地评测</h2>
-                    <a class="more" href="javascript:;">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                    <a class="more" href="/news/list2">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                 </div>
 
                 <ul class="cont clearfix">
-                    <li v-for="item in siteEssence">
-                        <a class="img" href="" title="">
-                            <img src="" alt="">
+                    <li v-for="item in evaluates">
+                        <a class="img" :href="'/article/'+item.id" :title="item.title">
+                            <img :src="item.img_paths[0].url_390_260" :alt="item.title">
                         </a>
                         <div class="des clearfix">
-                            <h3><a href="" title="">寻找沪上最有青春气息的好去处！</a></h3>
+                            <h3><a :href="'/article/'+item.id">{{item.title}}</a></h3>
                            <div class="fr statistics clearfix">
-                               <p class="fl"><i class="icon-icon_articleBrowserLine"></i>8456</p>
-                               <p class="fr"><i class="icon-icon_articleGoodSolid"></i>89</p>
+                               <p class="fl"><i class="icon-icon_articleBrowserLine"></i>{{item.viewed}}</p>
+                               <p class="fr"><i class="icon-icon_articleGoodSolid"></i>{{item.up_number}}</p>
                            </div>
                         </div>
                     </li>
@@ -78,39 +78,32 @@
             </div>
             <!--场地评测-end-->
 
-            <!--资讯报道-->
+            <!--搭建学堂/场地快报-->
             <div class="media-re mt30 clearfix">
                 <div class="media-left clearfix">
                     <div class="item-title clearfix">
-                        <h2><span class="redline"></span>场地评测</h2>
-                        <a class="more" href="javascript:;">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                        <h2><span class="redline"></span>搭建学堂</h2>
+                        <a class="more" href="/news/list3">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                     </div>
-                    <a href="" title="" class="media-piece">
-                        <img src="/static/images/test/3to2.png" alt="">
+                    <a v-for="(item,index) in teachings" :href="'/article/'+item.id" class="media-piece" v-if="index < 2">
+                        <img :src="item.img_paths[0].url_390_260" :alt="item.title">
                         <div class="des">
-                            <p>商业时尚的汇聚地及潮流风向标的起源地</p>
-                        </div>
-                    </a>
-                    <a href="" title="" class="media-piece">
-                        <img src="/static/images/test/3to2.png" alt="">
-                        <div class="des">
-                            <p>商业时尚的汇聚地及潮流风向标的起源地</p>
+                            <p>{{item.title}}</p>
                         </div>
                     </a>
                 </div>
                 <div class="media-right">
                     <div class="item-title clearfix">
-                        <h2><span class="redline"></span>场地评测</h2>
-                        <a class="more" href="javascript:;">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                        <h2><span class="redline"></span>场地快报</h2>
+                        <a class="more" href="/news/list4">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                     </div>
                     <ul>
-                        <li v-for="item in media">
-                            <a href="">
-                                <span>【搭建课堂】《华胥引》电影命名《鲛珠传》 打造IP六联动</span>
-                                <span class="time">2016-10-24</span>
+                        <li class="clearfix" v-for="(item,index) in articles" v-if="index < 8">
+                            <a :href="'/article/'+item.id" class="media-piece">
+                                <span>{{item.title}}</span>
+                                <span class="time">{{item.created_at}}</span>
                                 <div class="border-line"></div>
                             </a>
-
                         </li>
                     </ul>
                 </div>
@@ -125,20 +118,17 @@
     import SearchBar from '../public/search-bar.vue'
 
     function fetchData(store){
-//        store.commit('LOADING', true)
-//        return store.dispatch(`getSiteHomeData`,{
-//                    id : store.state.route.params.id
-//                }).then(() => {
-//                    store.commit('LOADING', false)
-//    })
+        store.commit('LOADING', true)
+        return store.dispatch(`getNewsHomeData`,{
+
+        }).then(() => {
+            store.commit('LOADING', false)
+        })
     }
 
     export default {
         data() {
             return {
-                siteEssenceTop:[1,2,3],
-                siteEssence:[1,2,3,4],
-                toplist:[1,2,3],
                 media:[1,2,3,4,5,6,7,8]
             }
         },
@@ -166,6 +156,21 @@
             SearchBar
         },
         computed: {
+            articles(){
+                return this.$store.state.NewsHome.articles
+            },
+            evaluates(){
+                return this.$store.state.NewsHome.evaluates
+            },
+            selecteds(){
+                return this.$store.state.NewsHome.selecteds
+            },
+            teachings(){
+                return this.$store.state.NewsHome.teachings
+            },
+            tops(){
+                return this.$store.state.NewsHome.tops
+            },
         },
         methods: {
             init : function () {

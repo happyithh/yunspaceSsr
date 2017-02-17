@@ -2,9 +2,9 @@
     <div>
         <!--面包屑-star-->
         <div class="breadCrumb w1200">
-            <a href="javascript:;" class="red">活动</a>
+            <a href="javascript:;" class="red">资讯</a>
             <span class="icon-icon_moreArrowRight"></span>
-            <a href="javascript:;">品牌案例</a>
+            <a href="javascript:;">场地评测</a>
         </div>
         <!--面包屑-end-->
 
@@ -13,25 +13,25 @@
             <div class="mt50 site-item-news itembox">
                 <div class="item-title BorderBotmNone clearfix">
                     <ul class="site-menu clearfix">
-                        <li><a href="/activity/band">品牌案例</a></li>
-                        <li><a href="/activity/industry">行业案例</a></li>
-                        <li class="current"><a href="/activity/star">明星案例</a></li>
+                        <li class="current"><a href="/news/list1">TOP榜单</a></li>
+                        <li><a href="/news/list2">场地评测</a></li>
+                        <li><a href="/news/list3">搭建学堂</a></li>
+                        <li><a href="/news/list4">场地快报</a></li>
                     </ul>
                 </div>
 
                 <div class="item-box clearfix">
                     <div class="fl mb30 box-list clearfix">
                         <ul>
-                            <li v-for="item in star_events">
+                            <li v-for="item in newsList">
                                 <a class="fl img" :href="'/article/'+item.id">
-                                    <img :src="item.first_picture.first_picture.url" :alt="item.title">
+                                    <img :src="item.img_paths[0].url_329_400" :alt="item.title">
                                 </a>
                                 <div class="fr text">
                                     <h3>
-                                        <a :href="'/article/'+item.id">{{item.title}}</a>
+                                        <a class="fl img" :href="'/article/'+item.id">云space上海壹秀秀场@你，这里有Nike秋冬新品</a>
                                     </h3>
                                     <p class="des">{{item.abstract}}</p>
-                                    <a class="taglink red" :href="'/site/dtl/'+item.site_id">{{item.site_title}}&nbsp;&nbsp;<i class="icon-icon_moreArrowRight"></i></a>
                                     <div class="bottom">
                                         <div class="fl icon skim">
                                             <i class="icon-icon_articleBrowserLine"></i>
@@ -42,7 +42,7 @@
                                             {{item.up_number}}
                                         </div>
 
-                                        <div class="fr time">{{item.updated_at}}</div>
+                                        <div class="fr time">{{item.created_at}}</div>
                                     </div>
                                 </div>
                             </li>
@@ -69,7 +69,7 @@
                             </div>
 
                             <ul class="cont clearfix">
-                                <li v-for="item in siteRecommend">
+                                <li v-for="item in 4">
                                     <a class="img" href="" title="">
                                         <img src="" alt="">
                                         <p>上海植物园第一会所会场</p>
@@ -90,12 +90,11 @@
 </template>
 <script>
     function fetchData(store){
-//        store.commit('LOADING', true)
-        return store.dispatch(`getEventListData`,{
-            type: '明星案例',
+        store.commit('LOADING', true)
+        return store.dispatch(`getNewsListData`,{
+            type : 'TOP榜单'
         }).then(() => {
             store.commit('LOADING', false)
-
         })
     }
 
@@ -103,15 +102,7 @@
         data() {
             return {
                 hotTags:[1,2,3,4,5],
-                sites:[1,2,3,4,5,6,7,8,9,10,11,12],
-                aboutcases:[1,2,3,4,5,6,7,8,9,10],
-                siteRecommend:[1,2,3,4,5]
             }
-        },
-        computed: {
-            star_events(){
-                return this.$store.state.EventList.star_events
-            },
         },
 
         metaInfo(){
@@ -133,6 +124,11 @@
 
         beforeMount () {
             fetchData(this.$store)
+        },
+        computed: {
+            newsList(){
+                return this.$store.state.NewsList.articles
+            },
         },
         methods: {
 

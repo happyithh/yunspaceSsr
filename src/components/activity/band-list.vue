@@ -23,15 +23,15 @@
                     <div class="fl mb30 box-list clearfix">
                         <ul>
                             <li v-for="item in band_events">
-                                <a class="fl img"  :href="'/article/'+item.id">
-                                    <img :src="item.first_picture.url" :alt="item.title">
+                                <a class="fl img" :href="'/article/'+item.id">
+                                    <img :src="item.first_picture.first_picture.url" :alt="item.title">
                                 </a>
                                 <div class="fr text">
                                     <h3>
                                         <a :href="'/article/'+item.id">{{item.title}}</a>
                                     </h3>
                                     <p class="des">{{item.abstract}}</p>
-                                    <a class="taglink red" href="javascript:;">上海壹秀秀场&nbsp;&nbsp;<i class="icon-icon_moreArrowRight"></i></a>
+                                    <a class="taglink red" :href="'/site/dtl/'+item.site_id">{{item.site_title}}&nbsp;&nbsp;<i class="icon-icon_moreArrowRight"></i></a>
                                     <div class="bottom">
                                         <div class="fl icon skim">
                                             <i class="icon-icon_articleBrowserLine"></i>
@@ -69,7 +69,7 @@
                             </div>
 
                             <ul class="cont clearfix">
-                                <li v-for="item in siteRecommend">
+                                <li v-for="item in 4">
                                     <a class="img" href="" title="">
                                         <img src="" alt="">
                                         <p>上海植物园第一会所会场</p>
@@ -92,7 +92,7 @@
     function fetchData(store){
 //        store.commit('LOADING', true)
         return store.dispatch(`getEventListData`,{
-            type: '',
+            type: '品牌案例',
         }).then(() => {
             store.commit('LOADING', false)
 
@@ -103,9 +103,6 @@
         data() {
             return {
                 hotTags:[1,2,3,4,5],
-                sites:[1,2,3,4,5,6,7,8,9,10,11,12],
-                aboutcases:[1,2,3,4,5,6,7,8,9,10],
-                siteRecommend:[1,2,3,4,5]
             }
         },
         computed: {
