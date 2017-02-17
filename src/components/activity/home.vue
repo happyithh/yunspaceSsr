@@ -33,18 +33,18 @@
                     <div class="logoBox clearfix">
                         <div class="item-title clearfix">
                             <h2><span class="redline"></span>品牌案例</h2>
-                            <a class="more" href="javascript:;">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                            <a class="more" href="/activity/band">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                         </div>
 
                         <ul class="casebox-list big clearfix">
                             <li v-for="(item,index) in band_events" v-if="index<2">
                                 <a class="img" :href="'/article/'+item.id" :title="item.title">
-                                    <img :src="item.first_picture.url" :alt="item.title">
+                                    <img :src="item.first_picture.first_picture.url" :alt="item.title">
                                 </a>
                                 <h3><a :href="'/article/'+item.id">{{item.title}}</a></h3>
-                                <p class="tag">创意活动</p>
-                                <a href="" class="link red">
-                                    <span>art + space</span>
+                                <p class="tag">{{item.event_types}}</p>
+                                <a :href="'/site/dtl/'+item.site_id" class="link red">
+                                    <span>{{item.site_title}}</span>
                                     <i class="icon-icon_moreArrowRight"></i>
                                 </a>
                             </li>
@@ -52,12 +52,12 @@
                         <ul class="casebox-list clearfix">
                             <li v-for="(item,index) in band_events" v-if="index >= 2">
                                 <a class="img" :href="'/article/'+item.id" :title="item.title">
-                                    <img :src="item.first_picture.url" :alt="item.title">
+                                    <img :src="item.first_picture.first_picture.url" :alt="item.title">
                                 </a>
                                 <h3><a :href="'/article/'+item.id">{{item.title}}</a></h3>
-                                <p class="tag">创意活动</p>
-                                <a href="" class="link red">
-                                    <span>art + space</span>
+                                <p class="tag">{{item.event_types}}</p>
+                                <a :href="'/site/dtl/'+item.site_id" class="link red">
+                                    <span>{{item.site_title}}</span>
                                     <i class="icon-icon_moreArrowRight"></i>
                                 </a>
                             </li>
@@ -74,18 +74,18 @@
                     <div class="industryBox mt50">
                         <div class="item-title clearfix">
                             <h2><span class="redline"></span>行业案例</h2>
-                            <a class="more" href="javascript:;">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                            <a class="more" href="/activity/industry">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                         </div>
 
                         <ul class="casebox-list clearfix">
                             <li v-for="item in industry_events">
                                 <a class="img" :href="'/article/'+item.id" :title="item.title">
-                                    <img :src="item.first_picture.url" :alt="item.title">
+                                    <img :src="item.first_picture.first_picture.url" :alt="item.title">
                                 </a>
                                 <h3><a :href="'/article/'+item.id">{{item.title}}</a></h3>
-                                <p class="tag">创意活动</p>
-                                <a href="" class="link red">
-                                    <span>携京东白条落户新天地</span>
+                                <p class="tag">{{item.event_types}}</p>
+                                <a :href="'/site/dtl/'+item.site_id" class="link red">
+                                    <span>{{item.site_title}}</span>
                                     <i class="icon-icon_moreArrowRight"></i>
                                 </a>
                             </li>
@@ -96,18 +96,18 @@
                     <div class="starBox mt30">
                         <div class="item-title clearfix">
                             <h2><span class="redline"></span>明星案例</h2>
-                            <a class="more" href="javascript:;">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                            <a class="more" href="/activity/star">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                         </div>
 
                         <ul class="casebox-list clearfix">
                             <li v-for="item in star_events">
                                 <a class="img" :href="'/article/'+item.id" :title="item.title">
-                                    <img :src="item.first_picture.url" :alt="item.title">
+                                    <img :src="item.first_picture.first_picture.url" :alt="item.title">
                                 </a>
                                 <h3><a :href="'/article/'+item.id">{{item.title}}</a></h3>
-                                <p class="tag">创意活动</p>
-                                <a href="" class="link red">
-                                    <span>携京东白条落户新天地</span>
+                                <p class="tag">{{item.event_types}}</p>
+                                <a :href="'/site/dtl/'+item.site_id" class="link red">
+                                    <span>{{item.site_title}}</span>
                                     <i class="icon-icon_moreArrowRight"></i>
                                 </a>
                             </li>
@@ -154,34 +154,50 @@
         data(){
             return {
                reSites:[1,2,3,4,5],
-                }
-               
-               
+
+
+
+            }
+
+
         },
         
         components: {},
         computed: {
             band_events(){
-                return this.$store.state.EventHome.band_events
+                var s = this.$store.state.EventHome.band_events
+                return this.getTypes(s);
             },
             industry_events(){
-                return this.$store.state.EventHome.industry_events
+                var s = this.$store.state.EventHome.industry_events
+                return this.getTypes(s);
             },
             star_events(){
-                return this.$store.state.EventHome.star_events
+                var s = this.$store.state.EventHome.star_events
+                return this.getTypes(s);
             },
 
         },
         mounted () {
             var self=this;
             self.getBanner();
+
         },
         preFetch: fetchData,
         beforeMount () {
             fetchData(this.$store)
         },
         methods: {
-            
+            getTypes:function (s) {
+                for(var i in s ){
+                    var types = s[i].event_types
+                    if(!types==''){
+                        s[i].event_types = s[i].event_types.substring(0,4);
+                    }
+                }
+                return s
+            },
+
             //搜索点击跳转到空间列表页
             getSearchVal:function () {
                 this.searchInputVal=$('.searchInputVal').val();
