@@ -31,7 +31,7 @@
                                         <a :href="'/article/'+item.id">{{item.title}}</a>
                                     </h3>
                                     <p class="des">{{item.abstract}}</p>
-                                    <a class="taglink red" :href="'/site/dtl/'+item.site_id">{{item.site_title}}&nbsp;&nbsp;<i class="icon-icon_moreArrowRight"></i></a>
+                                    <a class="taglink red" :href="'/site/'+item.site_id">{{item.site_title}}&nbsp;&nbsp;<i class="icon-icon_moreArrowRight"></i></a>
                                     <div class="bottom">
                                         <div class="fl icon skim">
                                             <i class="icon-icon_articleBrowserLine"></i>

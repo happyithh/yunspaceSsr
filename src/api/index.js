@@ -17,6 +17,7 @@ export const YUNAPI = {
     siteSelected : host + 'articles/get_site_selected',
     submitOnekeyDemand : host + 'onekey_demands/'
     // openShop : host + 'api/informations/get_retail',
+    booking : host + 'booking_demands',
     // findIp : host + 'api/projects/ip_project',
     // article : host + 'api/informations',
     // articleHot : host  + 'api/informations/get_hot_recommend',
