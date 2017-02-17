@@ -103,6 +103,7 @@
     </div>
 </template>
 <script>
+    import {YUNAPI} from '../../api'
     function fetchData(store){
 //        store.commit('LOADING', true)
 //        return store.dispatch(`getSiteHomeData`,{
@@ -138,6 +139,18 @@
             fetchData(this.$store)
         },
         computed: {
+            cities (){
+                return this.$store.state.cities
+            },
+            eventType(){
+                return this.$store.state.allTags.activity_type
+            },
+            allTags(){
+                return this.$store.state.allTags
+            },
+            activityPeople(){
+                return this.$store.state.allTags.activity_people
+            }
         },
         methods: {
 
