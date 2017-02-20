@@ -125,13 +125,13 @@
                     <ul class="cont clearfix">
                         <li v-for="item in venues">
                             <div class="img">
-                                <router-link :to="'/site/'+item.site_id">
+                                <router-link :to="'/site/dtl/'+item.site_id">
                                     <img :src="item.img_paths.length > 0 ? item.img_paths[0]['url_400_267'] : ''" />
                                     <!--<img :src="item.logo">-->
                                 </router-link>
                             </div>
                             <div class="text">
-                                <a class="title" target="_blank" :href="'/site/'+item.site_id" v-html="item.site_name"></a>
+                                <a class="title" target="_blank" :href="'/site/dtl/'+item.site_id" v-html="item.site_name"></a>
                                 <div class="price">{{item.special_price}}</div>
                                 <div class="textinfo">
                                     <p><span>场地类型：</span>{{item.site_type}}</p>

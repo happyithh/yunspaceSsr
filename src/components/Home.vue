@@ -67,11 +67,11 @@
             </div>
             <div class="recommend-site clearfix">
                 <div class="site-piece" v-for="item in hotSites">
-                    <router-link :to="'/site/'+item.id" title="">
+                    <router-link :to="'/site/dtl/'+item.id" title="">
                         <img :src="item.site_pictures.length > 0 ? item.site_pictures[0]['url_400_267'] : ''" alt="">
                     </router-link>
                     <div class="des">
-                        <router-link :to="'/site/'+item.id" class="title" v-html="item.title"></router-link>
+                        <router-link :to="'/site/dtl/'+item.id" class="title" v-html="item.title"></router-link>
                         <p class="p1">云SPACE价:<span>{{item.special_price}}</span></p>
                         <p>市场价: {{item.market_price}}</p>
                     </div>

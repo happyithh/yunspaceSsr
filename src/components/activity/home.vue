@@ -43,7 +43,7 @@
                                 </a>
                                 <h3><a :href="'/article/'+item.id">{{item.title}}</a></h3>
                                 <p class="tag">{{item.event_types}}</p>
-                                <a :href="'/site/'+item.site_id" class="link red">
+                                <a :href="'/site/dtl/'+item.site_id" class="link red">
                                     <span>{{item.site_title}}</span>
                                     <i class="icon-icon_moreArrowRight"></i>
                                 </a>
@@ -56,7 +56,7 @@
                                 </a>
                                 <h3><a :href="'/article/'+item.id">{{item.title}}</a></h3>
                                 <p class="tag">{{item.event_types}}</p>
-                                <a :href="'/site/'+item.site_id" class="link red">
+                                <a :href="'/site/dtl/'+item.site_id" class="link red">
                                     <span>{{item.site_title}}</span>
                                     <i class="icon-icon_moreArrowRight"></i>
                                 </a>
@@ -84,7 +84,7 @@
                                 </a>
                                 <h3><a :href="'/article/'+item.id">{{item.title}}</a></h3>
                                 <p class="tag">{{item.event_types}}</p>
-                                <a :href="'/site/'+item.site_id" class="link red">
+                                <a :href="'/site/dtl/'+item.site_id" class="link red">
                                     <span>{{item.site_title}}</span>
                                     <i class="icon-icon_moreArrowRight"></i>
                                 </a>
@@ -106,7 +106,7 @@
                                 </a>
                                 <h3><a :href="'/article/'+item.id">{{item.title}}</a></h3>
                                 <p class="tag">{{item.event_types}}</p>
-                                <a :href="'/site/'+item.site_id" class="link red">
+                                <a :href="'/site/dtl/'+item.site_id" class="link red">
                                     <span>{{item.site_title}}</span>
                                     <i class="icon-icon_moreArrowRight"></i>
                                 </a>

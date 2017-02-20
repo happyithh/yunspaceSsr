@@ -40,7 +40,7 @@ export default new Router({
     { path: '/article/:id', component: ArticleDtl },
     { path: '/article-toplist/:id', component: ArticleTopListDtl },
     { path: '/event', component: Event },
-    { path: '/site/:id', component: Site },
+    { path: '/site/dtl/:id', component: Site },
     { path: '/site', component: SiteHome },
     { path: '/site/hot', component: SiteHot },
     { path: '/site/activity', component: SiteHotActivity },
