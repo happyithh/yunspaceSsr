@@ -17,6 +17,7 @@ import { app, store } from './app'
 store.replaceState(window.__INITIAL_STATE__)
 
 // actually mount to DOM
+window.APP = app; // element插件需要使用
 app.$mount('#app')
 
 // service worker

@@ -26,7 +26,7 @@
                             您的称呼
                         </td>
                         <td class="fill">
-                            <input type="text" placeholder="请输入您的姓名">
+                            <input v-model="rent.contact" type="text" placeholder="请输入您的姓名">
                         </td>
                     </tr>
                     <tr>
@@ -35,8 +35,8 @@
                             联系方式
                         </td>
                         <td class="fill">
-                            <input type="text" placeholder="11位手机号">
-                            <button class="btn btn-black send-code">发送验证码</button>
+                            <input v-model="rent.phone" type="text" placeholder="11位手机号">
+                            <button @click="sendPhoneCode" class="btn btn-black send-code">发送验证码</button>
                         </td>
                     </tr>
                     <tr>
@@ -45,7 +45,7 @@
                             短信验证码
                         </td>
                         <td class="fill">
-                            <input type="text" placeholder="请输入6位短信验证码">
+                            <input v-model="rent.auth_code" type="text" placeholder="请输入6位短信验证码">
                         </td>
                     </tr>
                     <tr>
@@ -53,16 +53,14 @@
                             活动信息
                         </td>
                         <td class="fill">
-                            <select>
-                                <option>上海</option>
-                                <option>北京</option>
-                                <option>广州</option>
+                            <select v-model="rent.order_city">
+                                <option :value="v.name" v-for="(v,k) in cities">{{v.name}}</option>
                             </select>
-                            <select>
-                                <option>活动类型</option>
+                            <select v-model="rent.activity_type">
+                                <option :value="v" v-for="(v,k) in eventType">{{v}}</option>
                             </select>
-                            <select>
-                                <option>容纳人数</option>
+                            <select v-model="rent.numberof_activities">
+                                <option :value="k" v-for="(v,k) in activityPeople">{{v}}</option>
                             </select>
                         </td>
                     </tr>
@@ -71,13 +69,21 @@
                             使用日期
                         </td>
                         <td class="fill">
-                            <select>
-                                <option>开始时间</option>
-                            </select>
+                            <el-date-picker
+                                    v-model="rent.s_time"
+                                    align="left"
+                                    type="date"
+                                    class="fl box-wrap"
+                                    placeholder="选择日期">
+                            </el-date-picker>
                             <span class="line"> - </span>
-                            <select>
-                                <option>结束时间</option>
-                            </select>
+                            <el-date-picker
+                                    v-model="rent.e_time"
+                                    align="left"
+                                    type="date"
+                                    class="fl box-wrap"
+                                    placeholder="选择日期">
+                            </el-date-picker>
                         </td>
                     </tr>
                     <tr>
@@ -85,14 +91,14 @@
                             其他要求
                         </td>
                         <td class="fill">
-                            <textarea placeholder="提供更多的信息以方便为您服务"></textarea>
+                            <textarea v-model="rent.activities_required" placeholder="提供更多的信息以方便为您服务"></textarea>
                         </td>
                     </tr>
                     <tr>
                         <td class="label">
                         </td>
                         <td class="fill">
-                            <button class="btn btn-red">提交</button>
+                            <button @click="submitData" class="btn btn-red">提交</button>
                         </td>
                     </tr>
                     </tbody>
@@ -104,6 +110,7 @@
 </template>
 <script>
     import {YUNAPI} from '../../api'
+    import {FUNC} from '../../globalfunc/index'
     function fetchData(store){
 //        store.commit('LOADING', true)
 //        return store.dispatch(`getSiteHomeData`,{
@@ -116,6 +123,21 @@
     export default {
         data() {
             return {
+                rent:{
+                    s_time:'',
+                    e_time : '',
+                    activities_required : '',
+                    city_id : 1,
+                    order_city : '上海',
+                    code_token : '',
+                    phone:'',
+                    contact:'',
+                    auth_code : '',
+                    numberof_activities : '50',
+                    activity_type : '展览展示'
+                },
+
+
             }
         },
 
@@ -131,7 +153,6 @@
         },
         mounted () {
             var self = this;
-            self.$store.commit('LOADING', false)
         },
         preFetch: fetchData,
 
@@ -150,10 +171,37 @@
             },
             activityPeople(){
                 return this.$store.state.allTags.activity_people
-            }
+            },
+
         },
         methods: {
+            submitData(){
+                var self = this;
 
+                var sd = new Date(this.rent.s_time);
+                var ed = new Date(this.rent.e_time);
+
+                this.rent.s_time = sd.getFullYear() + '-' + (sd.getMonth() + 1) + '-' + sd.getDate() ;
+                this.rent.e_time = ed.getFullYear() + '-' + (ed.getMonth() + 1) + '-' + ed.getDate() ;
+
+                $.post({
+                    url:YUNAPI.submitOnekeyDemand,
+                    data:self.rent,
+                    success:function (data) {
+                        console.log(data)
+                    },
+                    error:function () {
+
+                    }
+                })
+            },
+            sendPhoneCode(e){
+                var self = this;
+                var success = function (data) {
+                    self.rent.code_token = data.data;
+                };
+                FUNC.sendPhoneCode(this.rent.phone,success,e.target);
+            }
         }
     }
 
