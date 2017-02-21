@@ -11,47 +11,100 @@
         </div>
         <div class="w1200">
 
+            <!--YUNSHOW-->
+            <ul class="yunshow mt50 clearfix">
+                <li>
+                    <a href="">
+                        <img src="" alt="yunshow">
+                        <p>SHOW</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="" alt="yunshow">
+                        <p>SHOW</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="" alt="yunshow">
+                        <p>SHOW</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="" alt="yunshow">
+                        <p>SHOW</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="" alt="yunshow">
+                        <p>SHOW</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="" alt="yunshow">
+                        <p>SHOW</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="" alt="yunshow">
+                        <p>SHOW</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="" alt="yunshow">
+                        <p>SHOW</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="" alt="yunshow">
+                        <p>SHOW</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="" alt="yunshow">
+                        <p>SHOW</p>
+                    </a>
+                </li>
+            </ul>
+
             <!--空间故事-->
-            <div class="mt50">
-                <div class="item-title clearfix">
-                    <h2><span class="redline"></span>空间故事</h2>
-                    <div class="keywords">
-                        <a href="">策划执行</a>
-                        <a href="">趣味年会</a>
-                        <a href="">闪店攻略</a>
-                    </div>
-                    <a class="more" href="">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
-                </div>
-            </div>
-            <div class="swiper-side-arrow">
-                <div class="swiper-container module-one">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"  v-for="item in spaceStorys">
-                            <a href="" title class="main-img">
-                                <img :src="item.img_paths.length > 0 ? item.img_paths[0]['url_400_267'] : ''" alt="">
-                                <p class="add"><i class="icon icon-icon_typeSpace"></i><span v-html="item.space_title"></span></p>
-                            </a>
-                            <a href="" class="title" v-html="item.title"></a>
-                            <span class="other"><i class="icon icon-icon_articleGoodLine"></i>{{item.up_number}} · {{item.brand}} · {{item.activity_type}}</span>
-                        </div>
-                    </div>
-                </div>
-                <span class="arrow-left arrow"><i class="icon icon-icon_switchArrowLeft"></i></span>
-                <span class="arrow-right arrow"><i class="icon icon-icon_switchArrowRight"></i></span>
-            </div>
+            <!--<div class="mt50">-->
+                <!--<div class="item-title clearfix">-->
+                    <!--<h2><span class="redline"></span>空间故事</h2>-->
+                    <!--<div class="keywords">-->
+                        <!--<a href="">策划执行</a>-->
+                        <!--<a href="">趣味年会</a>-->
+                        <!--<a href="">闪店攻略</a>-->
+                    <!--</div>-->
+                    <!--<a class="more" href="">更多 <i class="icon icon-icon_moreArrowRight"></i></a>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="swiper-side-arrow">-->
+                <!--<div class="swiper-container module-one">-->
+                    <!--<div class="swiper-wrapper">-->
+                        <!--<div class="swiper-slide"  v-for="item in spaceStorys">-->
+                            <!--<a href="" title class="main-img">-->
+                                <!--<img :src="item.img_paths.length > 0 ? item.img_paths[0]['url_400_267'] : ''" alt="">-->
+                                <!--<p class="add"><i class="icon icon-icon_typeSpace"></i><span v-html="item.space_title"></span></p>-->
+                            <!--</a>-->
+                            <!--<a href="" class="title" v-html="item.title"></a>-->
+                            <!--<span class="other"><i class="icon icon-icon_articleGoodLine"></i>{{item.up_number}} · {{item.brand}} · {{item.activity_type}}</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<span class="arrow-left arrow"><i class="icon icon-icon_switchArrowLeft"></i></span>-->
+                <!--<span class="arrow-right arrow"><i class="icon icon-icon_switchArrowRight"></i></span>-->
+            <!--</div>-->
 
             <!--/空间故事-->
-
-            <!--广告1-->
-            <div class="ad-one clearfix">
-                <a class="ad-piece">
-                    <img src="" alt="">
-                </a>
-                <a class="ad-piece">
-                    <img src="" alt="">
-                </a>
-            </div>
-            <!--/广告1-->
 
             <!--推荐场地-->
             <div class="mt50">
@@ -85,12 +138,17 @@
                 </div>
             </div>
             <!--/推荐场地-->
-            
-            <!--广告条-->
-            <a href="" class="ad-two mt50">
-                <img src="" alt="">
-            </a>
-            <!--/广告条-->
+
+            <!--广告1-->
+            <div class="ad-one mt50 clearfix">
+                <a class="ad-piece">
+                    <img src="" alt="">
+                </a>
+                <a class="ad-piece">
+                    <img src="" alt="">
+                </a>
+            </div>
+            <!--/广告1-->
 
             <!--精选分类-->
             <div class="mt50">
@@ -114,6 +172,12 @@
                     </a>
                 </div>
             <!--/精选分类-->
+
+            <!--广告条-->
+            <a href="" class="ad-two mt50">
+                <img src="" alt="">
+            </a>
+            <!--/广告条-->
 
             <!--资讯报道-->
             <div class="mt50">

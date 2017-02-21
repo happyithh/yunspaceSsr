@@ -200,6 +200,12 @@
     border-right: 1px solid #ddd;
     text-indent: 10px;
 }
+body .home .el-input__icon+.el-input__inner{
+    border-right: none;
+}
+.home .search-bar .box-wrap{
+    border-right: 1px solid #ddd;
+}
 .search-bar .box-wrap:last-child .box{border: none;}
 .search-bar .box-wrap .icon{
     position: absolute;
@@ -280,6 +286,10 @@
 /***轮播点点***/
 .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
     bottom: 12px;
+}
+.swiper-pagination-current{
+    font-size: 26px;
+    color: #AA2C3C;
 }
 body .swiper-pagination-bullet {
     width: 6px;

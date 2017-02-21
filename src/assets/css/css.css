@@ -35,6 +35,7 @@ a:active {color: #AA2C3C} /* 鼠标点击那一瞬间的状态 */
 .clearfix:after {content: " "; display: block; height:0; clear:both; visibility: hidden;}
 .clearfix { *zoom:1; }
 .w1200{width: 1200px;margin: auto}
+.w1170{width: 1170px;margin: auto}
 .w710{width: 710px;}
 .mt20{margin-top: 20px}
 .mb20{margin-bottom: 20px}
