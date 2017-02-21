@@ -10,19 +10,19 @@
                 </div>
                 <div class="fl nav-location dorpdown city-choose">
                     <div style="position: relative">
-                        <p>上海</p>
+                        <p>{{navValCity}}</p>
                         <i class="icon-triangedown"></i>
                     </div>
                     <div class="city-dorpdown">
                         <div class="hot-city">
                             <span class="active">热门城市</span>
-                            <a href="?city_id=1">上海</a>
-                            <a href="?city_id=2">北京</a>
+                            <a :class="{ 'active' : city_id == 1 }" href="?city_id=1">上海</a>
+                            <a :class="{ 'active' : city_id == 2 }" href="?city_id=2">北京</a>
                             <a>广州</a>
                         </div>
                         <div class="border-line"></div>
                         <div class="common-city">
-                            <a :href="'?city_id='+item.id" v-for="item in cities">{{item.name}}</a>
+                            <a :class="{ 'active' : city_id == item.id }" :href="'?city_id='+item.id" v-for="item in cities">{{item.name}}</a>
                         </div>
                     </div>
                 </div>
@@ -109,6 +109,15 @@
                 return this.$store.state.personalData
             },
             cities (){
+                var cities = this.$store.state.cities
+                if(cities.length > 0){
+                    for(var i = 0; i < cities.length; i++){
+                        if(this.$route.query.city_id == cities[i].id){
+                            this.navValCity = cities[i].name;
+                            break
+                        }
+                    }
+                }
                 return this.$store.state.cities
             }
         },
@@ -120,6 +129,7 @@
             return store.dispatch('getAllTags')
         },
         mounted () {
+            this.city_id = this.$route.query.city_id
         },
         methods: {
             toggleLoginForm(){},

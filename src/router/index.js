@@ -47,7 +47,7 @@ export default new Router({
     { path: '/site/selected', component: SiteSelected },
     { path: '/form/rent', component: RentalSite },
     { path: '/inquiry', component: InquiryList },
-    { path: '/success', component: Success },
+    { path: '/form/success', component: Success },
     { path: '/activity', component: Activity },
     { path: '/activity/band', component: ActivityBandList },
     { path: '/activity/industry', component: ActivityIndustryList },

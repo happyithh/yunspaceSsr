@@ -161,10 +161,16 @@ nav p,nav .navbar a{
   }
   .hot-city{
     padding: 6px 0;
+    .active{
+      color: #AA2C3C;
+    }
   }
   .common-city{
     padding: 6px 0;
     margin: 0 -13px;
+    .active{
+      color: #AA2C3C;
+    }
   }
 }
 .border-line{

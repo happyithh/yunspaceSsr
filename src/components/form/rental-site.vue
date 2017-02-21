@@ -177,7 +177,6 @@
         methods: {
             submitData(){
                 var self = this;
-
                 var sd = new Date(this.rent.s_time);
                 var ed = new Date(this.rent.e_time);
 
@@ -188,7 +187,17 @@
                     url:YUNAPI.submitOnekeyDemand,
                     data:self.rent,
                     success:function (data) {
-                        console.log(data)
+
+                        if(data.status == 1 || data.state == 1){
+
+                            router.replace('/form/success');
+                        }else{
+                            APP.$message({
+                                message: data.message,
+                                type: 'warning',
+                                duration : 2000
+                            });
+                        }
                     },
                     error:function () {
 

@@ -15,11 +15,11 @@
                     <!--<li>商业发布</li>-->
                     <!--<li>晚会年会</li>-->
                 <!--</ul>-->
-                <el-select v-model="searchCity" placeholder="目的">
+                <el-select v-model="searchEventType" placeholder="目的">
                     <el-option
-                            v-for="item in options"
-                            :label="item.label"
-                            :value="item.value">
+                            v-for="(k,v) in eventType"
+                            :label="v"
+                            :value="v">
                     </el-option>
                 </el-select>
             </div>
@@ -27,18 +27,18 @@
                 <!--<input class="box" type="text" placeholder="面积">-->
                 <!--<i class="icon icon-icon_selectDownArrowThin"></i>-->
 
-                <el-select v-model="searchCity" placeholder="面积">
+                <el-select v-model="searchAreaSize" placeholder="面积">
                     <el-option
-                            v-for="item in options"
-                            :label="item.label"
-                            :value="item.value">
+                            v-for="(k,v) in areaSize"
+                            :label="k"
+                            :value="v">
                     </el-option>
                 </el-select>
             </div>
         </div>
 
         <button class="fl btn btn-black search-btn"><i class="icon icon-icon_searchBarSearch"></i>搜索</button>
-        <button class="fl btn btn-red" style="margin-right: 0"><i class="icon icon-icon_searchBarOne"></i>一键租场地</button>
+        <router-link to="/form/rent" class="fl btn btn-red" style="margin-right: 0;color:#fff"><i class="icon icon-icon_searchBarOne"></i>一键租场地</router-link>
     </div>
     <!--搜索条-end-->
 
@@ -64,7 +64,8 @@
                     value: '选项5',
                     label: '北京烤鸭'
                 }],
-                searchCity: '',
+                searchEventType: '',
+                searchAreaSize : null
             }
 
 
@@ -72,6 +73,12 @@
 
         components: {},
         computed: {
+            eventType(){
+                return this.$store.state.allTags.activity_type
+            },
+            areaSize(){
+                return this.$store.state.allTags.area_size
+            }
         },
         mounted () {
             var self=this;
