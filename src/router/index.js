@@ -6,7 +6,6 @@ Vue.use(Router)
 import Home from '../components/Home.vue'
 import ArticleDtl from '../components/news/dtl.vue'
 import ArticleTopListDtl from '../components/news/dtl-toplist.vue'
-import Event from '../components/event/event.vue'
 import SiteHome from '../components/site/home.vue'
 import SiteHot from '../components/site/hot.vue'
 import SiteHotActivity from '../components/site/hot-activity.vue'
@@ -30,6 +29,8 @@ import NewsList2 from '../components/news/list2.vue'
 import NewsList3 from '../components/news/list3.vue'
 import NewsList4 from '../components/news/list4.vue'
 import NewsSite from '../components/news/site-essence.vue'
+import YunShow from '../components/yunshow/home.vue'
+import YunShowDtl from '../components/yunshow/dtl.vue'
 
 
 export default new Router({
@@ -39,7 +40,6 @@ export default new Router({
     { path: '/', component: Home },
     { path: '/article/:id', component: ArticleDtl },
     { path: '/article-toplist/:id', component: ArticleTopListDtl },
-    { path: '/event', component: Event },
     { path: '/site/dtl/:id', component: Site },
     { path: '/site', component: SiteHome },
     { path: '/site/hot', component: SiteHot },
@@ -62,6 +62,8 @@ export default new Router({
     { path: '/news/list3', component: NewsList3 },
     { path: '/news/list4', component: NewsList4 },
     { path: '/news/site', component: NewsSite },
+    { path: '/yunshow', component: YunShow },
+    { path: '/yunshow/dtl', component: YunShowDtl },
     { path: '*', component: NotFound },
   ]
 })
