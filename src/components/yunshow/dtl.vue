@@ -67,12 +67,12 @@
                 </div>
 
                 <div class="tab-box">
-                    <div class="cont current">
+                    <div class="cont clearfix current">
                         <div class="box site-piece" v-for="item in 6">
                             <router-link to="/" class="img" title="">
                                 <img src="" alt="">
                             </router-link>
-                            <div class="tag">餐厅酒吧</div>
+                            <div class="tag">餐厅酒吧<i class="jiao"></i></div>
                             <div class="des">
                                 <router-link to="/" class="h-title">上海龙猫咖啡</router-link>
                                 <p class="p1">云SPACE价:<span>￥30,000/天 起</span></p>
@@ -89,7 +89,7 @@
                         <div class="more">没有更多了 T T</div>
                     </div>
 
-                    <div class="cont">
+                    <div class="cont clearfix">
                         <div class="box site-piece" v-for="item in 6">
                             <router-link to="/" title="">
                                 <img src="" alt="">
@@ -110,7 +110,7 @@
                         <div class="more">没有更多了 T T</div>
                     </div>
 
-                    <div class="cont">
+                    <div class="cont clearfix">
                         <div class="box site-piece" v-for="item in 6">
                             <router-link to="/" title="">
                                 <img src="" alt="">
@@ -135,7 +135,12 @@
 
             <div class="fr revolve-service mt50">
                 <h2>涉及服务</h2>
-
+                <ul class="clearfix">
+                    <li v-for="item in 13">
+                        <i class="icon-icon_serveStage"></i>
+                        <p>场地搭建</p>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
