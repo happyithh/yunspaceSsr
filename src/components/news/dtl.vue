@@ -2,7 +2,7 @@
     <div>
         <!--面包屑-star-->
         <div class="breadCrumb w1200">
-            <a href="javascript:;" class="red">活动</a>
+            <a href="/activity" class="red">活动</a>
             <span class="icon-icon_moreArrowRight"></span>
             <a href="javascript:;">品牌案例</a>
         </div>
@@ -11,26 +11,26 @@
         <div class="w1200 dtl-box mb30 clearfix">
             <!--文章详情-star-->
             <div class="fl details">
-                <h1>魔都最有情调的餐厅……你知道几家？</h1>
+                <h1>{{detail.title}}</h1>
                 <div class="title-bar clearfix">
                     <div class="fl">
-                        来源：云SPACE运营部 &nbsp;&nbsp;&nbsp; 2016-12-09
+                        来源：{{detail.source}} &nbsp;&nbsp;&nbsp; {{detail.created_at}}
                     </div>
 
                     <div class="fr">
-                        浏览量：2881 <span class="dian">·</span> 点赞数：1225
+                        浏览量：{{detail.viewed}} <span class="dian">·</span> 点赞数：{{detail.up_number}}
                     </div>
                 </div>
                 <div class="tags">
                     <i class="icon-icon_tagHot"></i>
-                    <a class="tag" href="javascript:;" title="魔都" v-for="item in tags"><span>/</span>魔都</a>
+                    <div class="tag">
+                        <span>/</span>
+                        <a href="javascript:;" title="魔都">{{detail.keyword}}</a>
+                    </div>
+
                 </div>
-                <h3>
-                    说到深藏不露，自然不是那些民声在外甚至来头大得吓人的餐厅；因为是深藏不露，所以尽量不说魔都里的外滩系、酒店系。因此我在这里推荐的不是沪上美食榜单，而是你在魔都漫无目的的闲逛时遇到的惊喜。
-                </h3>
-                <div class="details-cont">
-                    <div class="box"><img src=""></div>
-                </div>
+                <h3>{{detail.abstract}}</h3>
+                <div class="details-cont" v-html="detail.details"></div>
 
                 <div class="handle clearfix">
                     <div class="fl btn-collect-zan clearfix">
@@ -50,16 +50,16 @@
                     </div>
                 </div>
 
-                <div class="PreNext clearfix">
-                    <div class="fl red clearfix">
-                        <p>上一篇：</p>
-                        <a href="javascript:;" title="">Salomon秋冬新品，来中成智谷秀场订购奥运冠军同款单品</a>
-                    </div>
-                    <div class="fr red clearfix">
-                        <p>下一篇：</p>
-                        <a href="javascript:;" title="">玛丽黛佳中国船舶馆大秀启幕云SPACE引领商业活动新浪潮</a>
-                    </div>
-                </div>
+                <!--<div class="PreNext clearfix">-->
+                    <!--<div class="fl red clearfix" v-if="pre.length > 0">-->
+                        <!--<p>上一篇：</p>-->
+                        <!--<a :href="'/article/'+pre.id">{{pre.title}}</a>-->
+                    <!--</div>-->
+                    <!--<div class="fr red clearfix" v-if="next.length > 0">-->
+                        <!--<p>下一篇：</p>-->
+                        <!--<a :href="'/article/'+next.id">{{next.title}}</a>-->
+                    <!--</div>-->
+                <!--</div>-->
             </div>
             <!--文章详情-end-->
 
@@ -71,8 +71,8 @@
                     </div>
                     <ul class="cont">
                         <li>
-                            <div class="img">
-                                <img src="" title="">
+                            <div class="img-wrap">
+                                <a class="img" :href="'/site/dtl/'+relation_site.id"><img src="/static/images/test/3to2.png" title=""></a>
                                 <div class="price">
                                     <p><strong>￥80,000</strong>/天 起</p>
                                     <span>市场价: ¥ 100,000/天</span>
@@ -80,13 +80,13 @@
                             </div>
                             <div class="text">
                                 <h3>
-                                    <a href="javascript:;">云SPACE 上海壹秀秀场</a>
+                                    <a :href="'/site/dtl/'+relation_site.id">{{relation_site.title}}</a>
                                 </h3>
                                 <p>商业发布／主题派对／时尚走秀／动漫游戏／展览展示</p>
 
                                 <div class="assort clearfix">
-                                    <p><i class="icon-icon_spaceBusiness"></i> 所属商圈：徐家汇 <span class="line"></span></p>
-                                    <p><i class="icon-icon_spacePeople"></i> 最大容纳人数：500人 <span class="line"></span></p>
+                                    <p><i class="icon-icon_spaceBusiness"></i> 所属商圈：{{relation_site.district}} <span class="line"></span></p>
+                                    <p><i class="icon-icon_spacePeople"></i> 最大容纳人数：{{relation_site.max_people}}人 <span class="line"></span></p>
                                 </div>
                             </div>
                         </li>
@@ -100,7 +100,7 @@
                     </div>
 
                     <ul class="cont clearfix">
-                        <li class="clearfix" v-for="item in hotSite">
+                        <li class="clearfix" v-for="item in 3">
                             <a class="fl img" href="" title="">
                                 <img src="" alt="">
                             </a>
@@ -124,7 +124,7 @@
                     </div>
 
                     <ul class="cont clearfix">
-                        <li class="clearfix" v-for="item in newsRecommend">
+                        <li class="clearfix" v-for="item in 6">
                             <h5 class="fl">
                                 <a href="javascript:;" title="">国际会展中心，捷普科技年会</a>
                             </h5>
@@ -144,8 +144,8 @@
 <script>
     function fetchData(store){
         store.commit('LOADING', true)
-        return store.dispatch(`getNewsData`,{
-//            city_id:1
+        return store.dispatch(`getNewsDtlData`,{
+            id: store.state.route.params.id
         }).then(() => {
             store.commit('LOADING', false)
         })
@@ -155,20 +155,30 @@
     export default {
         data() {
             return {
-                hotTags:[1,2,3,4,5],
-                sites:[1,2,3,4,5,6,7,8,9,10,11,12],
-                aboutcases:[1,2,3,4,5,6,7,8,9,10],
-                siteRecommend:[1,2,3,4,5],
-                tags:[1,2,3,4],
-                newsRecommend:[1,2,3,4,5],
-                hotSite:[1,2,3]
+
             }
         },
 
         computed: {
-//            cities (){
-//                return this.$store.state.cities
-//            },
+            detail (){
+                return this.$store.state.NewsDtl.detail
+            },
+            recommend_articles (){
+                return this.$store.state.NewsDtl.recommend_articles
+            },
+            hot_sites (){
+                return this.$store.state.NewsDtl.hot_sites
+            },
+            relation_site (){
+                return this.$store.state.NewsDtl.relation_site
+            },
+            next (){
+                return this.$store.state.NewsDtl.next
+            },
+            pre (){
+                return this.$store.state.NewsDtl.pre
+            }
+
         },
 
         metaInfo(){

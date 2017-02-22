@@ -53,15 +53,27 @@
                             活动信息
                         </td>
                         <td class="fill">
-                            <select v-model="rent.order_city">
-                                <option :value="v.name" v-for="(v,k) in cities">{{v.name}}</option>
-                            </select>
-                            <select v-model="rent.activity_type">
-                                <option :value="v" v-for="(v,k) in eventType">{{v}}</option>
-                            </select>
-                            <select v-model="rent.numberof_activities">
-                                <option :value="k" v-for="(v,k) in activityPeople">{{v}}</option>
-                            </select>
+                            <el-select v-model="rent.order_city" :placeholder="rent.order_city">
+                                <el-option
+                                        v-for="(v,k) in cities"
+                                        :label="v.name"
+                                        :value="v.id">
+                                </el-option>
+                            </el-select>
+                            <el-select v-model="rent.activity_type" :placeholder="rent.activity_type">
+                                <el-option
+                                        v-for="(v,k) in eventType"
+                                        :label="v"
+                                        :value="v">
+                                </el-option>
+                            </el-select>
+                            <el-select v-model="rent.numberof_activities" :placeholder="rent.numberof_activities">
+                                <el-option
+                                        v-for="(v,k) in activityPeople"
+                                        :label="v"
+                                        :value="k">
+                                </el-option>
+                            </el-select>
                         </td>
                     </tr>
                     <tr>
@@ -76,7 +88,7 @@
                                     class="fl box-wrap"
                                     placeholder="选择日期">
                             </el-date-picker>
-                            <span class="line"> - </span>
+                            <span class="fl line"> - </span>
                             <el-date-picker
                                     v-model="rent.e_time"
                                     align="left"

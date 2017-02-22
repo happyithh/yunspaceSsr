@@ -186,7 +186,6 @@
 
                             <div class="space-fit-details">
                                 <table cellpadding="0" cellspacing="0">
-                                    <tbody>
                                     <tr class="trfirst">
                                         <th width="33%">名称</th>
                                         <th width="16%">面积（㎡）</th>
@@ -194,6 +193,7 @@
                                         <th width="20%">参考价</th>
                                         <th width="18%">售价</th>
                                     </tr>
+                                    <tbody>
                                     <tr>
                                         <td>会议厅</td>
                                         <td>1200</td>

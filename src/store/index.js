@@ -79,6 +79,14 @@ const defaultState = {
         teachings:'',
         tops:'',
     },
+    NewsDtl:{
+        detail:'',
+        relation_site:'',
+        recommend_articles: [],
+        hot_sites: [],
+        next:'',
+        pre:''
+    },
     SiteEssence:'',
 
     loading : false,
@@ -169,13 +177,14 @@ const mutations = {
     },
 
     //文章详情
-    NEWS_DATA(state, data){
+    NEWS_DTL_DATA(state, data){
         console.log(data,777)
-        state.NewsHome.articles = data.articles
-        state.NewsHome.evaluates = data.evaluates
-        state.NewsHome.selecteds = data.selecteds
-        state.NewsHome.teachings = data.teachings
-        state.NewsHome.tops = data.tops
+        state.NewsDtl.detail = data.detail
+        state.NewsDtl.relation_site = data.relation_site
+        state.NewsDtl.hot_sites = data.hot_sites
+        state.NewsDtl.recommend_articles = data.recommend_articles
+        state.NewsDtl.next = data.next
+        state.NewsDtl.pre = data.pre
     },
 
     //资讯列表

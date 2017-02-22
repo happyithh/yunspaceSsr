@@ -14,6 +14,7 @@ export const YUNAPI = {
     eventList : host + 'events/list',
     newsList : host + 'articles/list',
     newsHome : host + 'articles',
+    newsDtl : host + 'articles/info',
     siteSelected : host + 'articles/get_site_selected',
     submitOnekeyDemand : host + 'onekey_demands/',
     // openShop : host + 'api/informations/get_retail',

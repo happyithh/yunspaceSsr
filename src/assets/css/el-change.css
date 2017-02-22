@@ -274,3 +274,21 @@ body .el-dialog select:-webkit-autofill {
     min-width: 28px;
 }
 
+body .fill .el-input__icon+.el-input__inner{
+    padding: 0 14px;
+    height: 36px;
+    border-right: 0;
+}
+body .fill .el-input__icon{
+    top:15px;
+    right: 12px;
+}
+body .fill .el-select{
+    width: 180px;
+    background: #f6f6f6;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+body .fill .el-input__icon{
+    border-top-color: #999;
+}
