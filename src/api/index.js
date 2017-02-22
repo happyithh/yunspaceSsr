@@ -18,7 +18,8 @@ export const YUNAPI = {
     submitOnekeyDemand : host + 'onekey_demands/',
     // openShop : host + 'api/informations/get_retail',
     booking : host + 'booking_demands',
-    sendPhoneCode : 'http://api.yunspace.com.cn/' + 'api/auth_codes/send_code'
+    sendPhoneCode : 'http://api.yunspace.com.cn/' + 'api/auth_codes/send_code',
+    siteSearch : host + 'sites/search.json',
     // findIp : host + 'api/projects/ip_project',
     // article : host + 'api/informations',
     // articleHot : host  + 'api/informations/get_hot_recommend',

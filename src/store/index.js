@@ -82,7 +82,10 @@ const defaultState = {
     SiteEssence:'',
 
     loading : false,
-    allTags : {}
+    allTags : {},
+    searchParameter : {
+        site_type : ''
+    }
 }
 
 const inBrowser = typeof window !== 'undefined'
@@ -197,6 +200,11 @@ const mutations = {
     LOADING(state,value){
         state.loading = value
     },
+    
+    SEARCH_PARAMETER(state,value){
+        console.log("数据改变",value)
+        state.searchParameter = value
+    }
 }
 
 export default new Vuex.Store({

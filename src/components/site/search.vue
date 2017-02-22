@@ -33,54 +33,56 @@
         <div class="w1200">
             <!--筛选-star-->
             <div class="screening">
-                <div class="itembox position clearfix">
-                    <div class="title">地理位置</div>
-                    <div class="red unlimited"></div>
-                    <ul class="list clearfix">
-                        <li>
-                            <select>
-                                <option>上海</option>
-                                <option>北京</option>
-                                <option>广州</option>
-                            </select>
-                        </li>
-                        <li>
-                            <select>
-                                <option>商圈</option>
-                                <option>北京</option>
-                                <option>广州</option>
-                            </select>
-                        </li>
-                        <li>
-                            <select>
-                                <option>地铁</option>
-                                <option>北京</option>
-                                <option>广州</option>
-                            </select>
-                        </li>
-                        <li>
-                            <select>
-                                <option>环线</option>
-                                <option>北京</option>
-                                <option>广州</option>
-                            </select>
-                        </li>
-                        <li>
-                            <select>
-                                <option>行政区</option>
-                                <option>北京</option>
-                                <option>广州</option>
-                            </select>
-                        </li>
-                    </ul>
-                </div>
+                <!--<div class="itembox position clearfix">-->
+                    <!--<div class="title">地理位置</div>-->
+                    <!--<div class="red unlimited"></div>-->
+                    <!--<ul class="list clearfix">-->
+                        <!--<li>-->
+                            <!--<select>-->
+                                <!--<option>上海</option>-->
+                                <!--<option>北京</option>-->
+                                <!--<option>广州</option>-->
+                            <!--</select>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<select>-->
+                                <!--<option>商圈</option>-->
+                                <!--<option>北京</option>-->
+                                <!--<option>广州</option>-->
+                            <!--</select>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<select>-->
+                                <!--<option>地铁</option>-->
+                                <!--<option>北京</option>-->
+                                <!--<option>广州</option>-->
+                            <!--</select>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<select>-->
+                                <!--<option>环线</option>-->
+                                <!--<option>北京</option>-->
+                                <!--<option>广州</option>-->
+                            <!--</select>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<select>-->
+                                <!--<option>行政区</option>-->
+                                <!--<option>北京</option>-->
+                                <!--<option>广州</option>-->
+                            <!--</select>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
 
                 <div class="itembox clearfix">
                     <div class="title">场地类型</div>
                     <div class="red unlimited">不限</div>
                     <ul class="list clearfix">
-                        <li>影院剧院</li>
-                        <li>秀场展馆</li>
+                        <!--<li>影院剧院</li>-->
+                        <li :class="{'current' : parameter['site_type'] && parameter['site_type'].key == v}"
+                            @click="changeSearchParameter('site_type',v,k)"
+                            v-for="(v,k) in allTags.space_type">{{k}}</li>
                     </ul>
                     <p class="more-less">更多<i class="icon-icon_selectDownArrowThin"></i></p>
                 </div>
@@ -88,18 +90,10 @@
                     <div class="title">活动类型</div>
                     <div class="red unlimited">不限</div>
                     <ul class="list clearfix">
-                        <li>路演递推</li>
-                        <li>商业发布</li>
-                        <li>论坛会议</li>
-                        <li>晚会年会</li>
-                        <li>试乘试驾</li>
-                        <li>亲子活动</li>
-                        <li>路演递推</li>
-                        <li>商业发布</li>
-                        <li>论坛会议</li>
-                        <li>晚会年会</li>
-                        <li>试乘试驾</li>
-                        <li>亲子活动</li>
+                        <!--<li>路演递推</li>-->
+                        <li :class="{'current' : parameter['event_type'] && parameter['event_type'].key == k}"
+                            @click="changeSearchParameter('event_type',v,k)"
+                            v-for="(v,k) in allTags.activity_type">{{v}}</li>
                     </ul>
                     <p class="fr more-less">更多<i class="icon-icon_selectDownArrowThin"></i></p>
                 </div>
@@ -107,31 +101,36 @@
                     <div class="title">价格范围</div>
                     <div class="red unlimited">不限</div>
                     <ul class="list clearfix">
-                        <li>2万元以下</li>
-                        <li>2~5万元</li>
+                        <!--<li>2万元以下</li>-->
+                        <li :class="{'current' : parameter['price_range'] && parameter['price_range'].key == k}"
+                            @click="changeSearchParameter('price_range',k,v)"
+                                v-for="(v,k) in priceRange">{{v}}</li>
+
                     </ul>
                 </div>
                 <div class="itembox clearfix">
                     <div class="title">容纳人数</div>
                     <div class="red unlimited">不限</div>
                     <ul class="list clearfix">
-                        <li>100人以下</li>
-                        <li>100~300人</li>
+                        <li :class="{'current' : parameter['activity_people'] && parameter['activity_people'].key == k}"
+                            @click="changeSearchParameter('activity_people',k,v)"
+                                v-for="(v,k) in activityPeople">{{v}}</li>
                     </ul>
                 </div>
                 <div class="itembox clearfix">
                     <div class="title">空间面积</div>
                     <div class="red unlimited">不限</div>
                     <ul class="list clearfix">
-                        <li>200㎡以下</li>
-                        <li>200~500㎡</li>
+                        <li :class="{'current' : parameter['area_size'] && parameter['area_size'].key == k}"
+                            @click="changeSearchParameter('area_size',k,v)"
+                                v-for="(v,k) in areaSize">{{v}}</li>
                     </ul>
                 </div>
                 <div class="itembox clearfix">
                     <div class="title">空间层高</div>
                     <div class="red unlimited">不限</div>
                     <div class="fl floor-height">
-                        <input type="number">米
+                        <input v-model="realParameter.height" type="number">米
                     </div>
                 </div>
                 <!--展开/收起筛选-->
@@ -141,10 +140,16 @@
                 <div class="screening-result clearfix">
                     <h5 class="fl">搜索条件</h5>
                     <ul class="fl result-list clearfix">
-                        <li>影院剧院<span class="close icon-icon_deleteX"></span></li>
-                        <li>路演递推<span class="close icon-icon_deleteX"></span></li>
+                        <!--<li>影院剧院<span class="close icon-icon_deleteX"></span></li>-->
+
+                        <li v-for="(v,k) in parameter"
+                                v-if="v.value">
+                            <span v-text="v.value" ></span>
+                            <span class="close icon-icon_deleteX" @click="resetOneSearchParameter(v)"></span>
+                        </li>
+
                     </ul>
-                    <div class="fl delete-all"><i class="icon-icon_deleteTrash"></i>删除全部</div>
+                    <div @click="resetSearchParameter" class="fl delete-all"><i class="icon-icon_deleteTrash"></i>删除全部</div>
                 </div>
             </div>
             <!--筛选-end-->
@@ -157,31 +162,32 @@
                             <li class="current">默认<span class="line"></span></li>
                             <li>价格<i class="icon-icon_rankArrowUp"></i></li>
                         </ul>
-                        <p class="des">找到相关空间 131 个</p>
+                        <p class="des">找到相关空间 {{siteCount}} 个</p>
                     </div>
 
                     <!--列表-开始-->
                     <div class="box-list clearfix">
                         <div class="box-list-box" v-for="item in sites">
                             <a class="fl img" href="javascript:;">
-                                <img src="" alt="列表模式">
+                                <img :src="item.logos && item.logos.length > 0 ? item.logos[0].url_250_186 : '' " alt="列表模式">
                             </a>
                             <div class="fl text">
                                 <h3>
-                                    <a href="javascript:;">云SPACE 上海国际工业园秀场</a>
+                                    <a href="javascript:;" v-text="item.title">云SPACE 上海国际工业园秀场</a>
                                 </h3>
                                 <div class="assort clearfix">
-                                    <p><i class="icon-icon_spaceBusiness"></i> 徐家汇 <span class="line"></span></p>
-                                    <p><i class="icon-icon_spacePeople"></i> 500人 <span class="line"></span></p>
-                                    <p><i class="icon-icon_spaceArea"></i> 300㎡</p>
+                                    <p><i class="icon-icon_spaceBusiness"></i> {{item.district}} <span class="line"></span></p>
+                                    <p><i class="icon-icon_spacePeople"></i> {{item.max_people}}人 <span class="line"></span></p>
+                                    <p><i class="icon-icon_spaceArea"></i> {{item.size}}</p>
                                 </div>
-                                <p><i class="icon-icon_spaceRecommend"></i> 推荐理由：Boom Shakalaka~</p>
-                                <p class="keywords">商业发布／主题派对／时尚走秀／动漫游戏／展览展示</p>
+                                <p><i class="icon-icon_spaceRecommend"></i> 推荐理由：{{item.recommend_reason}}</p>
+                                <!--<p class="keywords">商业发布／主题派对／时尚走秀／动漫游戏／展览展示</p>-->
+                                <p class="keywords" v-text="item.event_type">商业发布／主题派对／时尚走秀／动漫游戏／展览展示</p>
                                 <a class="btn btn-red" href="javascript:;">加入咨询</a>
                             </div>
                             <div class="fr price">
-                                <p><strong>￥80,000</strong>/天 起</p>
-                                <span>市场价: ¥ 100,000/天</span>
+                                <p><strong>{{item.lower_price}}</strong></p>
+                                <span>市场价: {{item.market_price}}</span>
                             </div>
 
                             <div class="space-fit-details">
@@ -244,8 +250,10 @@
 </template>
 <script>
     function fetchData(store) {
-        return store.dispatch(`getHomeData`)
+//        return store.dispatch(`getHomeData`)
     }
+    import {YUNAPI} from '../../api'
+    import store from '../../store'
     export default {
         data() {
             const isInitialRender = !this.$root._isMounted
@@ -266,6 +274,19 @@
                 media:[1,2,3,4,5,6,7,8],
                 hotTags:[1,2,3,4,5],
                 sites:[1,2,3,4,5,6,7,8,9,10,11,12],
+                parameter :{
+                    site_type : '',
+                    event_type : '',
+                    price_range :'',
+                    activity_people : '',
+                    area_size : ''
+                },
+                realParameter : {
+                    height:'',
+                    q:{}
+                },
+                siteCount:''
+
             }
         },
         components: {
@@ -296,12 +317,95 @@
             cities (){
                 return this.$store.state.cities
             },
+            searchParameter(){
+                return this.$store.state.searchParameter
+            },
             allTags(){
                 return this.$store.state.allTags
+            },
+            priceRange(){
+                var price = this.$store.state.allTags.budget_amount
+                for(var i in price){ // 需要去掉 空的
+                    if(!i){
+                        delete price[i]
+                    }
+                }
+                return price
+            },
+            activityPeople(){
+                var value = this.$store.state.allTags.activity_people
+                for(var i in value){ // 需要去掉 空的
+                    if(value[i] == '不限'){
+                        delete value[i]
+                    }
+                }
+                return value
+            },
+            areaSize(){
+                var value = this.$store.state.allTags.area_size
+                for(var i in value){ // 需要去掉 空的
+                    if(value[i] == '不限'){
+                        delete value[i]
+                    }
+                }
+                return value
             }
         },
         methods: {
-            homeDoSearch(){}
+            changeSearchParameter(name,key,value){
+                console.log(name,key,value)
+                if(!this.parameter[name]){
+                    this.parameter[name] = {}
+//                    this.searchParameter[name]['key'] = null
+//                    this.searchParameter[name]['value'] = null
+                }
+
+                var object = {
+                    key : key,
+                    value : value
+                }
+
+                this.parameter[name] = object
+//                this.parameter[name]['key'] = key
+//                this.parameter[name]['value'] = value
+//                console.log(this.parameter)
+//                Vue.set(this.parameter,name,object)
+//                this.$store.commit('SEARCH_PARAMETER', this.searchParameter)
+                this.doSearch()
+            },
+            resetSearchParameter(){
+                for(var i in this.parameter){
+                    this.parameter[i] = ""
+                }
+                this.doSearch()
+            },
+            resetOneSearchParameter(value){
+                for(var i in this.parameter){
+                    if(this.parameter[i] == value){
+                        this.parameter[i] = ''
+                    }
+                }
+                this.doSearch()
+            },
+            doSearch(){
+                var self = this
+
+                self.realParameter.q.site_type = self.parameter.site_type.key;
+                self.realParameter.q.event_type = self.parameter.event_type.key;
+
+                $.ajax({
+                    url:YUNAPI.siteSearch,
+                    data:self.realParameter,
+                    success:function (data) {
+                        console.log(data)
+                        self.sites = data.sites
+                        self.siteCount = data.page_count
+                    },
+                    error:function (data) {
+                        
+                    }
+                })
+            }
         },
 
         preFetch: fetchData,

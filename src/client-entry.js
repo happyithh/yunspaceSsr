@@ -1,4 +1,5 @@
 import 'es6-promise/auto'
+import Vue from 'vue'
 import { app, router, store } from './app'
 //me
 // import Vue from 'vue'
@@ -18,6 +19,7 @@ store.replaceState(window.__INITIAL_STATE__)
 // actually mount to DOM
 window.APP = app; // element插件需要使用
 window.router = router;
+window.Vue = Vue
 app.$mount('#app')
 
 // service worker

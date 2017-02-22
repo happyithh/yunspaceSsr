@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <button class="fl btn btn-black search-btn"><i class="icon icon-icon_searchBarSearch"></i>搜索</button>
+        <button @click="goToSearch" class="fl btn btn-black search-btn"><i class="icon icon-icon_searchBarSearch"></i>搜索</button>
         <router-link to="/form/rent" class="fl btn btn-red" style="margin-right: 0;color:#fff"><i class="icon icon-icon_searchBarOne"></i>一键租场地</router-link>
     </div>
     <!--搜索条-end-->
@@ -85,7 +85,9 @@
 //            self.getBanner();
         },
         methods: {
-
+            goToSearch(){
+                router.push('/site/search')
+            }
         }
     }
 </script>

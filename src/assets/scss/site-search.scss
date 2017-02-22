@@ -22,11 +22,13 @@
       float: left;
       width: 70px;
       min-height: 12px;
+      cursor: pointer;
     }
     .list{
       float: left;
       max-width: 880px;
       li{
+        cursor: pointer;
         float: left;
         margin-bottom: 12px;
         width: 120px;
@@ -162,11 +164,19 @@
       padding-bottom: 30px;
       .box-list-box{
         position: relative;
+        .price{
+          position: absolute;
+          right: 20px;
+          top: 20px;
+        }
         .img{
           width: 250px;
         }
         .text{
           width: 310px;
+          .keywords{
+            overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
+          }
         }
 
         .space-fit-details{
