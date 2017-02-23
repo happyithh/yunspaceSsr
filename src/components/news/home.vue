@@ -42,12 +42,12 @@
 
                 <ul class="cont clearfix">
                     <li v-for="(item,index) in tops">
-                        <a class="img" :href="'/article-toplist/'+item.id" :title="item.title">
+                        <a class="img" :href="'/article/'+item.id" :title="item.title">
                             <img :src="item.img_paths[0].url_420_300" :alt="item.title">
                             <span class="numb">{{index+1}}</span>
                         </a>
                         <div class="des">
-                            <h3><a :href="'/article-toplist/'+item.id">{{item.title}}</a></h3>
+                            <h3><a :href="'/article/'+item.id">{{item.title}}</a></h3>
                         </div>
                     </li>
                 </ul>

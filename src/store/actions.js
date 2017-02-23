@@ -81,19 +81,6 @@ export const getSpaceDtlData = ({ commit, state },{id}) => {
         console.log(error)
     })
 }
-// 文章详情数据
-export const getArticleDtlData = ({ commit, state },{id}) => {
-    return request.get(YUNAPI.articleDtl + '/' + id + '.json',{
-
-    }).then((response) => {
-        if (response.statusText === 'OK') {
-
-            commit('ARTICLE_DTL_DATA', response.data)
-        }
-    }).catch((error) => {
-        console.log(error)
-    })
-}
 
 //办活动首页
 export const getEventHomeData = ({ commit, state }) => {
@@ -135,12 +122,14 @@ export const getNewsHomeData = ({ commit, state }) => {
     })
 }
 //文章详情
-export const getNewsData = ({ commit, state }) => {
-    return request.post(YUNAPI.newsHome+'.json',{
-
+export const getNewsDtlData = ({ commit, state },{id}) => {
+    return request.get(YUNAPI.newsDtl+'.json',{
+        params:{
+            id:id
+        }
     }).then((response) => {
         if (response.statusText === 'OK') {
-            commit('NEWS_DATA', response.data)
+            commit('NEWS_DTL_DATA', response.data)
         }
     }).catch((error) => {
         console.log(error)
