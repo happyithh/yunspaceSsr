@@ -77,7 +77,8 @@
 
                 <div class="itembox clearfix">
                     <div class="title">场地类型</div>
-                    <div class="red unlimited">不限</div>
+                    <div @click="resetOneSearchParameter(parameter.site_type)" class="unlimited"
+                         :class="{ 'red': parameter.site_type == ''}">不限</div>
                     <ul class="list clearfix">
                         <!--<li>影院剧院</li>-->
                         <li :class="{'current' : parameter['site_type'] && parameter['site_type'].key == v}"
@@ -88,7 +89,9 @@
                 </div>
                 <div class="itembox clearfix">
                     <div class="title">活动类型</div>
-                    <div class="red unlimited">不限</div>
+                    <div @click="resetOneSearchParameter(parameter.event_type)"
+                         class="unlimited"
+                         :class="{ 'red': parameter.event_type == ''}">不限</div>
                     <ul class="list clearfix">
                         <!--<li>路演递推</li>-->
                         <li :class="{'current' : parameter['event_type'] && parameter['event_type'].key == k}"
@@ -99,7 +102,8 @@
                 </div>
                 <div class="itembox clearfix">
                     <div class="title">价格范围</div>
-                    <div class="red unlimited">不限</div>
+                    <div @click="resetOneSearchParameter(parameter.price_range)" class="unlimited"
+                         :class="{ 'red': parameter.price_range == ''}">不限</div>
                     <ul class="list clearfix">
                         <!--<li>2万元以下</li>-->
                         <li :class="{'current' : parameter['price_range'] && parameter['price_range'].key == k}"
@@ -110,16 +114,19 @@
                 </div>
                 <div class="itembox clearfix">
                     <div class="title">容纳人数</div>
-                    <div class="red unlimited">不限</div>
+                    <div @click="resetOneSearchParameter(parameter.activity_people)"
+                         class="unlimited"
+                         :class="{ 'red': parameter.activity_people == ''}">不限</div>
                     <ul class="list clearfix">
                         <li :class="{'current' : parameter['activity_people'] && parameter['activity_people'].key == k}"
                             @click="changeSearchParameter('activity_people',k,v)"
-                                v-for="(v,k) in activityPeople">{{v}}</li>
+                                v-for="(v,k) in searchPeople">{{v}}</li>
                     </ul>
                 </div>
                 <div class="itembox clearfix">
                     <div class="title">空间面积</div>
-                    <div class="red unlimited">不限</div>
+                    <div @click="resetOneSearchParameter(parameter.area_size)" class="unlimited"
+                         :class="{ 'red': parameter.area_size == ''}">不限</div>
                     <ul class="list clearfix">
                         <li :class="{'current' : parameter['area_size'] && parameter['area_size'].key == k}"
                             @click="changeSearchParameter('area_size',k,v)"
@@ -130,7 +137,7 @@
                     <div class="title">空间层高</div>
                     <div class="red unlimited">不限</div>
                     <div class="fl floor-height">
-                        <input v-model="realParameter.height" type="number">米
+                        <input v-model="parameter.height" type="number">米
                     </div>
                 </div>
                 <!--展开/收起筛选-->
@@ -279,12 +286,10 @@
                     event_type : '',
                     price_range :'',
                     activity_people : '',
-                    area_size : ''
-                },
-                realParameter : {
+                    area_size : '',
                     height:'',
-                    q:{}
                 },
+                realParameter : {},
                 siteCount:''
 
             }
@@ -349,6 +354,15 @@
                     }
                 }
                 return value
+            },
+            searchPeople(){
+                var value = this.$store.state.allTags.search_people
+                for(var i in value){ // 需要去掉 空的
+                    if(value[i] == '不限'){
+                        delete value[i]
+                    }
+                }
+                return value
             }
         },
         methods: {
@@ -390,8 +404,29 @@
             doSearch(){
                 var self = this
 
+                self.realParameter = {
+                    q : {}
+                }
+
+                self.realParameter.height = self.parameter.height
+
                 self.realParameter.q.site_type = self.parameter.site_type.key;
                 self.realParameter.q.event_type = self.parameter.event_type.key;
+
+                if(self.parameter.price_range.key){ // 价格范围
+                    self.realParameter.q.min_price = self.parameter.price_range.key.split('-')[0]
+                    self.realParameter.q.max_price = self.parameter.price_range.key.split('-')[1]
+                }
+                if(self.parameter.activity_people.key){ // 人数范围
+                    self.realParameter.q.min_people = self.parameter.activity_people.key.split('-')[0]
+                    self.realParameter.q.max_people = self.parameter.activity_people.key.split('-')[1]
+                }
+
+                if(self.parameter.area_size.key){ // 空间面积
+                    self.realParameter.q.min_size = self.parameter.area_size.key.split('-')[0]
+                    self.realParameter.q.max_size = self.parameter.area_size.key.split('-')[1]
+                }
+
 
                 $.ajax({
                     url:YUNAPI.siteSearch,
