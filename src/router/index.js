@@ -5,7 +5,6 @@ Vue.use(Router)
 
 import Home from '../components/Home.vue'
 import ArticleDtl from '../components/news/dtl.vue'
-import ArticleTopListDtl from '../components/news/dtl-toplist.vue'
 import SiteHome from '../components/site/home.vue'
 import SiteHot from '../components/site/hot.vue'
 import SiteHotActivity from '../components/site/hot-activity.vue'
@@ -39,7 +38,6 @@ export default new Router({
   routes: [
     { path: '/', component: Home },
     { path: '/article/:id', component: ArticleDtl },
-    { path: '/article-toplist/:id', component: ArticleTopListDtl },
     { path: '/site/dtl/:id', component: Site },
     { path: '/site', component: SiteHome },
     { path: '/site/hot', component: SiteHot },

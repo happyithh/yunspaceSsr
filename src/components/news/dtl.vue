@@ -65,24 +65,24 @@
 
             <div class="fr sidebar">
                 <!--关联场地-->
-                <div class="relation-site">
+                <div class="relation-site" v-if="relation_site.id">
                     <div class="item-title small clearfix">
                         <h2><span class="redline"></span>关联场地</h2>
                     </div>
                     <ul class="cont">
                         <li>
                             <div class="img-wrap">
-                                <a class="img" :href="'/site/dtl/'+relation_site.id"><img src="/static/images/test/3to2.png" title=""></a>
+                                <a class="img" :href="'/site/dtl/'+relation_site.id"><img :src="relation_site.logo" :title="relation_site.title"></a>
                                 <div class="price">
-                                    <p><strong>￥80,000</strong>/天 起</p>
-                                    <span>市场价: ¥ 100,000/天</span>
+                                    <p><strong>{{relation_site.lower_price}}</strong></p>
+                                    <span>市场价: {{relation_site.market_price}}</span>
                                 </div>
                             </div>
                             <div class="text">
                                 <h3>
                                     <a :href="'/site/dtl/'+relation_site.id">{{relation_site.title}}</a>
                                 </h3>
-                                <p>商业发布／主题派对／时尚走秀／动漫游戏／展览展示</p>
+                                <p>{{relation_site.service_type}}</p>
 
                                 <div class="assort clearfix">
                                     <p><i class="icon-icon_spaceBusiness"></i> 所属商圈：{{relation_site.district}} <span class="line"></span></p>
@@ -93,43 +93,43 @@
                     </ul>
                 </div>
                 <!--热推场地-star-->
-                <div class="hot site">
+                <div class="hot site" v-if="hot_sites[0]">
                     <div class="item-title small clearfix">
                         <h2><span class="redline"></span>热推场地</h2>
                         <a class="more" href="/site/hot">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                     </div>
 
                     <ul class="cont clearfix">
-                        <li class="clearfix" v-for="item in 3">
-                            <a class="fl img" href="" title="">
-                                <img src="" alt="">
+                        <li class="clearfix" v-for="item in hot_sites">
+                            <a class="fl img" :href="'/site/dtl/'+item.id" :title="item.title">
+                                <img :src="item.logo">
                             </a>
                             <div class="fr text">
                                 <h5>
-                                    <a href="javascript:;" title="">国际会展中心，捷普科技年会</a>
+                                    <a :href="'/site/dtl/'+item.id">{{item.title}}</a>
                                 </h5>
                                 <div class="assort clearfix">
-                                    <p class="fl"><i class="icon-icon_spaceArea"></i> 300㎡</p>
-                                    <p class="fl"><i class="icon-icon_spacePeople"></i> 500人 <span class="line"></span></p>
+                                    <p class="fl"><i class="icon-icon_spaceArea"></i> {{item.area}}㎡</p>
+                                    <p class="fl"><i class="icon-icon_spacePeople"></i> {{item.max_people}}人 <span class="line"></span></p>
                                 </div>
                             </div>
                         </li>
                     </ul>
                 </div><!--热推场地-end-->
                 <!--推荐文章-star-->
-                <div class="hot news">
+                <div class="hot news" v-if="recommend_articles[0]">
                     <div class="item-title small clearfix">
                         <h2><span class="redline"></span>推荐文章</h2>
-                        <a class="more" href="/site/hot">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
+                        <a class="more" href="/news/list1">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                     </div>
 
                     <ul class="cont clearfix">
-                        <li class="clearfix" v-for="item in 6">
+                        <li class="clearfix" v-for="item in recommend_articles">
                             <h5 class="fl">
-                                <a href="javascript:;" title="">国际会展中心，捷普科技年会</a>
+                                <a :href="'/article/'+item.id" title="">{{item.title}}</a>
                             </h5>
-                            <a class="fr img" href="" title="">
-                                <img src="" alt="">
+                            <a class="fr img" :href="'/article/'+item.id" :title="item.title">
+                                <img :src="item.img_paths[0].url_150_100">
                             </a>
                         </li>
                     </ul>
@@ -155,7 +155,7 @@
     export default {
         data() {
             return {
-
+                change: 'true',
             }
         },
 
@@ -194,6 +194,8 @@
         mounted () {
             var self = this;
             self.$store.commit('LOADING', false)
+
+//            console.log(self.relation_site.id,6666);
 
         },
         preFetch: fetchData,
