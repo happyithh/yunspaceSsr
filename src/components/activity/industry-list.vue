@@ -49,7 +49,15 @@
                         </ul>
 
                         <!--分页器-->
-                        <div class="fr">分页器</div>
+                        <el-pagination
+                                @sizechange="handleSizeChange"
+                                @current-change="handleCurrentChange"
+                                :current-page="page"
+                                :page-size="12"
+                                layout="prev, pager, next, jumper"
+                                v-if="industry_events.length > 0"
+                                :total="total">
+                        </el-pagination>
                     </div>
 
                     <!--右边-star-->
@@ -69,7 +77,7 @@
                             </div>
 
                             <ul class="cont clearfix">
-                                <li v-for="item in siteRecommend">
+                                <li v-for="item in 5">
                                     <a class="img" href="" title="">
                                         <img src="" alt="">
                                         <p>上海植物园第一会所会场</p>
@@ -102,10 +110,8 @@
     export default {
         data() {
             return {
-                hotTags:[1,2,3,4,5],
-                sites:[1,2,3,4,5,6,7,8,9,10,11,12],
-                aboutcases:[1,2,3,4,5,6,7,8,9,10],
-                siteRecommend:[1,2,3,4,5]
+                page: 1,
+                total: 0,
             }
         },
         computed: {
@@ -135,7 +141,9 @@
             fetchData(this.$store)
         },
         methods: {
-
+            handleCurrentChange(val) {
+                this.page = val
+            },
         }
     }
 

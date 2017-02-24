@@ -181,7 +181,6 @@ const mutations = {
 
     //文章详情
     NEWS_DTL_DATA(state, data){
-        console.log(data,777)
         state.NewsDtl.detail = data.detail
         state.NewsDtl.relation_site = data.relation_site
         state.NewsDtl.hot_sites = data.hot_sites

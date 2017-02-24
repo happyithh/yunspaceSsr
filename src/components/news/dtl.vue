@@ -27,18 +27,17 @@
                         <span>/</span>
                         <a href="javascript:;" title="魔都">{{detail.keyword}}</a>
                     </div>
-
                 </div>
                 <h3>{{detail.abstract}}</h3>
                 <div class="details-cont" v-html="detail.details"></div>
 
                 <div class="handle clearfix">
                     <div class="fl btn-collect-zan clearfix">
-                        <a class="fl btn" href="javascript:;">
+                        <a :class="changeCollect ? 'fl btn current' : 'fl btn'" href="javascript:;" @click="collect">
                             <i class="icon-icon_articleCollectLine"></i>
                             收藏
                         </a>
-                        <a class="fl btn" href="javascript:;">
+                        <a :class="isZan ? 'fl btn current' : 'fl btn'" href="javascript:;" @click="zan">
                             <i class="icon-icon_articleGoodLine"></i>
                             点赞
                         </a>
@@ -50,16 +49,16 @@
                     </div>
                 </div>
 
-                <!--<div class="PreNext clearfix">-->
-                    <!--<div class="fl red clearfix" v-if="pre.length > 0">-->
-                        <!--<p>上一篇：</p>-->
-                        <!--<a :href="'/article/'+pre.id">{{pre.title}}</a>-->
-                    <!--</div>-->
-                    <!--<div class="fr red clearfix" v-if="next.length > 0">-->
-                        <!--<p>下一篇：</p>-->
-                        <!--<a :href="'/article/'+next.id">{{next.title}}</a>-->
-                    <!--</div>-->
-                <!--</div>-->
+                <div class="PreNext clearfix">
+                    <div class="fl red clearfix" v-if="pre">
+                        <p>上一篇：</p>
+                        <a :href="'/article/'+pre.id">{{pre.title}}</a>
+                    </div>
+                    <div class="fr red clearfix" v-if="next">
+                        <p>下一篇：</p>
+                        <a :href="'/article/'+next.id">{{next.title}}</a>
+                    </div>
+                </div>
             </div>
             <!--文章详情-end-->
 
@@ -155,7 +154,8 @@
     export default {
         data() {
             return {
-                change: 'true',
+                changeCollect: true,
+                isZan: true,
             }
         },
 
@@ -195,8 +195,6 @@
             var self = this;
             self.$store.commit('LOADING', false)
 
-//            console.log(self.relation_site.id,6666);
-
         },
         preFetch: fetchData,
 
@@ -204,7 +202,13 @@
             fetchData(this.$store)
         },
         methods: {
+            collect : function () {
 
+
+            },
+            zan : function () {
+                this.isZan = !this.isZan
+            }
         }
     }
 

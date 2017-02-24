@@ -15,62 +15,50 @@
             <ul class="yunshow mt50 clearfix">
                 <li>
                     <a href="">
-                        <img src="" alt="yunshow">
+                        <img src="/static/images/yunshow/img_productShow.png" alt="show">
                         <p>SHOW</p>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="" alt="yunshow">
-                        <p>SHOW</p>
+                        <img src="/static/images/yunshow/img_productRDshow.png" alt="路演">
+                        <p>路演</p>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="" alt="yunshow">
-                        <p>SHOW</p>
+                        <img src="/static/images/yunshow/img_productPopup.png" alt="快闪店">
+                        <p>快闪店</p>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="" alt="yunshow">
-                        <p>SHOW</p>
+                        <img src="/static/images/yunshow/img_productSport.png" alt="体育">
+                        <p>体育</p>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="" alt="yunshow">
-                        <p>SHOW</p>
+                        <img src="/static/images/yunshow/img_productPlay.png" alt="演艺">
+                        <p>演艺</p>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="" alt="yunshow">
-                        <p>SHOW</p>
+                        <img src="/static/images/yunshow/img_productMarket.png" alt="yunshow">
+                        <p>市集</p>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="" alt="yunshow">
-                        <p>SHOW</p>
+                        <img src="/static/images/yunshow/img_productGallery.png" alt="展览">
+                        <p>展览</p>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="" alt="yunshow">
-                        <p>SHOW</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="" alt="yunshow">
-                        <p>SHOW</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="" alt="yunshow">
-                        <p>SHOW</p>
+                        <img src="/static/images/yunshow/img_productParty.png" alt="派对">
+                        <p>派对</p>
                     </a>
                 </li>
             </ul>
@@ -154,20 +142,50 @@
             <div class="mt50">
                 <div class="item-title clearfix">
                     <h2><span class="redline"></span>精选分类</h2>
-                    <div class="keywords">
-                        <a href="">策划执行</a>
-                        <a href="">趣味年会</a>
-                        <a href="">闪店攻略</a>
-                    </div>
                     <a class="more" href="">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                 </div>
             </div>
                 <div class="selection-classify clearfix">
-                    <a class="selection-piece" v-for="item in selection">
-                        <img src="/static/images/test/3to2.png" alt="">
+                    <a class="selection-piece">
+                        <img src="/static/images/home/img_typeArea_xczg.jpg" alt="秀场展馆">
                         <div class="name-des">
                             <p>秀场展馆</p>
                             <p>商业时尚的汇聚地及潮流风向标的起源地</p>
+                        </div>
+                    </a>
+                    <a class="selection-piece">
+                        <img src="/static/images/home/img_typeArea_tscd.jpg" alt="特色场地">
+                        <div class="name-des">
+                            <p>特色场地</p>
+                            <p>时尚个性，不甘于常规，独具韵味的文化特色空间</p>
+                        </div>
+                    </a>
+                    <a class="selection-piece">
+                        <img src="/static/images/home/img_typeArea_sygc.jpg" alt="商业广场">
+                        <div class="name-des">
+                            <p>商业广场</p>
+                            <p>品牌供应商的汇聚地，实现各类大型室内外活动</p>
+                        </div>
+                    </a>
+                    <a class="selection-piece">
+                        <img src="/static/images/home/img_typeArea_yyjy.jpg" alt="影业剧院">
+                        <div class="name-des">
+                            <p>影业剧院</p>
+                            <p>独一无二的震撼感、环境优雅、逼格实足</p>
+                        </div>
+                    </a>
+                    <a class="selection-piece">
+                        <img src="/static/images/home/img_typeArea_gdhs.jpg" alt="高端会所">
+                        <div class="name-des">
+                            <p>高端会所</p>
+                            <p>轻奢、舒适、得天独厚、私密高端的主题空间</p>
+                        </div>
+                    </a>
+                    <a class="selection-piece">
+                        <img src="/static/images/home/img_typeArea_hwzx.jpg" alt="会务中心">
+                        <div class="name-des">
+                            <p>会务中心</p>
+                            <p>千人会场、占据最佳地理位置</p>
                         </div>
                     </a>
                 </div>
@@ -183,11 +201,6 @@
             <div class="mt50">
                 <div class="item-title clearfix">
                     <h2><span class="redline"></span>资讯报道</h2>
-                    <div class="keywords">
-                        <a href="">策划执行</a>
-                        <a href="">趣味年会</a>
-                        <a href="">闪店攻略</a>
-                    </div>
                     <a class="more" href="">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                 </div>
             </div>

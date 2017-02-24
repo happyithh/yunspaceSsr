@@ -49,7 +49,15 @@
                         </ul>
 
                         <!--分页器-->
-                        <div class="fr">分页器</div>
+                        <el-pagination
+                                @sizechange="handleSizeChange"
+                                @current-change="handleCurrentChange"
+                                :current-page="page"
+                                :page-size="12"
+                                layout="prev, pager, next, jumper"
+                                v-if="band_events.length > 0"
+                                :total="total">
+                        </el-pagination>
                     </div>
 
                     <!--右边-star-->
@@ -102,7 +110,8 @@
     export default {
         data() {
             return {
-                hotTags:[1,2,3,4,5],
+                page: 1,
+                total: 0,
             }
         },
         computed: {

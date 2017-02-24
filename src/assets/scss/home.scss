@@ -91,8 +91,8 @@
 .yunshow{
   li{
     float: left;
-    width: 240px;
-    height: 180px;
+    width: 300px;
+    height: 230px;
     position: relative;
     &:nth-child(2n+1){
       //p{
@@ -202,10 +202,11 @@
 }
 
 .selection-piece {
-  width: 388px;
+  width: 386px;
+  height: 256px;
   float: left;
-  margin-right: 18px;
-  margin-bottom: 18px;
+  margin-right: 20px;
+  margin-bottom: 20px;
   position: relative;
   display: block;
   position: relative;
