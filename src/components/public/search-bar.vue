@@ -86,7 +86,13 @@
         },
         methods: {
             goToSearch(){
-                router.push('/site/search')
+                router.push({
+                    path : '/site/search',
+                    query : {
+                        event_type:this.searchEventType,
+                        area_size : this.searchAreaSize
+                    }
+                })
             }
         }
     }

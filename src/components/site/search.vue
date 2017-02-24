@@ -7,11 +7,11 @@
                 <div class="search-bar clearfix">
                     <div class="fl search-box clearfix">
                         <div class="fl box-wrap">
-                            <input class="box" type="text" placeholder="请输入场地名称">
+                            <input @keyup.enter="doSearch" v-model="parameter.keyword" class="box" type="text" placeholder="请输入场地名称">
                         </div>
                     </div>
-                    <button class="fl btn btn-black search-btn"><i class="icon icon-icon_searchBarSearch"></i>搜索</button>
-                    <button class="fl btn btn-red" style="margin-right: 0"><i class="icon icon-icon_searchBarOne"></i>一键租场地</button>
+                    <button @click="doSearch" class="fl btn btn-black search-btn"><i class="icon icon-icon_searchBarSearch"></i>搜索</button>
+                    <router-link to="/form/rent" class="fl btn btn-red" style="margin-right: 0;color: #fff;"><i class="icon icon-icon_searchBarOne"></i>一键租场地</router-link>
 
                     <a class="fr show" href="javascript:;"><img src="" alt="魔都首个泰迪之家博物馆"></a>
                 </div>
@@ -85,7 +85,7 @@
                             @click="changeSearchParameter('site_type',v,k)"
                             v-for="(v,k) in allTags.space_type">{{k}}</li>
                     </ul>
-                    <p class="more-less">更多<i class="icon-icon_selectDownArrowThin"></i></p>
+                    <p @click="moreSpaceType = !moreSpaceType" class="more-less">更多<i class="icon-icon_selectDownArrowThin"></i></p>
                 </div>
                 <div class="itembox clearfix">
                     <div class="title">活动类型</div>
@@ -98,9 +98,9 @@
                             @click="changeSearchParameter('event_type',v,k)"
                             v-for="(v,k) in allTags.activity_type">{{v}}</li>
                     </ul>
-                    <p class="fr more-less">更多<i class="icon-icon_selectDownArrowThin"></i></p>
+                    <p @click="moreEventType = !moreEventType" class="fr more-less">更多<i class="icon-icon_selectDownArrowThin"></i></p>
                 </div>
-                <div class="itembox clearfix">
+                <div class="itembox clearfix" v-if="isMoreParameter">
                     <div class="title">价格范围</div>
                     <div @click="resetOneSearchParameter(parameter.price_range)" class="unlimited"
                          :class="{ 'red': parameter.price_range == ''}">不限</div>
@@ -112,7 +112,7 @@
 
                     </ul>
                 </div>
-                <div class="itembox clearfix">
+                <div class="itembox clearfix" v-if="isMoreParameter">
                     <div class="title">容纳人数</div>
                     <div @click="resetOneSearchParameter(parameter.activity_people)"
                          class="unlimited"
@@ -123,7 +123,7 @@
                                 v-for="(v,k) in searchPeople">{{v}}</li>
                     </ul>
                 </div>
-                <div class="itembox clearfix">
+                <div class="itembox clearfix" v-if="isMoreParameter">
                     <div class="title">空间面积</div>
                     <div @click="resetOneSearchParameter(parameter.area_size)" class="unlimited"
                          :class="{ 'red': parameter.area_size == ''}">不限</div>
@@ -133,15 +133,15 @@
                                 v-for="(v,k) in areaSize">{{v}}</li>
                     </ul>
                 </div>
-                <div class="itembox clearfix">
+                <div class="itembox clearfix" v-if="isMoreParameter">
                     <div class="title">空间层高</div>
-                    <div class="red unlimited">不限</div>
+                    <div class="unlimited" :class="{ 'red': !parameter.height}">不限</div>
                     <div class="fl floor-height">
-                        <input v-model="parameter.height" type="number">米
+                        <input @keyup.enter="doSearch" v-model="parameter.height" type="number">米
                     </div>
                 </div>
                 <!--展开/收起筛选-->
-                <div class="slideup-down">收起筛选<i class="icon-icon_selectUpArrowThin"></i></div>
+                <div @click="isMoreParameter = !isMoreParameter" class="slideup-down">收起筛选<i class="icon-icon_selectUpArrowThin"></i></div>
 
                 <!--搜索条件-->
                 <div class="screening-result clearfix">
@@ -166,8 +166,8 @@
                     <!--过滤-star-->
                     <div class="filter-wrap">
                         <ul class="filter clearfix">
-                            <li class="current">默认<span class="line"></span></li>
-                            <li>价格<i class="icon-icon_rankArrowUp"></i></li>
+                            <li :class="{ 'current': !parameter.order_price }" @click="defaultSort">默认<span class="line"></span></li>
+                            <li :class="{ 'current': !!parameter.order_price }" @click="priceSort">价格<i class="icon-icon_rankArrowUp"></i></li>
                         </ul>
                         <p class="des">找到相关空间 {{siteCount}} 个</p>
                     </div>
@@ -175,12 +175,12 @@
                     <!--列表-开始-->
                     <div class="box-list clearfix">
                         <div class="box-list-box" v-for="item in sites">
-                            <a class="fl img" href="javascript:;">
+                            <router-link class="fl img" :to=" '/site/dtl/' + item.id">
                                 <img :src="item.logos && item.logos.length > 0 ? item.logos[0].url_250_186 : '' " alt="列表模式">
-                            </a>
+                            </router-link>
                             <div class="fl text">
                                 <h3>
-                                    <a href="javascript:;" v-text="item.title">云SPACE 上海国际工业园秀场</a>
+                                    <router-link :to=" '/site/dtl/' + item.id" v-text="item.title">云SPACE 上海国际工业园秀场</router-link>
                                 </h3>
                                 <div class="assort clearfix">
                                     <p><i class="icon-icon_spaceBusiness"></i> {{item.district}} <span class="line"></span></p>
@@ -199,6 +199,7 @@
 
                             <div class="space-fit-details">
                                 <table cellpadding="0" cellspacing="0">
+                                    <thead>
                                     <tr class="trfirst">
                                         <th width="33%">名称</th>
                                         <th width="16%">面积（㎡）</th>
@@ -206,28 +207,29 @@
                                         <th width="20%">参考价</th>
                                         <th width="18%">售价</th>
                                     </tr>
+                                    </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>会议厅</td>
-                                        <td>1200</td>
-                                        <td>1000</td>
-                                        <td>¥30,000／日</td>
-                                        <td>¥20,000／日</td>
+                                    <tr v-for="space in item.spaces">
+                                        <td>{{space.title}}</td>
+                                        <td>{{space.area}}</td>
+                                        <td>{{space.people}}</td>
+                                        <td>{{space.market_price}}</td>
+                                        <td>{{space.inner_price}}</td>
                                     </tr>
-                                    <tr>
-                                        <td>中厅</td>
-                                        <td>1200</td>
-                                        <td>1000</td>
-                                        <td>¥30,000／日</td>
-                                        <td>¥90,000／日</td>
-                                    </tr>
-                                    <tr>
-                                        <td>宴会厅宴会厅宴会厅宴会厅宴会厅</td>
-                                        <td>1000</td>
-                                        <td>1000</td>
-                                        <td>¥30,000／日</td>
-                                        <td>¥20,000／日</td>
-                                    </tr>
+                                    <!--<tr>-->
+                                        <!--<td>中厅</td>-->
+                                        <!--<td>1200</td>-->
+                                        <!--<td>1000</td>-->
+                                        <!--<td>¥30,000／日</td>-->
+                                        <!--<td>¥90,000／日</td>-->
+                                    <!--</tr>-->
+                                    <!--<tr>-->
+                                        <!--<td>宴会厅宴会厅宴会厅宴会厅宴会厅</td>-->
+                                        <!--<td>1000</td>-->
+                                        <!--<td>1000</td>-->
+                                        <!--<td>¥30,000／日</td>-->
+                                        <!--<td>¥20,000／日</td>-->
+                                    <!--</tr>-->
                                     <tr>
                                         <td colspan="7">
                                             <a class="lookmore"
@@ -246,8 +248,7 @@
 
                 <!--右边地图-star-->
                 <div class="fr side-map">
-                    <a class="btn btn-look-sitemap" href="javascript:;">
-                        <i class="icon-icon_mapInfinity"></i>查看场地地图
+                    <a class="btn btn-look-sitemap" href="javascript:;">收起筛选
                     </a>
                 </div>
                 <!--右边地图-end-->
@@ -288,9 +289,14 @@
                     activity_people : '',
                     area_size : '',
                     height:'',
+                    order_price : '',
+                    keyword : ''
                 },
                 realParameter : {},
-                siteCount:''
+                siteCount:'',
+                isMoreParameter : false,
+                moreSpaceType : false,
+                moreEventType : false
 
             }
         },
@@ -305,6 +311,22 @@
             },function () {
                 $(this).removeClass('itemshow')
             });
+            if(this.$route.query.event_type){
+                var object = {
+                    key : this.$route.query.event_type
+                }
+                this.parameter.event_type = object
+            }
+            if(this.$route.query.area_size){
+                var object = {
+                    key : this.$route.query.area_size
+                }
+                this.parameter.area_size = object
+            }
+//            if(this.$route.query.area_size){
+//                this.parameter.area_size['key'] = this.$route.query.area_size
+//            }
+            this.doSearch()
         },
         metaInfo: {
             title: '【云SPACE－商业空间短租平台】提供全国活动场地_发布会场地_场地租赁_活动资讯_找场地上云SPACE',
@@ -401,13 +423,26 @@
                 }
                 this.doSearch()
             },
+            priceSort(){
+                if(this.parameter.order_price){
+                    this.parameter.order_price = this.parameter.order_price == 'desc' ? 'asc' : 'desc';
+                }else{
+                    this.parameter.order_price = 'desc'
+                }
+                this.doSearch();
+            },
+            defaultSort(){
+                this.parameter.order_price = ''
+            },
+
             doSearch(){
                 var self = this
 
                 self.realParameter = {
                     q : {}
                 }
-
+                self.realParameter.order_price = this.parameter.order_price
+                self.realParameter.keyword = this.parameter.keyword
                 self.realParameter.height = self.parameter.height
 
                 self.realParameter.q.site_type = self.parameter.site_type.key;
@@ -440,7 +475,7 @@
                         
                     }
                 })
-            }
+            },
         },
 
         preFetch: fetchData,
