@@ -61,7 +61,7 @@ export default new Router({
     { path: '/news/list4', component: NewsList4 },
     { path: '/news/site', component: NewsSite },
     { path: '/yunshow', component: YunShow },
-    { path: '/yunshow/dtl', component: YunShowDtl },
+    { path: '/yunshow/dtl/:id', component: YunShowDtl },
     { path: '*', component: NotFound },
   ]
 })

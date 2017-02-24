@@ -14,51 +14,59 @@
             <!--YUNSHOW-->
             <ul class="yunshow mt50 clearfix">
                 <li>
-                    <a href="">
+                    <a href="/yunshow/dtl/1">
                         <img src="/static/images/yunshow/img_productShow.png" alt="show">
-                        <p>SHOW</p>
+                        <p>秀<br/><span>SHOW</span></p>
+                        <div class="mask"></div>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="/yunshow/dtl/1">
                         <img src="/static/images/yunshow/img_productRDshow.png" alt="路演">
-                        <p>路演</p>
+                        <p>路演<br/><span>ROADSHOW</span></p>
+                        <div class="mask"></div>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="/yunshow/dtl/1">
                         <img src="/static/images/yunshow/img_productPopup.png" alt="快闪店">
-                        <p>快闪店</p>
+                        <p>快闪店<br/><span>POPUP</span></p>
+                        <div class="mask"></div>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="/yunshow/dtl/1">
                         <img src="/static/images/yunshow/img_productSport.png" alt="体育">
-                        <p>体育</p>
+                        <p>体育<br/><span>SPORT</span></p>
+                        <div class="mask"></div>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="/yunshow/dtl/1">
                         <img src="/static/images/yunshow/img_productPlay.png" alt="演艺">
-                        <p>演艺</p>
+                        <p>演艺<br/><span>PLAY</span></p>
+                        <div class="mask"></div>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="/yunshow/dtl/1">
                         <img src="/static/images/yunshow/img_productMarket.png" alt="yunshow">
-                        <p>市集</p>
+                        <p>市集<br/><span>MARKET</span></p>
+                        <div class="mask"></div>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="/yunshow/dtl/1">
                         <img src="/static/images/yunshow/img_productGallery.png" alt="展览">
-                        <p>展览</p>
+                        <p>展览<br/><span>GALLERY</span></p>
+                        <div class="mask"></div>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="/yunshow/dtl/1">
                         <img src="/static/images/yunshow/img_productParty.png" alt="派对">
-                        <p>派对</p>
+                        <p>派对<br/><span>PARTY</span></p>
+                        <div class="mask"></div>
                     </a>
                 </li>
             </ul>
