@@ -2,7 +2,7 @@
     <div>
         <!--提交成功-star-->
         <div class="success">
-            <h2><span></span>️提交成功</h2>
+            <h2><span>✔</span>️提交成功</h2>
             <p>您的需求已提交成功，我们将在30分钟内与您取得联系，请保持电话畅通！</p>
             <p>客服工作时间：09:00-18:00（周末除外）
             <br/>客服电话：400-056-0599</p>
@@ -74,6 +74,9 @@
         text-align: center;
         font-size: 16px;
         margin-left: -1px;
+    }
+    .success h2 span{
+        color: #7ED321;
     }
     .success p{
         color: #000;
