@@ -75,7 +75,7 @@
                     <!--</ul>-->
                 <!--</div>-->
 
-                <div class="itembox clearfix">
+                <div class="itembox clearfix" :class="{ 'hide-more' : !moreSpaceType }">
                     <div class="title">场地类型</div>
                     <div @click="resetOneSearchParameter(parameter.site_type)" class="unlimited"
                          :class="{ 'red': parameter.site_type == ''}">不限</div>
@@ -87,7 +87,7 @@
                     </ul>
                     <p @click="moreSpaceType = !moreSpaceType" class="more-less">更多<i class="icon-icon_selectDownArrowThin"></i></p>
                 </div>
-                <div class="itembox clearfix">
+                <div class="itembox clearfix" :class="{ 'hide-more' : !moreEventType }">
                     <div class="title">活动类型</div>
                     <div @click="resetOneSearchParameter(parameter.event_type)"
                          class="unlimited"
@@ -174,7 +174,7 @@
 
                     <!--列表-开始-->
                     <div class="box-list clearfix">
-                        <div class="box-list-box" v-for="item in sites">
+                        <div class="box-list-box" v-for="item in sites" :id="item.id">
                             <router-link class="fl img" :to=" '/site/dtl/' + item.id">
                                 <img :src="item.logos && item.logos.length > 0 ? item.logos[0].url_250_186 : '' " alt="列表模式">
                             </router-link>
@@ -247,9 +247,10 @@
                 </div>
 
                 <!--右边地图-star-->
-                <div class="fr side-map">
-                    <a class="btn btn-look-sitemap" href="javascript:;">收起筛选
+                <div class="fr side-map" >
+                    <a class="btn btn-look-sitemap" href="javascript:;">场地地图
                     </a>
+                    <div id="siteMap" class="site-map-inner"></div>
                 </div>
                 <!--右边地图-end-->
             </div>
@@ -257,6 +258,7 @@
     </div>
 </template>
 <script>
+    import {yunspaceMapStyle} from '../../api/mapStyle'
     function fetchData(store) {
 //        return store.dispatch(`getHomeData`)
     }
@@ -281,7 +283,7 @@
                 selection:[1,2,3,4,5,6],
                 media:[1,2,3,4,5,6,7,8],
                 hotTags:[1,2,3,4,5],
-                sites:[1,2,3,4,5,6,7,8,9,10,11,12],
+                sites:[],
                 parameter :{
                     site_type : '',
                     event_type : '',
@@ -296,7 +298,9 @@
                 siteCount:'',
                 isMoreParameter : false,
                 moreSpaceType : false,
-                moreEventType : false
+                moreEventType : false,
+                map : {},
+                allFieldPoint : {}
 
             }
         },
@@ -304,13 +308,28 @@
         },
         mounted () {
             var self = this
+
+            self.map = new BMap.Map("siteMap",{minZoom:12,maxZoom:18,enableMapClick:false});
+
             this.$store.commit('LOADING', false)
-            $('.box-list-box').hover(function () {
-                $('.box-list-box').removeClass('itemshow')
-                $(this).addClass('itemshow')
-            },function () {
-                $(this).removeClass('itemshow')
+
+//            $('.box-list-box').hover(function () {
+//                $('.box-list-box').removeClass('itemshow')
+//                $(this).addClass('itemshow')
+//            },function () {
+//                $(this).removeClass('itemshow')
+//            });
+            $(document).on('mouseenter','.box-list-box',function(){
+                var id = $(this).attr('id')
+                var thisPoint = self.allFieldPoint[id]
+                if(!thisPoint){
+                   return
+                }
+                self.pointClick(thisPoint)
+                var point = thisPoint.getPosition()
+                self.map.centerAndZoom(point, 12);
             });
+
             if(this.$route.query.event_type){
                 var object = {
                     key : this.$route.query.event_type
@@ -326,7 +345,9 @@
 //            if(this.$route.query.area_size){
 //                this.parameter.area_size['key'] = this.$route.query.area_size
 //            }
+            this.initMap()
             this.doSearch()
+
         },
         metaInfo: {
             title: '【云SPACE－商业空间短租平台】提供全国活动场地_发布会场地_场地租赁_活动资讯_找场地上云SPACE',
@@ -385,7 +406,8 @@
                     }
                 }
                 return value
-            }
+            },
+
         },
         methods: {
             changeSearchParameter(name,key,value){
@@ -442,8 +464,8 @@
                     q : {}
                 }
                 self.realParameter.order_price = this.parameter.order_price
-                self.realParameter.keyword = this.parameter.keyword
-                self.realParameter.height = self.parameter.height
+                self.realParameter.q.keyword = this.parameter.keyword
+                self.realParameter.q.height = self.parameter.height
 
                 self.realParameter.q.site_type = self.parameter.site_type.key;
                 self.realParameter.q.event_type = self.parameter.event_type.key;
@@ -469,12 +491,107 @@
                     success:function (data) {
                         console.log(data)
                         self.sites = data.sites
+                        self.map.clearOverlays()
+                        for(var i = 0; i < self.sites.length; i++){
+                            self.drawingPoint(self.sites[i])
+                        }
                         self.siteCount = data.page_count
                     },
                     error:function (data) {
                         
                     }
                 })
+            },
+            initMap(){
+                var self = this
+                var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL});
+
+
+                self.map.setMapStyle({styleJson:yunspaceMapStyle});
+
+                setTimeout(function () {
+                    self.map.addControl(top_right_navigation);
+                },300)
+
+                var myGeo = new BMap.Geocoder();
+
+                myGeo.getPoint("红坊创意园", function(point){
+                    if (point) {
+                        self.map.centerAndZoom(point, 12);  // 初始化地图,设置中心点坐标和地图级别
+                        var marker = new BMap.Marker(point);  // 创建标注
+                        self.map.addOverlay(marker);
+                        //self.request();
+                    }else{
+                        //TODO //没有这个点的提示
+                    }
+
+                },'上海');
+            },
+            pointClick(target){
+
+                var node = target._container.childNodes[0];
+                var self = this;
+
+                var href = node.href;
+                for(var i in self.allFieldPoint){
+                    var node2 = self.allFieldPoint[i]._container.childNodes[0];
+                    $(node2).removeClass('pt-click');
+                    $(node2).removeClass('deal');
+                    $(node2).find('.icon-map-marker').removeClass('icon-map-pointer').addClass('icon-map-nopointer');
+                    //node2.className = "icon-c icon-map-marker icon-map-nopointer";
+                }
+                if(!$(node).hasClass('deal')){
+                    $(node).find('.pt-detail').css({
+                        'left': - $(node).find('.pt-detail').width()/2 + 'px',
+                    });
+                }
+
+                $(node).addClass('deal');
+                $(node).find('.icon-map-marker').addClass('icon-map-pointer');
+                $(node).addClass('pt-click');
+                //node.className = "icon-c icon-map-marker icon-map-nopointer pt-click";
+                //self.getOnePlaceInfo(id);
+            },
+            drawingPoint(pointData){
+                var lat,lng,point,htm,rm,product_name,url,space_name_url;
+                var self = this;
+                lat = pointData.x_coordinates;
+                lng = pointData.y_conrdinates;
+//                lat = "31.2051";
+//                lng = "121.4294";
+                product_name = pointData.title;
+                space_name_url = '';
+                //url = '/service_info/'+ pointData['id'] +'.html';
+                url = '/site/'+space_name_url;
+                point = new BMap.Point(lng,lat);
+                htm = '<div class="pt-wrap" id='+pointData['id']+'>'
+                        + '<a class="icon-c icon-map-marker icon-map-nopointer" href="javascript:;"></a>'
+                        + '<div class="pt-detail">'
+                        +'<a class="blank" href="'+url+'" target="_blank">'+product_name
+                        +'<span class="img-blank"></span>'
+                        +'<span class="jiao">◆</span>'
+                        +'</a>'
+                        +'</div>'
+                        + '</div>';
+
+                //htm = '<p>css</p>' +
+                //    '<a id='+pointData['id']+' class="icon-c icon-map-marker icon-map-nopointer" href="javascript:;">' +
+                //    '</a>';
+
+                rm = new BMapLib.RichMarker(htm, point, { "anchor": new BMap.Size(0, 0)});
+                self.map.addOverlay(rm);
+
+                var rNode = rm._container.childNodes[0].childNodes[1];
+                var container = $(rm._container);
+
+                rm.addEventListener('click',function(e){
+
+                    self.pointClick(this)
+                });
+
+
+                self.allFieldPoint[pointData['id']] = rm;
+
             },
         },
 

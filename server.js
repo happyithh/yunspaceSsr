@@ -99,6 +99,7 @@ app.get('*', (req, res) => {
             <script src="/static/range/jquery.range.js"></script>
             ${indexHTML.head}
             <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=aaNCRRcGGai6klHMOGZ8yBbP"></script>
+            <script src="/static/js/RichMarker.js"></script>
         </head>
         <body ${bodyAttrs.text()}>
         `)

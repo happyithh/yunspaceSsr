@@ -206,15 +206,26 @@
             self.$store.commit('LOADING', false)
 
             //tab切换
-            $('.itembox .tab-menu li').each(function (index) {
-                var thisa = $(this);
-                thisa.click(function () {
-                    $('.itembox .tab-menu li').removeClass('current');
-                    $('.itembox .tab-box .cont').removeClass('current');
-                    thisa.addClass('current');
-                    $('.itembox .tab-box .cont').eq(index).addClass('current');
-                })
-            });
+//            $(document).on('click','.itembox .tab-menu li',function (dom,index) {
+//                var thisa = $(this);
+//                $('.itembox .tab-menu li').removeClass('current');
+//                $('.itembox .tab-box .cont').removeClass('current');
+//                thisa.addClass('current');
+//                $('.itembox .tab-box .cont').eq(index).addClass('current');
+//                console.log(index)
+//            })
+            setTimeout(function () {
+                $('.itembox .tab-menu li').each(function (index) {
+                    var thisa = $(this);
+                    thisa.click(function () {
+                        $('.itembox .tab-menu li').removeClass('current');
+                        $('.itembox .tab-box .cont').removeClass('current');
+                        thisa.addClass('current');
+                        $('.itembox .tab-box .cont').eq(index).addClass('current');
+                    })
+                });
+            },300)
+
 
             setTimeout(function () {
                 self.init();

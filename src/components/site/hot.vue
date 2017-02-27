@@ -112,7 +112,7 @@
             self.$store.commit('LOADING', false)
 
             //tab切换
-            $('.itembox .tab-menu li').each(function (index) {
+            $('document').on('click','.itembox .tab-menu li',function () {
                 var thisa = $(this);
                 thisa.click(function () {
                     $('.itembox .tab-menu li').removeClass('current');
@@ -120,7 +120,7 @@
                     thisa.addClass('current');
                     $('.itembox .tab-box .cont').eq(index).addClass('current');
                 })
-            });
+            })
         },
         preFetch: fetchData,
 
