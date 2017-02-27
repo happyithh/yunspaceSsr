@@ -118,7 +118,11 @@ const mutations = {
     },
 
     SPACE_DTL_DATA:(state, data)=>{
-        state.SpaceDtlData.dtl = data.space
+        if(data.space.id){
+            state.SpaceDtlData[data.space.id] = data.space
+        }
+        // state.SpaceDtlData = data.space
+        // console.log(data.space)
         // state.SpaceDtlData.space = data.site_spaces
         // state.homeData.home_recommend_space = data.home_recommend_space
     },

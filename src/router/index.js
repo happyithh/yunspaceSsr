@@ -55,7 +55,7 @@ export default new Router({
     { path: '/activity/star', component: ActivityStarList },
     { path: '/activity/supporting', component: ActivitySupporting },
     { path: '/site/search', component: SiteSearch },
-    { path: '/booking', component: Booking },
+    { path: '/booking/:id', component: Booking },
     { path: '/news', component: News },
     { path: '/map', component: Map },
     { path: '/news/list1', component: NewsList1 },

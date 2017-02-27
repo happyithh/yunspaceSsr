@@ -71,7 +71,7 @@ export const getSiteListData = ({ commit, state },{type}) => {
 }
 // 空间详情数据
 export const getSpaceDtlData = ({ commit, state },{id}) => {
-    return request.get(YUNAPI.spaceDtl + '/' + id + '.json',{
+    return request.get(YUNAPI.spaceDtl + '?id=' + id ,{
 
     }).then((response) => {
         if (response.statusText === 'OK') {

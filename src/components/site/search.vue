@@ -85,7 +85,10 @@
                             @click="changeSearchParameter('site_type',v,k)"
                             v-for="(v,k) in allTags.space_type">{{k}}</li>
                     </ul>
-                    <p @click="moreSpaceType = !moreSpaceType" class="more-less">更多<i class="icon-icon_selectDownArrowThin"></i></p>
+                    <p @click="moreSpaceType = !moreSpaceType" class="more-less">
+                        <span v-text="moreSpaceType?'收起':'更多'"></span>
+                        <i :class=" moreSpaceType ?'icon-icon_selectUpArrowThin':'icon-icon_selectDownArrowThin'"></i>
+                    </p>
                 </div>
                 <div class="itembox clearfix" :class="{ 'hide-more' : !moreEventType }">
                     <div class="title">活动类型</div>
@@ -98,7 +101,10 @@
                             @click="changeSearchParameter('event_type',v,k)"
                             v-for="(v,k) in allTags.activity_type">{{v}}</li>
                     </ul>
-                    <p @click="moreEventType = !moreEventType" class="fr more-less">更多<i class="icon-icon_selectDownArrowThin"></i></p>
+                    <p @click="moreEventType = !moreEventType" class="fr more-less">
+                        <span v-text="moreEventType?'收起':'更多'"></span>
+                        <i :class=" moreEventType ?'icon-icon_selectUpArrowThin':'icon-icon_selectDownArrowThin'"></i>
+                    </p>
                 </div>
                 <div class="itembox clearfix" v-if="isMoreParameter">
                     <div class="title">价格范围</div>
@@ -141,7 +147,10 @@
                     </div>
                 </div>
                 <!--展开/收起筛选-->
-                <div @click="isMoreParameter = !isMoreParameter" class="slideup-down">收起筛选<i class="icon-icon_selectUpArrowThin"></i></div>
+                <div @click="isMoreParameter = !isMoreParameter" class="slideup-down">
+                    <span v-text="isMoreParameter?'收起筛选':'更多筛选'"></span>
+                    <i :class=" isMoreParameter ?'icon-icon_selectUpArrowThin':'icon-icon_selectDownArrowThin'"></i>
+                </div>
 
                 <!--搜索条件-->
                 <div class="screening-result clearfix">
@@ -243,7 +252,17 @@
                         </div>
                     </div>
                     <!--列表-结束-->
-                    <div class="fr page">分页器</div>
+                    <div class="fr page">
+                        <el-pagination
+                                @sizechange="handleSizeChange"
+                                @current-change="handleCurrentChange"
+                                :current-page="parameter.page"
+                                :page-size="12"
+                                v-show="siteCount >= 12"
+                                layout="prev, pager, next, jumper"
+                                :total="siteCount">
+                        </el-pagination>
+                    </div>
                 </div>
 
                 <!--右边地图-star-->
@@ -292,15 +311,19 @@
                     area_size : '',
                     height:'',
                     order_price : '',
-                    keyword : ''
+                    keyword : '',
+                    page:1
                 },
                 realParameter : {},
-                siteCount:'',
+                siteCount:0,
                 isMoreParameter : false,
                 moreSpaceType : false,
                 moreEventType : false,
                 map : {},
-                allFieldPoint : {}
+                allFieldPoint : {},
+                page: 1,
+                total: 0,
+                ajaxSearch : null
 
             }
         },
@@ -457,7 +480,7 @@
                 this.parameter.order_price = ''
             },
 
-            doSearch(){
+            doSearch(page){
                 var self = this
 
                 self.realParameter = {
@@ -466,6 +489,11 @@
                 self.realParameter.order_price = this.parameter.order_price
                 self.realParameter.q.keyword = this.parameter.keyword
                 self.realParameter.q.height = self.parameter.height
+                if(page){
+                    self.realParameter.page = self.parameter.page = page
+                }else{
+                    self.parameter.page = 1
+                }
 
                 self.realParameter.q.site_type = self.parameter.site_type.key;
                 self.realParameter.q.event_type = self.parameter.event_type.key;
@@ -484,12 +512,15 @@
                     self.realParameter.q.max_size = self.parameter.area_size.key.split('-')[1]
                 }
 
+                if (self.ajaxSearch && self.ajaxSearch.state() === 'pending') {
+                    self.ajaxSearch.abort()
+                }
 
-                $.ajax({
+                self.ajaxSearch = $.ajax({
                     url:YUNAPI.siteSearch,
                     data:self.realParameter,
                     success:function (data) {
-                        console.log(data)
+//                        console.log(data)
                         self.sites = data.sites
                         self.map.clearOverlays()
                         for(var i = 0; i < self.sites.length; i++){
@@ -593,6 +624,13 @@
                 self.allFieldPoint[pointData['id']] = rm;
 
             },
+            handleCurrentChange(val) {
+                this.parameter.page = val
+                this.doSearch(val)
+            },
+            handleSizeChange(e){
+
+            }
         },
 
         preFetch: fetchData,

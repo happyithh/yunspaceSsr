@@ -8,7 +8,7 @@ export const YUNAPI = {
     findSite : host + 'sites.json',
     siteDtl : host + 'sites/',
     sitesList : host + 'sites/list.json',
-    // spaceDtl : host + 'api/spaces',
+    spaceDtl : 'http://api.yunspace.com.cn/' + 'api/spaces/detail.json',
     // articleDtl : host + 'api/informations',
     eventHome : host + 'events',
     eventList : host + 'events/list',
