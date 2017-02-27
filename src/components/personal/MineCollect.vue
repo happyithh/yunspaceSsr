@@ -137,8 +137,6 @@
 <script>
 
     import Lib from 'assets/Lib.js'
-    import 'assets/css/component.css';
-    import 'assets/css/personal.css';
 
     export default {
         data() {
@@ -241,3 +239,7 @@
         }
     }
 </script>
+
+<style lang="css" scoped>
+    @import "../../assets/css/personal.css";
+</style>

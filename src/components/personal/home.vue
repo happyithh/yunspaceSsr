@@ -10,7 +10,7 @@
 
                 </div>
                 <div class="p-text name">
-                   <!--{{personalData.name}}{{nowtime}}-->
+                    <!--{{personalData.name}}{{nowtime}}-->
                 </div>
                 <div class="p-text">
                     <i class="icons icon-mobile"></i>
@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="info-top clearfix">
-                <!--<h2>{{this.$route.name}}</h2>-->
+                <h2>{{this.$route.name}}</h2>
                 <!--<p class="state">【收到报价】</p>-->
                 <div v-if="this.$route.path == '/personal/enquiry/dtl'" class="inq-btnwrap clearfix">
                     <a class="fl btn-cancel" href="JavaScript:;" @click="showstate=!showstate">取消资询</a>
@@ -172,7 +172,7 @@
 //            this.authorize.access_token = personalData.access_token
             //personalData.mobile=personalData.substr(0,3)+"****"+str.substr(7);
             var now = new Date(),
-                hour = now.getHours();
+                    hour = now.getHours();
             if(hour < 6){this.nowtime='，凌晨好！'}
             else if (hour < 9){this.nowtime='，早上好！'}
             else if (hour < 12){this.nowtime='，上午好！'}
@@ -200,13 +200,9 @@
     }
 </script>
 
-<style lang="css" scoped>
+<style lang="sass" scoped>
     @import "../../assets/css/personal.css";
-    html,body{
-        background-color: #fff!important;
-    }
 </style>
-
 
 
 
