@@ -85,7 +85,7 @@
                     <a class="more" href="/site/hot">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                 </div>
                 <ul class="item-cont clearfix">
-                    <li v-for="item in friends">
+                    <li v-for="item in 8">
                         <a href="javascript:;" class="img">
                             <img src="" alt="">
                         </a>
@@ -114,11 +114,7 @@
     export default {
         data() {
             return {
-                hotTags:[1,2,3,4,5],
-                sites:[1,2,3,4,5,6,7,8,9,10,11,12],
-                aboutcases:[1,2,3,4,5,6,7,8,9,10],
-                siteRecommend:[1,2,3,4,5],
-                friends:[1,2,3,4,5,6,7,8]
+
             }
         },
 

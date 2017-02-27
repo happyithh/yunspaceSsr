@@ -30,6 +30,9 @@ import NewsList4 from '../components/news/list4.vue'
 import NewsSite from '../components/news/site-essence.vue'
 import YunShow from '../components/yunshow/home.vue'
 import YunShowDtl from '../components/yunshow/dtl.vue'
+// 个人中心
+// import perHome from '../components/personal/home.vue'
+
 
 
 export default new Router({
@@ -61,7 +64,10 @@ export default new Router({
     { path: '/news/list4', component: NewsList4 },
     { path: '/news/site', component: NewsSite },
     { path: '/yunshow', component: YunShow },
-    { path: '/yunshow/dtl', component: YunShowDtl },
+    { path: '/yunshow/dtl/:id', component: YunShowDtl },
+      //个人中心
+    // { path: '/personal', component: perHome },
+
     { path: '*', component: NotFound },
   ]
 })
