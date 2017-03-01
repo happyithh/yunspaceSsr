@@ -44,6 +44,9 @@
     .box-list-box .price{
       text-align: left;
       position: relative;
+      bottom: 0!important;
+      left: 0;
+      top:3px
     }
     .assort{
       margin-bottom: 20px;
@@ -52,7 +55,7 @@
       position: absolute;
       right: 0px;
       bottom: -20px;
-      button{
+      button,a{
         position: relative;
         float: left;
         height: 36px;
@@ -243,7 +246,7 @@ body{
 }
 .btn-op{
   padding: 15px 0px;
-  button{
+  button,a{
     float: left;
     &:first-child{
       width: 156px;

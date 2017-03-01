@@ -16,7 +16,7 @@
                     <h2>立即预订</h2>
                 </div>
 
-                <div class="box-list-box reserve-dtl">
+                <div class="box-list-box reserve-dtl" v-if="spaceDtl">
                     <a class="fl img" href="javascript:;">
                         <img :src="spaceDtl.logo" alt="列表模式">
                     </a>
@@ -141,14 +141,6 @@
                     </tr>
                     <tr>
                         <td class="label">
-                            其他要求
-                        </td>
-                        <td class="fill">
-                            <textarea v-model="rent.activities_required" placeholder="提供更多的信息以方便为您服务"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="label">
                         </td>
                         <td class="fill">
                             <button @click="submitData" class="btn btn-red">提交</button>
@@ -179,25 +171,36 @@
                 rent:{
                     s_time:'',
                     e_time : '',
-                    activities_required : '',
-                    city_id : 1,
-                    order_city : '上海',
+                    order_city : '',
                     code_token : '',
                     phone:'',
                     contact:'',
                     auth_code : '',
-                    numberof_activities : '50',
-                    activity_type : '展览展示'
+                    space_ids : [],
                 },
+//                spaceDtl  : null
             }
         },
         computed: {
             cities (){
                 return this.$store.state.cities
             },
-            spaceDtl (){
-                return this.$store.state.SpaceDtlData[this.$route.params.id]
+            allSpaceDtl : {
+                set(value){
+                    if(value[this.$route.params.id]){
+                        this.spaceDtl = value[this.$route.params.id]
+                    }
+                },
+                get(){
+                    var spaces = this.$store.state.SpaceDtlData
+                    return spaces
+                }
+            },
+            spaceDtl(){
+                return this.allSpaceDtl[this.$route.params.id]
             }
+
+
         },
 
         metaInfo(){
@@ -228,13 +231,15 @@
                 this.rent.s_time = sd.getFullYear() + '-' + (sd.getMonth() + 1) + '-' + sd.getDate() ;
                 this.rent.e_time = ed.getFullYear() + '-' + (ed.getMonth() + 1) + '-' + ed.getDate() ;
 
+                this.rent.order_city = this.spaceDtl.city_name
+                this.rent.space_ids[0] = this.spaceDtl.id
+
                 $.post({
-                    url:YUNAPI.submitOnekeyDemand,
+                    url:YUNAPI.booking,
                     data:self.rent,
                     success:function (data) {
 
                         if(data.status == 1 || data.state == 1){
-
                             router.replace('/form/success');
                         }else{
                             APP.$message({

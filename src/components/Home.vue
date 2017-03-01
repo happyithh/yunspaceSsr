@@ -214,13 +214,13 @@
             </div>
             <div class="media-re clearfix">
                 <div class="media-left clearfix">
-                    <a href="" title="" class="media-piece" v-for="(item,index) in mediaReport" v-if="index < 2">
+                    <router-link :to="'/article/'+item.id" title="" class="media-piece" v-for="(item,index) in mediaReport" v-if="index < 2">
                         <img :src="item.img_paths.length > 0 ? item.img_paths[0]['url_400_267'] : ''" alt="">
                         <div class="des">
                             <p v-html="item.title"></p>
                             <p>{{item.i_time}}</p>
                         </div>
-                    </a>
+                    </router-link>
                     <!--<a href="" title="" class="media-piece">-->
                         <!--<img src="/static/images/test/3to2.png" alt="">-->
                         <!--<div class="des">-->

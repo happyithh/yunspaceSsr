@@ -56,7 +56,7 @@ const defaultState = {
             site_pictures:[]
         },
         spaces:'',
-        relate_topics:'',
+        relate_cases:'',
         relate_articles:''
     },
     EventHome:{
@@ -93,7 +93,9 @@ const defaultState = {
     allTags : {},
     searchParameter : {
         site_type : ''
-    }
+    },
+    inquiryList :{},
+    inquiryCount : 0
 }
 
 const inBrowser = typeof window !== 'undefined'
@@ -150,7 +152,7 @@ const mutations = {
         state.SiteDtlData.dtl = data.site
         state.SiteDtlData.spaces = data.site_spaces
         // state.SiteDtlData.spaces = data.site_spaces
-        // state.SiteDtlData.relate_topics = data.relate_topics
+        state.SiteDtlData.relate_cases = data.relate_cases
         // state.SiteDtlData.relate_articles = data.relate_articles
     },
 
@@ -214,9 +216,45 @@ const mutations = {
     },
     
     SEARCH_PARAMETER(state,value){
-        console.log("数据改变",value)
         state.searchParameter = value
+    },
+
+    GET_INQUIRY_DATA(state,value){
+        state.inquiryList =  LS.get('inquiry');
+        state.inquiryCount = countProperties(state.inquiryList)
+    },
+    INQUIRY_DATA_CHANGE(state,value){ // 本地询价数据改变
+        state.inquiryList =  LS.get('inquiry');
+        if(!state.inquiryList){
+            state.inquiryList = {}
+        }
+        if(typeof value === 'object'){
+            if(value.op == 'add'){
+                state.inquiryList[value.site.id] = state.inquiryList[value.site.id] || {}
+                if(state.inquiryList[value.site.id]){
+                    state.inquiryList[value.site.id] = value.site
+                    if(value.type == 'space'){
+                        state.inquiryList[value.site.id]['inquiry_space'] = state.inquiryList[value.site.id]['inquiry_space'] || []
+                        state.inquiryList[value.site.id]['inquiry_space'][value.space.id] = value.space
+                    }
+                }
+            }
+        }
+        state.inquiryCount = countProperties(state.inquiryList)
+        console.log(state.inquiryCount,333)
+        LS.set('inquiry',state.inquiryList)
+        console.log(2222)
     }
+}
+
+function countProperties (obj) { // 计算对象长度
+    var count = 0;
+    for (var property in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, property)) {
+            count++;
+        }
+    }
+    return count;
 }
 
 export default new Vuex.Store({

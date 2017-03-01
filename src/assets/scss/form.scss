@@ -136,4 +136,9 @@
 }
 .reserve-dtl.box-list-box .text>p{
   margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 320px;
+
 }

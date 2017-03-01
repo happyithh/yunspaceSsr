@@ -107,8 +107,8 @@
                                         <span>市场价: {{item.market_price}}</span>
 
                                         <div class="btn-op clearfix">
-                                            <button class="btn btn-red">立即预订</button>
-                                            <button>加入咨询</button>
+                                            <router-link :to="'/booking/'+ item.id" class="btn btn-red">立即预订</router-link>
+                                            <button @click="spaceAddToInquiry(item)">加入咨询</button>
                                         </div>
                                     </div>
 
@@ -133,31 +133,27 @@
                         <p><span>{{siteDtl.lower_price}} </span><span>市场价: {{siteDtl.market_price}}</span></p>
                     </div>
                     <div class="btn-op clearfix">
-                        <button class="btn btn-red">立即询价</button>
-                        <button>加入询价</button>
+                        <router-link :to="'/'" class="btn btn-red">立即询价</router-link>
+                        <button >加入询价</button>
                     </div>
                     <div class="price-tel">
                         <i class="icon icon-icon_headerTel"></i>400-056-0599
                     </div>
                 </div>
-                <div class="item-title clearfix site-dtl">
+                <div class="item-title clearfix site-dtl" v-if="cases.length > 0">
                     <h2><span class="redline"></span>活动案例</h2>
                     <a class="more" href="/site/hot">更多 <i class="icon icon-icon_moreArrowRight"></i></a>
                 </div>
-                <div class="event-case border-gray">
+                <div class="event-case border-gray" v-if="cases.length > 0">
                     <ul>
-                        <li>
-                            <a href="" class="text">边开年会边旅游，会奖旅游最佳目的地——上海</a>
-                            <a href=""><img src="" alt=""></a>
+                        <li v-for="item in cases">
+                            <router-link :to="'/article/'+item.id" class="text" v-text="item.title">边开年会边旅游，会奖旅游最佳目的地——上海</router-link>
+                            <router-link :to="'/article/'+item.id"><img :src="item.img_paths.length > 0 ? item.img_paths[0]['url_400_400'] : ''" alt=""></router-link>
                         </li>
-                        <li>
-                            <a href="" class="text">边开年会边旅游，会奖旅游最佳目的地——上海</a>
-                            <a href=""><img src="" alt=""></a>
-                        </li>
-                        <li>
-                            <a href="" class="text">边开年会边旅游，会奖旅游最佳目的地——上海</a>
-                            <a href=""><img src="" alt=""></a>
-                        </li>
+                        <!--<li>-->
+                            <!--<a href="" class="text">边开年会边旅游，会奖旅游最佳目的地——上海</a>-->
+                            <!--<a href=""><img src="" alt=""></a>-->
+                        <!--</li>-->
                     </ul>
                 </div>
                 <div class="item-title clearfix site-dtl">
@@ -243,6 +239,9 @@
             },
             spaces(){
                 return this.$store.state.SiteDtlData.spaces
+            },
+            cases(){
+                return this.$store.state.SiteDtlData.relate_cases
             }
         },
         mounted () {
@@ -255,6 +254,7 @@
                 autoplay: 3500
             });
             this.initMap()
+
         },
         preFetch: fetchData,
         beforeMount () {
@@ -283,6 +283,14 @@
                     }
 
                 },'上海');
+            },
+            spaceAddToInquiry(data){
+                var value = {}
+                value.site = this.siteDtl
+                value.op = 'add'
+                value.type = 'space'
+                value.space = data
+                this.$store.commit('INQUIRY_DATA_CHANGE',value)
             }
         }
 

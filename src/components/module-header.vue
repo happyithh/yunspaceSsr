@@ -62,7 +62,7 @@
                 </div>
                 <div class="fl aboutlist">
                     <i class="icon-icon_headerList red"></i>
-                    <a href="javascript:;">咨询清单(0)</a>
+                    <a href="javascript:;">咨询清单({{inquiryCount}})</a>
                 </div>
             </div>
         </nav>
@@ -119,6 +119,9 @@
                     }
                 }
                 return this.$store.state.cities
+            },
+            inquiryCount(){
+                return this.$store.state.inquiryCount
             }
         },
         props: {
@@ -130,6 +133,7 @@
         },
         mounted () {
             this.city_id = this.$route.query.city_id
+            this.$s
         },
         methods: {
             toggleLoginForm(){},

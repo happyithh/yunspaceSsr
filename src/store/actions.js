@@ -197,6 +197,11 @@ export const getNewFoundData = ({ commit, state }) => {
     })
 }
 
+// 本地询价数据改变
+export const inquiryDataChange = ({ commit, state }) => {
+    
+}
+
 // export const loading = (state,value)=>{
 //     state.loading = value
 // }
