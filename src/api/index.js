@@ -21,8 +21,8 @@ export const YUNAPI = {
     booking : host + 'booking_demands',
     sendPhoneCode : 'http://api.yunspace.com.cn/' + 'api/auth_codes/send_code',
     siteSearch : host + 'sites/search.json',
-    // findIp : host + 'api/projects/ip_project',
-    // article : host + 'api/informations',
+    scenes : host + 'scenes',
+    scenesDtl : host + 'scenes/1',
     // articleHot : host  + 'api/informations/get_hot_recommend',
     // siteDtl : host + 'api/sites'
 }

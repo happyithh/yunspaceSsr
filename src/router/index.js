@@ -28,8 +28,8 @@ import NewsList2 from '../components/news/list2.vue'
 import NewsList3 from '../components/news/list3.vue'
 import NewsList4 from '../components/news/list4.vue'
 import NewsSite from '../components/news/site-essence.vue'
-import YunShow from '../components/yunshow/home.vue'
-import YunShowDtl from '../components/yunshow/dtl.vue'
+import Scenes from '../components/scenes/home.vue'
+import ScenesDtl from '../components/scenes/dtl.vue'
 // 个人中心
 // import perHome from '../components/personal/home.vue'
 
@@ -63,8 +63,8 @@ export default new Router({
     { path: '/news/list3', component: NewsList3 },
     { path: '/news/list4', component: NewsList4 },
     { path: '/news/site', component: NewsSite },
-    { path: '/yunshow', component: YunShow },
-    { path: '/yunshow/dtl/:id', component: YunShowDtl },
+    { path: '/scenes/:id', component: Scenes },
+    { path: '/scenes/dtl/:id', component: ScenesDtl },
       //个人中心
     // { path: '/personal', component: perHome },
 

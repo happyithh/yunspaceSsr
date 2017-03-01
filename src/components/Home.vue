@@ -14,56 +14,56 @@
             <!--YUNSHOW-->
             <ul class="yunshow mt50 clearfix">
                 <li>
-                    <a href="/yunshow/dtl/1">
+                    <a href="/scenes/YUNSHOW">
                         <img src="/static/images/yunshow/img_productShow.png" alt="show">
                         <p>秀<br/><span>SHOW</span></p>
                         <div class="mask"></div>
                     </a>
                 </li>
                 <li>
-                    <a href="/yunshow/dtl/1">
+                    <a href="/scenes/ROADSHOW">
                         <img src="/static/images/yunshow/img_productRDshow.png" alt="路演">
                         <p>路演<br/><span>ROADSHOW</span></p>
                         <div class="mask"></div>
                     </a>
                 </li>
                 <li>
-                    <a href="/yunshow/dtl/1">
+                    <a href="/scenes/POPUP">
                         <img src="/static/images/yunshow/img_productPopup.png" alt="快闪店">
                         <p>快闪店<br/><span>POPUP</span></p>
                         <div class="mask"></div>
                     </a>
                 </li>
                 <li>
-                    <a href="/yunshow/dtl/1">
+                    <a href="/scenes/SPORT">
                         <img src="/static/images/yunshow/img_productSport.png" alt="体育">
                         <p>体育<br/><span>SPORT</span></p>
                         <div class="mask"></div>
                     </a>
                 </li>
                 <li>
-                    <a href="/yunshow/dtl/1">
+                    <a href="/scenes/PLAY">
                         <img src="/static/images/yunshow/img_productPlay.png" alt="演艺">
                         <p>演艺<br/><span>PLAY</span></p>
                         <div class="mask"></div>
                     </a>
                 </li>
                 <li>
-                    <a href="/yunshow/dtl/1">
+                    <a href="/scenes/MARKET">
                         <img src="/static/images/yunshow/img_productMarket.png" alt="yunshow">
                         <p>市集<br/><span>MARKET</span></p>
                         <div class="mask"></div>
                     </a>
                 </li>
                 <li>
-                    <a href="/yunshow/dtl/1">
+                    <a href="/scenes/1">
                         <img src="/static/images/yunshow/img_productGallery.png" alt="展览">
                         <p>展览<br/><span>GALLERY</span></p>
                         <div class="mask"></div>
                     </a>
                 </li>
                 <li>
-                    <a href="/yunshow/dtl/1">
+                    <a href="/scenes/1">
                         <img src="/static/images/yunshow/img_productParty.png" alt="派对">
                         <p>派对<br/><span>PARTY</span></p>
                         <div class="mask"></div>
@@ -284,9 +284,6 @@
                         preKeyword : ''
                     }
                 },
-                reSites:[1,2,3,4,5,6,7,8],
-                selection:[1,2,3,4,5,6],
-                media:[1,2,3,4,5,6,7,8]
             }
         },
         components: {

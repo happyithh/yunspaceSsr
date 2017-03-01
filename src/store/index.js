@@ -88,6 +88,8 @@ const defaultState = {
         pre:''
     },
     SiteEssence:'',
+    allBrand:'',
+    scencesList: [],
 
     loading : false,
     allTags : {},
@@ -108,6 +110,7 @@ const mutations = {
     ALL_TAGS: (state, data) => {
         state.allTags = data
         state.cities = data.cities
+        state.allBrand = data.all_brand
     },
 
     HOME_DATA:(state, data)=>{
@@ -209,6 +212,12 @@ const mutations = {
     BOOKING_DATA(state,data){
 
         console.log(data,999)
+    },
+
+    //子品牌首页
+    SCENES_DATA(state,data){
+        console.log(data,888)
+        state.scencesList = data.list
     },
 
     LOADING(state,value){
