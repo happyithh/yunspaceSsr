@@ -2,7 +2,7 @@
 .itembox{
   .tab-box{
     .cont{
-      display: none;
+      width: 100%;
     }
     .current{
       display: block;
@@ -61,7 +61,7 @@
 
 .yunshow-box{
   .tab-menu{
-    margin-bottom: 40px;
+    margin: 40px auto;
     li{
       width: 234px;
       height: 370px;

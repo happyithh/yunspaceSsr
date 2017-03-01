@@ -6,7 +6,7 @@ request.defaults.headers = {'Access-Control-Allow-Origin':'*'}
 
 
 export const getAllTags = ({ commit, state }) => {
-    return request.get('http://api.yunspace.com.cn/api/tags/all_tags.json').then((response) => {
+    return request.get('http://172.16.0.145/api/tags/all_tags.json').then((response) => {
         if (response.statusText === 'OK') {
             commit('ALL_TAGS', response.data)
         }
@@ -191,6 +191,22 @@ export const getNewFoundData = ({ commit, state }) => {
     }).then((response) => {
         if (response.statusText === 'OK') {
             commit('NEWFOUND_DATA', response.data)
+        }
+    }).catch((error) => {
+        console.log(error)
+    })
+}
+
+//首页子品牌
+export const getScenesData = ({ commit, state },{parentId}) => {
+    return request.get(YUNAPI.scenes+'.json',{
+        params:{
+            parent_id:parentId
+        }
+    }).then((response) => {
+        if (response.statusText === 'OK') {
+            // response.data.parent_id = parentId
+            commit('SCENES_DATA', response.data)
         }
     }).catch((error) => {
         console.log(error)
